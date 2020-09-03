@@ -1,0 +1,1800 @@
+# -*- coding: utf-8 -*-
+
+################################################################################
+## Form generated from reading UI file 'untitled.ui'
+##
+## Created by: Qt User Interface Compiler version 5.14.2
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
+
+from PySide2.QtCore import (QCoreApplication, QDate, QDateTime, QMetaObject,
+    QObject, QPoint, QRect, QSize, QTime, QUrl, Qt)
+from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
+    QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter,
+    QPixmap, QRadialGradient)
+from PySide2.QtWidgets import *
+
+from features_controller import version
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        if not MainWindow.objectName():
+            MainWindow.setObjectName(u"MainWindow")
+        MainWindow.resize(745, 659)
+        MainWindow.setMinimumSize(QSize(745, 0))
+        MainWindow.setMaximumSize(QSize(745, 16777215))
+        icon = QIcon()
+        icon.addFile(u"Data/imgs/whatsapp.ico", QSize(), QIcon.Normal, QIcon.Off)
+        MainWindow.setWindowIcon(icon)
+        MainWindow.setStyleSheet(u"/*-----QWidget-----*/\n"
+"\n"
+"QWidget\n"
+"{\n"
+"	\n"
+"	background-color: qradialgradient(spread:pad, cx:0.522, cy:0.518, radius:2, fx:0.522273, fy:0.506, stop:0.0227273 rgba(23, 27, 36, 255), stop:1 rgba(0, 0, 0, 255));\n"
+"	color: #ffffff;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QLabel-----*/\n"
+"QLabel\n"
+"{\n"
+"	background-color: transparent;\n"
+"	color: #ffffff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLabel::disabled\n"
+"{\n"
+"	background-color: transparent;\n"
+"	color: #656565;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QMenuBar-----*/\n"
+"QMenuBar\n"
+"{\n"
+"	background-color: #0a0a0a;\n"
+"	color: #ffffff;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QMenuBar::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QMenuBar::item\n"
+"{\n"
+"    background-color: transparent;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QMenuBar::item:selected\n"
+"{\n"
+"    background-color: #607cff;\n"
+"    border: 1px solid #41cd52;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QMenuBar::item:p"
+                        "ressed\n"
+"{\n"
+"    background-color: #4969ff;\n"
+"    border: 1px solid #000;\n"
+"    margin-bottom: -1px;\n"
+"    padding-bottom: 1px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QMenu-----*/\n"
+"QMenu\n"
+"{\n"
+"    background-color: #121212;\n"
+"    border: 1px solid;\n"
+"    color: #ffffff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QMenu::separator\n"
+"{\n"
+"    height: 1px;\n"
+"    background-color: #6d8eff;\n"
+"    color: #ffffff;\n"
+"    padding-left: 4px;\n"
+"    margin-left: 10px;\n"
+"    margin-right: 5px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QMenu::item\n"
+"{\n"
+"    min-width : 150px;\n"
+"    padding: 3px 20px 3px 20px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QMenu::item:selected\n"
+"{\n"
+"    background-color: #4969ff;\n"
+"    color: #ffffff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QMenu::item:disabled\n"
+"{\n"
+"    color: #262626;\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QToolTip-----*/\n"
+"QToolTip\n"
+"{\n"
+"	border : 1px solid #000000;\n"
+"	background-color: #26264f;\n"
+"	color: #ffffff;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QPushButton-----*/\n"
+"QPushBu"
+                        "tton\n"
+"{\n"
+"	background-color: #607cff;\n"
+"	color: #ffffff;\n"
+"	border-style: solid;\n"
+"	border-width: 1px;\n"
+"	border-radius: 3px;\n"
+"	border-color: #051a39;\n"
+"	padding: 5px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"	background-color: #8399ff;\n"
+"	color: #ffffff;\n"
+"	border-style: solid;\n"
+"	border-width: 1px;\n"
+"	border-radius: 3px;\n"
+"	border-color: #051a39;\n"
+"	padding: 5px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"	background-color: #4969ff;\n"
+"	color: #ffffff;\n"
+"	border-style: solid;\n"
+"	border-width: 1px;\n"
+"	border-radius: 3px;\n"
+"	border-color: #051a39;\n"
+"	padding: 5px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QToolButton-----*/\n"
+"QToolButton\n"
+"{\n"
+"	background-color: #607cff;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 3px;\n"
+"	border-color: #051a39;\n"
+"	padding: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QToolB"
+                        "utton::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QToolButton::hover\n"
+"{\n"
+"	background-color: #8399ff;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 3px;\n"
+"	border-color: #051a39;\n"
+"	padding: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QToolButton::pressed\n"
+"{\n"
+"	background-color: #4969ff;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 3px;\n"
+"	border-color: #051a39;\n"
+"	padding: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QComboBox-----*/\n"
+"QComboBox\n"
+"{\n"
+"    background-color: #607cff;\n"
+"    border: 1px solid;\n"
+"    border-radius: 3px;\n"
+"    padding-left: 6px;\n"
+"    color: #ffffff;\n"
+"    height: 20px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox:hover\n"
+"{\n"
+"    background-color: #8399ff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox:on\n"
+"{\n"
+"    background-color: #4969f"
+                        "f;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox QAbstractItemView\n"
+"{\n"
+"    background-color: #383838;\n"
+"    color: #ffffff;\n"
+"    border: 1px solid black;\n"
+"    selection-background-color: #4969ff;\n"
+"    selection-color: #ffffff;\n"
+"    outline: 0;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox::drop-down\n"
+"{\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    width: 15px;\n"
+"    border-left-width: 0px;\n"
+"    border-left-color: darkgray;\n"
+"    border-left-style: solid; \n"
+"    border-top-right-radius: 3px; \n"
+"    border-bottom-right-radius: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox::down-arrow\n"
+"{\n"
+"    image: url(://arrow-down.png);\n"
+"    width: 8px;\n"
+"    height: 8px;\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QSpinBox & QDoubleSpinBox & QDateTimeEdit-----*/\n"
+"QSpinBox, \n"
+"QDoubleSpinBox,\n"
+"QDateTimeEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border: 1px solid #051a39;\n"
+"	border-radius: 3px;\n"
+"	padding : 2px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSpinBox::disabl"
+                        "ed, \n"
+"QDoubleSpinBox::disabled,\n"
+"QDateTimeEdit::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSpinBox:hover, \n"
+"QDoubleSpinBox::hover,\n"
+"QDateTimeEdit::hover\n"
+"{\n"
+"    background-color: #626262;\n"
+"    border: 1px solid #607cff;\n"
+"    color:  #fff;\n"
+"    padding: 2px\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSpinBox::up-button, QSpinBox::down-button,\n"
+"QDoubleSpinBox::up-button, QDoubleSpinBox::down-button,\n"
+"QDateTimeEdit::up-button, QDateTimeEdit::down-button\n"
+"{\n"
+"    background-color: #607cff;\n"
+"	border-radius: 2px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSpinBox::disabled, \n"
+"QDoubleSpinBox::disabled,\n"
+"QDateTimeEdit::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSpinBox::up-button:hover, QSpinBox::down-button:hover,\n"
+"QDoubleSpinBox::up-button:hover, QDoubleSpinBox::down-button:hover,\n"
+"QDateTimeEdit::up-button:hover, QDateTimeEdit::down-button:hov"
+                        "er\n"
+"{\n"
+"    background-color: #8399ff;\n"
+"    border: 1px solid #8399ff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSpinBox::up-button:disabled, QSpinBox::down-button:disabled,\n"
+"QDoubleSpinBox::up-button:disabled, QDoubleSpinBox::down-button:disabled,\n"
+"QDateTimeEdit::up-button:disabled, QDateTimeEdit::down-button:disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSpinBox::up-button:pressed, QSpinBox::down-button:pressed,\n"
+"QDoubleSpinBox::up-button:pressed, QDoubleSpinBox::down-button::pressed,\n"
+"QDateTimeEdit::up-button:pressed, QDateTimeEdit::down-button::pressed\n"
+"{\n"
+"    background-color: #4969ff;\n"
+"    border: 1px solid #4969ff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSpinBox::down-arrow,\n"
+"QDoubleSpinBox::down-arrow,\n"
+"QDateTimeEdit::down-arrow\n"
+"{\n"
+"    image: url(://arrow-down.png);\n"
+"    width: 7px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSpinBox::up-arrow,\n"
+"QDoubleSpinBox::up-arrow,\n"
+"QDateTimeEdit::up-arrow\n"
+"{\n"
+"    image: url(://ar"
+                        "row-up.png);\n"
+"    width: 7px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QLineEdit-----*/\n"
+"QLineEdit\n"
+"{\n"
+"	background-color: #525251;\n"
+"	color: #ffffff;\n"
+"	border-width: 1px;\n"
+"	border-radius: 3px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QLineEdit::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-width: 1px;\n"
+"	border-radius: 3px;\n"
+"	border-color: #051a39;\n"
+"	padding: 2px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QTextEdit-----*/\n"
+"QTextEdit\n"
+"{\n"
+"	background-color: #ffffff;\n"
+"	color: #010201;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTextEdit::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QGroupBox-----*/\n"
+"QGroupBox \n"
+"{\n"
+"    border: 1px solid;\n"
+"    border-color: #607cff;\n"
+"    margin-top: 22px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QGroupBox::title  \n"
+"{\n"
+"    background-color: #607cff;\n"
+"    color: #ffffff;\n"
+"    subcontrol-origin: ma"
+                        "rgin;\n"
+"    subcontrol-position: top left;\n"
+"    padding: 5px;\n"
+"	border-top-left-radius: 3px;\n"
+"	border-top-right-radius: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QGroupBox::title::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top left;\n"
+"    padding: 5px;\n"
+"	border-top-left-radius: 3px;\n"
+"	border-top-right-radius: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QCheckBox-----*/\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"/*-----QRadioButton-----*/\n"
+"QRadioButton::indicator::unchecked\n"
+"{ \n"
+"	border: 2px inset gray; \n"
+"	border-radius: 5px; \n"
+"	background-color:  #fff;\n"
+"	width: 9px; \n"
+"	height: 9px; \n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QRadioButton::indicator::unchecked:hover\n"
+"{ \n"
+"	border: 2px solid #607cff; \n"
+"	border-radius: 5px; \n"
+"	background-color:  #fff;\n"
+"	width: 9px; \n"
+"	height: 9px; \n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QRadioButton::indicator::checked\n"
+"{ \n"
+"	border: 2px inset darkgray; \n"
+"	border-radius: 5"
+                        "px; \n"
+"	background-color: #4969ff; \n"
+"	width: 9px; \n"
+"	height: 9px; \n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QRadioButton::disabled\n"
+"{\n"
+"	color: #656565;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QRadioButton::indicator:disabled\n"
+"{\n"
+"	background-color: #656565;\n"
+"	color: #656565;\n"
+"    border: 2px solid #656565;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QTableView & QTableWidget-----*/\n"
+"QTableView\n"
+"{\n"
+"    background-color: transparent;\n"
+"    border: 1px solid #32414B;\n"
+"    color: #f0f0f0;\n"
+"    gridline-color: #8faaff;\n"
+"    outline : 0;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTableView::disabled\n"
+"{\n"
+"    background-color: #242526;\n"
+"    border: 1px solid #32414B;\n"
+"    color: #656565;\n"
+"    gridline-color: #656565;\n"
+"    outline : 0;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTableView::item:hover \n"
+"{\n"
+"    background-color: #26264f;\n"
+"    color: #f0f0f0;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTableView::item:selected \n"
+"{\n"
+"    background-color: #1a1b1c;\n"
+"    border: 2px solid #4969ff;\n"
+"    color: #F0F0F0;\n"
+"\n"
+"}\n"
+"\n"
+""
+                        "\n"
+"QTableView::item:selected:disabled\n"
+"{\n"
+"    background-color: #1a1b1c;\n"
+"    border: 2px solid #525251;\n"
+"    color: #656565;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTableCornerButton::section\n"
+"{\n"
+"    background-color: #505050;\n"
+"    color: #fff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderView::section\n"
+"{\n"
+"    background-color: #525251;\n"
+"    color: #fff;\n"
+"    text-align: left;\n"
+"	padding: 4px;\n"
+"	\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderView::section:disabled\n"
+"{\n"
+"    background-color: #525251;\n"
+"    color: #656565;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderView::section:checked\n"
+"{\n"
+"    color: #fff;\n"
+"    background-color: #4969ff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderView::section:checked:disabled\n"
+"{\n"
+"    color: #656565;\n"
+"    background-color: #525251;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderView::section::vertical::first,\n"
+"QHeaderView::section::vertical::only-one\n"
+"{\n"
+"    border-top: 1px solid #353635;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderView::section::vertical\n"
+"{\n"
+"    border-top: 1px solid #35363"
+                        "5;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderView::section::horizontal::first,\n"
+"QHeaderView::section::horizontal::only-one\n"
+"{\n"
+"    border-left: 1px solid #353635;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderView::section::horizontal\n"
+"{\n"
+"    border-left: 1px solid #353635;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QTabWidget-----*/\n"
+"QTabBar::tab\n"
+"{\n"
+"	background-color: transparent;\n"
+"	color: #ffffff;\n"
+"	border-style: solid;\n"
+"	border-width: 1px;\n"
+"	border-top-left-radius: 3px;\n"
+"	border-top-right-radius: 3px;\n"
+"	border-color: #051a39;\n"
+"	padding: 5px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:disabled\n"
+"{\n"
+"	background-color: #656565;\n"
+"	color: #656565;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabWidget::pane \n"
+"{\n"
+"	background-color: red;\n"
+"	color: #ffffff;\n"
+"    border: 1px solid;\n"
+"    border-color: #607cff;\n"
+"\n"
+"}\n"
+"\n"
+"QTabBar::tab:selected\n"
+"{\n"
+"    background-color: #607cff;\n"
+"	color: #ffffff;\n"
+"	border-style: solid;\n"
+"	border-width: 1px;\n"
+"	border-top-left-radius: 3px;\n"
+"	border-t"
+                        "op-right-radius: 3px;\n"
+"	border-color: #051a39;\n"
+"	padding: 5px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:selected:disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"	color: #656565;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:!selected \n"
+"{\n"
+"    background-color: #262626;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:!selected:hover \n"
+"{\n"
+"    background-color: #8399ff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:top:!selected \n"
+"{\n"
+"    margin-top: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:bottom:!selected \n"
+"{\n"
+"    margin-bottom: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:top, QTabBar::tab:bottom \n"
+"{\n"
+"    min-width: 8ex;\n"
+"    margin-right: -1px;\n"
+"    padding: 5px 10px 5px 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:top:selected \n"
+"{\n"
+"    border-bottom-color: none;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:bottom:selected \n"
+"{\n"
+"    border-top-color: none;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:top:last, QTabBar::tab:bottom:last,\n"
+"QTabBar::tab:top:only-one, QTabBar::tab:bottom:only-one \n"
+""
+                        "{\n"
+"    margin-right: 0;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:left:!selected \n"
+"{\n"
+"    margin-right: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:right:!selected\n"
+"{\n"
+"    margin-left: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:left, QTabBar::tab:right \n"
+"{\n"
+"    min-height: 8ex;\n"
+"    margin-bottom: -1px;\n"
+"    padding: 10px 5px 10px 5px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:left:selected \n"
+"{\n"
+"    border-left-color: none;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:right:selected \n"
+"{\n"
+"    border-right-color: none;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QTabBar::tab:left:last, QTabBar::tab:right:last,\n"
+"QTabBar::tab:left:only-one, QTabBar::tab:right:only-one \n"
+"{\n"
+"    margin-bottom: 0;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QSlider-----*/\n"
+"QSlider::groove:horizontal \n"
+"{\n"
+"	background-color: transparent;\n"
+"	height: 5px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSlider::sub-page:horizontal \n"
+"{\n"
+"	background-color: #607cff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSlider::add-page:horizontal \n"
+"{\n"
+"	background-col"
+                        "or: #666765;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSlider::handle:horizontal \n"
+"{\n"
+"	background-color: #607cff;\n"
+"	width: 14px;\n"
+"	margin-top: -6px;\n"
+"	margin-bottom: -6px;\n"
+"	border-radius: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSlider::handle:horizontal:hover \n"
+"{\n"
+"	background-color: #607cff;\n"
+"	border-radius: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSlider::sub-page:horizontal:disabled \n"
+"{\n"
+"	background-color: #bbb;\n"
+"	border-color: #999;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSlider::add-page:horizontal:disabled \n"
+"{\n"
+"	background-color: #eee;\n"
+"	border-color: #999;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSlider::handle:horizontal:disabled \n"
+"{\n"
+"	background-color: #eee;\n"
+"	border: 1px solid #aaa;\n"
+"	border-radius: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSlider::groove:vertical \n"
+"{\n"
+"	background-color: transparent;\n"
+"	width: 5px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSlider::sub-page:vertical \n"
+"{\n"
+"	background-color: #607cff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSlider::add-page:vertical \n"
+"{\n"
+"	background-color: #666765;\n"
+"\n"
+"}\n"
+"\n"
+""
+                        "\n"
+"QSlider::handle:vertical \n"
+"{\n"
+"	background-color: #607cff;\n"
+"	height: 14px;\n"
+"	margin-left: -6px;\n"
+"	margin-right: -6px;\n"
+"	border-radius: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSlider::handle:vertical:hover \n"
+"{\n"
+"	background-color: #607cff;\n"
+"	border-radius: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSlider::sub-page:vertical:disabled \n"
+"{\n"
+"	background-color: #bbb;\n"
+"	border-color: #999;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSlider::add-page:vertical:disabled \n"
+"{\n"
+"	background-color: #eee;\n"
+"	border-color: #999;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QSlider::handle:vertical:disabled \n"
+"{\n"
+"	background-color: #eee;\n"
+"	border: 1px solid #aaa;\n"
+"	border-radius: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QDial-----*/\n"
+"QDial\n"
+"{\n"
+"	background-color: #607cff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QDial::disabled\n"
+"{\n"
+"	background-color: #404040;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QScrollBar-----*/\n"
+"QScrollBar:horizontal\n"
+"{\n"
+"    border: 1px solid #222222;\n"
+"    background-color: #3d3d3d;\n"
+"    height: 13px;\n"
+""
+                        "    margin: 0px 16px 0 16px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::handle:horizontal\n"
+"{\n"
+"    background: #607cff;\n"
+"    min-height: 20px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::add-line:horizontal\n"
+"{\n"
+"    border: 1px solid #1b1b19;\n"
+"    background-color: #607cff;\n"
+"    width: 14px;\n"
+"    subcontrol-position: right;\n"
+"    subcontrol-origin: margin;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::sub-line:horizontal\n"
+"{\n"
+"    border: 1px solid #1b1b19;\n"
+"    background-color: #607cff;\n"
+"    width: 14px;\n"
+"    subcontrol-position: left;\n"
+"    subcontrol-origin: margin;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::right-arrow:horizontal\n"
+"{\n"
+"    image: url(://arrow-right.png);\n"
+"    width: 6px;\n"
+"    height: 6px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::left-arrow:horizontal\n"
+"{\n"
+"    image: url(://arrow-left.png);\n"
+"    width: 6px;\n"
+"    height: 6px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal\n"
+"{\n"
+"    background: none;\n"
+"\n"
+"}\n"
+"\n"
+""
+                        "\n"
+"QScrollBar:vertical\n"
+"{\n"
+"    background-color: #3d3d3d;\n"
+"    width: 13px;\n"
+"    margin: 16px 0 16px 0;\n"
+"    border: 1px solid #222222;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::handle:vertical\n"
+"{\n"
+"    background-color: #607cff;\n"
+"    min-height: 20px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::add-line:vertical\n"
+"{\n"
+"    border: 1px solid #1b1b19;\n"
+"    background-color: #607cff;\n"
+"    height: 14px;\n"
+"    subcontrol-position: bottom;\n"
+"    subcontrol-origin: margin;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::sub-line:vertical\n"
+"{\n"
+"    border: 1px solid #1b1b19;\n"
+"    background-color: #607cff;\n"
+"    height: 14px;\n"
+"    subcontrol-position: top;\n"
+"    subcontrol-origin: margin;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::up-arrow:vertical\n"
+"{\n"
+"    image: url(://arrow-up.png);\n"
+"    width: 6px;\n"
+"    height: 6px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::down-arrow:vertical\n"
+"{\n"
+"    image: url(://arrow-down.png);\n"
+"    width: 6px;\n"
+"    height: 6px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+""
+                        "QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical\n"
+"{\n"
+"    background: none;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QProgressBar-----*/\n"
+"QProgressBar\n"
+"{\n"
+"	background-color: #383838;\n"
+"	color: #ffffff;\n"
+"	border: 1px solid #607cff;\n"
+"	border-radius: 3px;\n"
+"	text-align: center;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QProgressBar::chunk {\n"
+"	background-color: #607cff;\n"
+"	color: #fff;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QProgressBar::chunk:disabled {\n"
+"	background-color: #656565;\n"
+"	border: 1px solid #aaa;\n"
+"	color: #656565;\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QStatusBar-----*/\n"
+"QStatusBar\n"
+"{\n"
+"	background-color: #0a0a0a;\n"
+"	color: #ffffff;\n"
+"	border-color: #051a39;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.centralwidget = QWidget(MainWindow)
+        self.centralwidget.setObjectName(u"centralwidget")
+        self.gridLayout_2 = QGridLayout(self.centralwidget)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setContentsMargins(0, 0, 0, 10)
+        self.horizontalLayout_7 = QHBoxLayout()
+        self.horizontalLayout_7.setSpacing(15)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.start_btn = QPushButton(self.centralwidget)
+        self.start_btn.setObjectName(u"start_btn")
+        self.start_btn.setMaximumSize(QSize(16777215, 45))
+        icon1 = QIcon()
+        icon1.addFile(u"Data/imgs/black icons/icons8-play-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.start_btn.setIcon(icon1)
+        self.start_btn.setIconSize(QSize(34, 48))
+
+        self.horizontalLayout_7.addWidget(self.start_btn)
+
+        self.stop_btn = QPushButton(self.centralwidget)
+        self.stop_btn.setObjectName(u"stop_btn")
+        self.stop_btn.setMaximumSize(QSize(16777215, 45))
+        icon2 = QIcon()
+        icon2.addFile(u"Data/imgs/black icons/icons8-stop-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.stop_btn.setIcon(icon2)
+        self.stop_btn.setIconSize(QSize(38, 37))
+
+        self.horizontalLayout_7.addWidget(self.stop_btn)
+
+
+        self.gridLayout_2.addLayout(self.horizontalLayout_7, 1, 1, 1, 1)
+
+        self.horizontalLayout_8 = QHBoxLayout()
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.listWidget = QListWidget(self.centralwidget)
+        __qlistwidgetitem = QListWidgetItem(self.listWidget)
+        __qlistwidgetitem.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
+        __qlistwidgetitem.setIcon(icon);
+        icon3 = QIcon()
+        icon3.addFile(u"Data/imgs/white icons/icons8-bar-chart-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        brush = QBrush(QColor(0, 0, 0, 255))
+        brush.setStyle(Qt.NoBrush)
+        __qlistwidgetitem1 = QListWidgetItem(self.listWidget)
+        __qlistwidgetitem1.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
+        __qlistwidgetitem1.setBackground(brush);
+        __qlistwidgetitem1.setIcon(icon3);
+        icon4 = QIcon()
+        icon4.addFile(u"Data/imgs/white icons/icons8-clock-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        font = QFont()
+        font.setPointSize(15)
+        font.setBold(True)
+        font.setWeight(75)
+        __qlistwidgetitem2 = QListWidgetItem(self.listWidget)
+        __qlistwidgetitem2.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
+        __qlistwidgetitem2.setFont(font);
+        __qlistwidgetitem2.setIcon(icon4);
+        icon5 = QIcon()
+        icon5.addFile(u"Data/imgs/white icons/icons8-about-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qlistwidgetitem3 = QListWidgetItem(self.listWidget)
+        __qlistwidgetitem3.setIcon(icon5);
+        __qlistwidgetitem3.setFlags(Qt.ItemIsSelectable|Qt.ItemIsEnabled);
+        self.listWidget.setObjectName(u"listWidget")
+        self.listWidget.setMaximumSize(QSize(155, 16777215))
+        font1 = QFont()
+        font1.setPointSize(16)
+        font1.setBold(True)
+        font1.setWeight(75)
+        self.listWidget.setFont(font1)
+        self.listWidget.setMouseTracking(False)
+        self.listWidget.setLayoutDirection(Qt.LeftToRight)
+        self.listWidget.setStyleSheet(u"QListView {\n"
+"    background:transparent;\n"
+"}\n"
+"\n"
+"::item{\n"
+"width:100px;\n"
+"height:130px;\n"
+"}\n"
+"\n"
+"::item:disabled{\n"
+"width:100px;\n"
+"height:130px;\n"
+"background:rgb(71, 71, 71)\n"
+"}\n"
+"\n"
+"")
+        self.listWidget.setFrameShape(QFrame.Box)
+        self.listWidget.setFrameShadow(QFrame.Raised)
+        self.listWidget.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.listWidget.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.listWidget.setAutoScrollMargin(16)
+        self.listWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.listWidget.setTabKeyNavigation(False)
+        self.listWidget.setProperty("showDropIndicator", False)
+        self.listWidget.setDragEnabled(False)
+        self.listWidget.setDragDropOverwriteMode(False)
+        self.listWidget.setDragDropMode(QAbstractItemView.NoDragDrop)
+        self.listWidget.setAlternatingRowColors(False)
+        self.listWidget.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.listWidget.setSelectionBehavior(QAbstractItemView.SelectItems)
+        self.listWidget.setIconSize(QSize(92, 63))
+        self.listWidget.setTextElideMode(Qt.ElideMiddle)
+        self.listWidget.setVerticalScrollMode(QAbstractItemView.ScrollPerItem)
+        self.listWidget.setMovement(QListView.Static)
+        self.listWidget.setFlow(QListView.TopToBottom)
+        self.listWidget.setProperty("isWrapping", False)
+        self.listWidget.setResizeMode(QListView.Adjust)
+        self.listWidget.setLayoutMode(QListView.SinglePass)
+        self.listWidget.setSpacing(0)
+        self.listWidget.setViewMode(QListView.ListMode)
+        self.listWidget.setModelColumn(0)
+        self.listWidget.setUniformItemSizes(False)
+        self.listWidget.setBatchSize(100)
+        self.listWidget.setWordWrap(False)
+        self.listWidget.setSelectionRectVisible(False)
+        self.listWidget.setSortingEnabled(False)
+
+        self.horizontalLayout_8.addWidget(self.listWidget)
+
+        self.tabWidget = QTabWidget(self.centralwidget)
+        self.tabWidget.setObjectName(u"tabWidget")
+        self.tabWidget.setMaximumSize(QSize(16777215, 16777215))
+        self.tabWidget.setStyleSheet(u"\n"
+"QTabWidget::tab-bar {\n"
+"   height:0;\n"
+"	width:0;\n"
+"}")
+        self.tabWidget.setTabPosition(QTabWidget.East)
+        self.tabWidget.setIconSize(QSize(0, 0))
+        self.tabWidget.setElideMode(Qt.ElideNone)
+        self.tabWidget.setUsesScrollButtons(False)
+        self.tabWidget.setDocumentMode(True)
+        self.tabWidget.setTabsClosable(False)
+        self.tabWidget.setMovable(False)
+        self.tabWidget.setTabBarAutoHide(False)
+        self.main_tab = QWidget()
+        self.main_tab.setObjectName(u"main_tab")
+        self.main_tab.setMaximumSize(QSize(16777215, 16777215))
+        self.main_tab.setAutoFillBackground(False)
+        self.verticalLayout_6 = QVBoxLayout(self.main_tab)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.frame = QFrame(self.main_tab)
+        self.frame.setObjectName(u"frame")
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(1)
+        sizePolicy.setVerticalStretch(1)
+        sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy)
+        self.frame.setMinimumSize(QSize(0, 0))
+        self.frame.setMaximumSize(QSize(16777215, 16777215))
+        self.frame.setSizeIncrement(QSize(0, 0))
+        self.frame.setBaseSize(QSize(0, 0))
+        self.frame.setLayoutDirection(Qt.LeftToRight)
+        self.frame.setStyleSheet(u"")
+        self.frame.setFrameShape(QFrame.NoFrame)
+        self.frame.setLineWidth(1)
+        self.frame.setMidLineWidth(0)
+        self.verticalLayout_5 = QVBoxLayout(self.frame)
+        self.verticalLayout_5.setSpacing(10)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalLayout_5.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.groupBox = QGroupBox(self.frame)
+        self.groupBox.setObjectName(u"groupBox")
+        self.groupBox.setMaximumSize(QSize(16777215, 16777215))
+        font2 = QFont()
+        font2.setPointSize(8)
+        self.groupBox.setFont(font2)
+        self.groupBox.setStyleSheet(u"QGroupBox{\n"
+"background:transparent;\n"
+"}")
+        self.groupBox.setAlignment(Qt.AlignCenter)
+        self.groupBox.setFlat(False)
+        self.verticalLayout = QVBoxLayout(self.groupBox)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.gridLayout = QGridLayout()
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.textBrowser = QTextBrowser(self.groupBox)
+        self.textBrowser.setObjectName(u"textBrowser")
+        self.textBrowser.setMaximumSize(QSize(16777215, 50))
+        self.textBrowser.setStyleSheet(u"background:transparent;\n"
+"color:white")
+        self.textBrowser.setFrameShape(QFrame.NoFrame)
+        self.textBrowser.setLineWidth(0)
+        self.textBrowser.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.textBrowser.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+
+        self.gridLayout.addWidget(self.textBrowser, 1, 0, 1, 1)
+
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.sheet_le = QLineEdit(self.groupBox)
+        self.sheet_le.setObjectName(u"sheet_le")
+        self.sheet_le.setReadOnly(True)
+
+        self.horizontalLayout_4.addWidget(self.sheet_le)
+
+        self.sheet_btn = QToolButton(self.groupBox)
+        self.sheet_btn.setObjectName(u"sheet_btn")
+
+        self.horizontalLayout_4.addWidget(self.sheet_btn)
+
+
+        self.gridLayout.addLayout(self.horizontalLayout_4, 0, 0, 1, 1)
+
+
+        self.verticalLayout.addLayout(self.gridLayout)
+
+
+        self.verticalLayout_5.addWidget(self.groupBox)
+
+        self.groupBox_2 = QGroupBox(self.frame)
+        self.groupBox_2.setObjectName(u"groupBox_2")
+        self.groupBox_2.setMaximumSize(QSize(16777215, 16777215))
+        self.verticalLayout_3 = QVBoxLayout(self.groupBox_2)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(50, -1, 50, -1)
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.horizontalLayout_5 = QHBoxLayout()
+        self.horizontalLayout_5.setSpacing(0)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.label = QLabel(self.groupBox_2)
+        self.label.setObjectName(u"label")
+        self.label.setMaximumSize(QSize(50, 16777215))
+        font3 = QFont()
+        font3.setPointSize(11)
+        font3.setBold(True)
+        font3.setWeight(75)
+        self.label.setFont(font3)
+
+        self.horizontalLayout_5.addWidget(self.label)
+
+        self.messages_sbox = QSpinBox(self.groupBox_2)
+        self.messages_sbox.setObjectName(u"messages_sbox")
+        self.messages_sbox.setMaximumSize(QSize(50, 16777215))
+        self.messages_sbox.setMinimum(0)
+        self.messages_sbox.setMaximum(1000)
+        self.messages_sbox.setValue(100)
+
+        self.horizontalLayout_5.addWidget(self.messages_sbox)
+
+        self.label_2 = QLabel(self.groupBox_2)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMaximumSize(QSize(120, 16777215))
+        self.label_2.setFont(font3)
+
+        self.horizontalLayout_5.addWidget(self.label_2)
+
+        self.minutes_sbox = QSpinBox(self.groupBox_2)
+        self.minutes_sbox.setObjectName(u"minutes_sbox")
+        self.minutes_sbox.setMaximumSize(QSize(50, 16777215))
+        self.minutes_sbox.setMinimum(1)
+        self.minutes_sbox.setMaximum(1000)
+        self.minutes_sbox.setValue(30)
+
+        self.horizontalLayout_5.addWidget(self.minutes_sbox)
+
+        self.label_4 = QLabel(self.groupBox_2)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setMaximumSize(QSize(100, 16777215))
+        self.label_4.setFont(font3)
+        self.label_4.setScaledContents(False)
+        self.label_4.setWordWrap(False)
+
+        self.horizontalLayout_5.addWidget(self.label_4)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_5)
+
+        self.checkBox = QCheckBox(self.groupBox_2)
+        self.checkBox.setObjectName(u"checkBox")
+
+        self.verticalLayout_2.addWidget(self.checkBox)
+
+
+        self.verticalLayout_3.addLayout(self.verticalLayout_2)
+
+
+        self.verticalLayout_5.addWidget(self.groupBox_2)
+
+        self.groupBox_3 = QGroupBox(self.frame)
+        self.groupBox_3.setObjectName(u"groupBox_3")
+        self.groupBox_3.setMaximumSize(QSize(16777215, 16777215))
+        self.formLayout = QFormLayout(self.groupBox_3)
+        self.formLayout.setObjectName(u"formLayout")
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.attachments_le = QLineEdit(self.groupBox_3)
+        self.attachments_le.setObjectName(u"attachments_le")
+        self.attachments_le.setReadOnly(True)
+
+        self.horizontalLayout_2.addWidget(self.attachments_le)
+
+        self.attachments_btn = QToolButton(self.groupBox_3)
+        self.attachments_btn.setObjectName(u"attachments_btn")
+
+        self.horizontalLayout_2.addWidget(self.attachments_btn)
+
+
+        self.formLayout.setLayout(0, QFormLayout.SpanningRole, self.horizontalLayout_2)
+
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.label_5 = QLabel(self.groupBox_3)
+        self.label_5.setObjectName(u"label_5")
+
+        self.horizontalLayout.addWidget(self.label_5)
+
+        self.contactCard_le = QLineEdit(self.groupBox_3)
+        self.contactCard_le.setObjectName(u"contactCard_le")
+
+        self.horizontalLayout.addWidget(self.contactCard_le)
+
+
+        self.formLayout.setLayout(1, QFormLayout.LabelRole, self.horizontalLayout)
+
+
+        self.verticalLayout_5.addWidget(self.groupBox_3)
+
+        self.groupBox_4 = QGroupBox(self.frame)
+        self.groupBox_4.setObjectName(u"groupBox_4")
+        self.groupBox_4.setMaximumSize(QSize(16777215, 16777215))
+        self.groupBox_4.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.verticalLayout_4 = QVBoxLayout(self.groupBox_4)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(80, -1, -1, -1)
+        self.sameFormat_rb = QRadioButton(self.groupBox_4)
+        self.sameFormat_rb.setObjectName(u"sameFormat_rb")
+        self.sameFormat_rb.setMaximumSize(QSize(16777215, 16777215))
+        self.sameFormat_rb.setChecked(True)
+
+        self.horizontalLayout_3.addWidget(self.sameFormat_rb)
+
+        self.oneline_rb = QRadioButton(self.groupBox_4)
+        self.oneline_rb.setObjectName(u"oneline_rb")
+        self.oneline_rb.setMaximumSize(QSize(16777215, 16777215))
+        self.oneline_rb.setChecked(False)
+
+        self.horizontalLayout_3.addWidget(self.oneline_rb)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout_3)
+
+        self.pushButton = QPushButton(self.groupBox_4)
+        self.pushButton.setObjectName(u"pushButton")
+
+        self.verticalLayout_4.addWidget(self.pushButton)
+
+        self.message_text = QPlainTextEdit(self.groupBox_4)
+        self.message_text.setObjectName(u"message_text")
+
+        self.verticalLayout_4.addWidget(self.message_text)
+
+        self.horizontalLayout_6 = QHBoxLayout()
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.multi_messages_le = QLineEdit(self.groupBox_4)
+        self.multi_messages_le.setObjectName(u"multi_messages_le")
+        self.multi_messages_le.setReadOnly(True)
+
+        self.horizontalLayout_6.addWidget(self.multi_messages_le)
+
+        self.multi_messages_btn = QToolButton(self.groupBox_4)
+        self.multi_messages_btn.setObjectName(u"multi_messages_btn")
+
+        self.horizontalLayout_6.addWidget(self.multi_messages_btn)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout_6)
+
+
+        self.verticalLayout_5.addWidget(self.groupBox_4)
+
+        self.verticalLayout_5.setStretch(3, 1)
+
+        self.verticalLayout_6.addWidget(self.frame)
+
+        self.tabWidget.addTab(self.main_tab, "")
+        self.report_tab = QWidget()
+        self.report_tab.setObjectName(u"report_tab")
+        self.verticalLayout_7 = QVBoxLayout(self.report_tab)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.tableWidget = QTableWidget(self.report_tab)
+        if (self.tableWidget.columnCount() < 3):
+            self.tableWidget.setColumnCount(3)
+        icon6 = QIcon()
+        icon6.addFile(u"Data/imgs/white icons/icons8-contacts-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qtablewidgetitem = QTableWidgetItem()
+        __qtablewidgetitem.setIcon(icon6);
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        icon7 = QIcon()
+        icon7.addFile(u"Data/imgs/white icons/icons8-phone-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        __qtablewidgetitem1.setIcon(icon7);
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        icon8 = QIcon()
+        icon8.addFile(u"Data/imgs/white icons/icons8-info-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        __qtablewidgetitem2.setIcon(icon8);
+        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.tableWidget.setSelectionMode(QAbstractItemView.NoSelection)
+        self.tableWidget.setSelectionBehavior(QAbstractItemView.SelectItems)
+        self.tableWidget.horizontalHeader().setCascadingSectionResizes(False)
+        self.tableWidget.horizontalHeader().setMinimumSectionSize(39)
+        self.tableWidget.horizontalHeader().setDefaultSectionSize(125)
+        self.tableWidget.horizontalHeader().setStretchLastSection(True)
+        self.tableWidget.verticalHeader().setVisible(False)
+
+        self.verticalLayout_7.addWidget(self.tableWidget)
+
+        self.horizontalLayout_9 = QHBoxLayout()
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.csv_btn = QPushButton(self.report_tab)
+        self.csv_btn.setObjectName(u"csv_btn")
+        self.csv_btn.setMaximumSize(QSize(150, 16777215))
+        icon9 = QIcon()
+        icon9.addFile(u"Data/imgs/white icons/icons8-save-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.csv_btn.setIcon(icon9)
+        self.csv_btn.setIconSize(QSize(22, 22))
+
+        self.horizontalLayout_9.addWidget(self.csv_btn)
+
+        self.newsession_btn = QPushButton(self.report_tab)
+        self.newsession_btn.setObjectName(u"newsession_btn")
+        self.newsession_btn.setMaximumSize(QSize(150, 16777215))
+        icon10 = QIcon()
+        icon10.addFile(u"Data/imgs/white icons/icons8-trash-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.newsession_btn.setIcon(icon10)
+        self.newsession_btn.setIconSize(QSize(19, 18))
+
+        self.horizontalLayout_9.addWidget(self.newsession_btn)
+
+
+        self.verticalLayout_7.addLayout(self.horizontalLayout_9)
+
+        self.tabWidget.addTab(self.report_tab, "")
+        self.timed_tab = QWidget()
+        self.timed_tab.setObjectName(u"timed_tab")
+        self.verticalLayout_8 = QVBoxLayout(self.timed_tab)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.verticalLayout_8.setContentsMargins(0, 110, 0, 0)
+        self.textBrowser_3 = QTextBrowser(self.timed_tab)
+        self.textBrowser_3.setObjectName(u"textBrowser_3")
+        self.textBrowser_3.setStyleSheet(u"background:transparent;\n"
+"color:white\n"
+"\n"
+"")
+        self.textBrowser_3.setFrameShape(QFrame.NoFrame)
+
+        self.verticalLayout_8.addWidget(self.textBrowser_3)
+
+        self.tabWidget.addTab(self.timed_tab, "")
+        self.about_tab = QWidget()
+        self.about_tab.setObjectName(u"about_tab")
+        self.verticalLayout_9 = QVBoxLayout(self.about_tab)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.textBrowser_2 = QTextBrowser(self.about_tab)
+        self.textBrowser_2.setObjectName(u"textBrowser_2")
+        self.textBrowser_2.setMaximumSize(QSize(16777215, 140))
+        self.textBrowser_2.setStyleSheet(u"background:transparent;\n"
+"color:white\n"
+"\n"
+"")
+        self.textBrowser_2.setFrameShape(QFrame.NoFrame)
+        self.textBrowser_2.setOpenExternalLinks(False)
+
+        self.verticalLayout_9.addWidget(self.textBrowser_2)
+
+        self.textBrowser_4 = QTextBrowser(self.about_tab)
+        self.textBrowser_4.setObjectName(u"textBrowser_4")
+        self.textBrowser_4.setStyleSheet(u"background:transparent;\n"
+"color:white;\n"
+"border:transparent\n"
+"\n"
+"")
+        self.textBrowser_4.setOpenExternalLinks(True)
+
+        self.verticalLayout_9.addWidget(self.textBrowser_4)
+
+        self.tabWidget.addTab(self.about_tab, "")
+
+        self.horizontalLayout_8.addWidget(self.tabWidget)
+
+        self.horizontalLayout_8.setStretch(1, 1)
+
+        self.gridLayout_2.addLayout(self.horizontalLayout_8, 0, 0, 1, 3)
+
+        self.commandLinkButton = QCommandLinkButton(self.centralwidget)
+        self.commandLinkButton.setObjectName(u"commandLinkButton")
+        self.commandLinkButton.setMaximumSize(QSize(16777215, 25))
+        font4 = QFont()
+        font4.setFamily(u"Segoe UI")
+        font4.setPointSize(8)
+        font4.setBold(False)
+        font4.setWeight(50)
+        self.commandLinkButton.setFont(font4)
+        self.commandLinkButton.setCursor(QCursor(Qt.PointingHandCursor))
+        self.commandLinkButton.setStyleSheet(u"background: transparent;\n"
+"border:0")
+        icon11 = QIcon()
+        iconThemeName = u";"
+        if QIcon.hasThemeIcon(iconThemeName):
+            icon11 = QIcon.fromTheme(iconThemeName)
+        else:
+            icon11.addFile(u"../Yellow Pages sg", QSize(), QIcon.Normal, QIcon.Off)
+        
+        self.commandLinkButton.setIcon(icon11)
+
+        self.gridLayout_2.addWidget(self.commandLinkButton, 1, 0, 1, 1)
+
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QStatusBar(MainWindow)
+        self.statusbar.setObjectName(u"statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        self.listWidget.currentRowChanged.connect(self.tabWidget.setCurrentIndex)
+
+        self.listWidget.setCurrentRow(0)
+        self.tabWidget.setCurrentIndex(0)
+
+
+        QMetaObject.connectSlotsByName(MainWindow)
+    # setupUi
+
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", f"WhatsApp Bulk Sender {version}", None))
+        self.start_btn.setText("")
+        self.stop_btn.setText("")
+
+        __sortingEnabled = self.listWidget.isSortingEnabled()
+        self.listWidget.setSortingEnabled(False)
+        ___qlistwidgetitem = self.listWidget.item(0)
+        ___qlistwidgetitem.setText(QCoreApplication.translate("MainWindow", u"Main", None));
+        ___qlistwidgetitem1 = self.listWidget.item(1)
+        ___qlistwidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Report", None));
+        ___qlistwidgetitem2 = self.listWidget.item(2)
+        ___qlistwidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Timed", None));
+        ___qlistwidgetitem3 = self.listWidget.item(3)
+        ___qlistwidgetitem3.setText(QCoreApplication.translate("MainWindow", u"About", None));
+        self.listWidget.setSortingEnabled(__sortingEnabled)
+
+        self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Choose the contacts source", None))
+        self.textBrowser.setHtml(QCoreApplication.translate("MainWindow",
+                                                            u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                                            "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                                            "p, li { white-space: pre-wrap; }\n"
+                                                            "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+                                                            "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7pt; font-weight:600; color:#ffffff;\">*** IMPORTANT ***</span></p>\n"
+                                                            "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7pt; font-weight:600; color:#ffff00;\">Names</span><span style=\" font-size:7pt; font-weight:600;\"> in Column A</span></p>\n"
+                                                            "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" fo"
+                                                            "nt-size:7pt; font-weight:600; color:#ffff00;\">Phone numbers</span><span style=\" font-size:7pt; font-weight:600;\"> in Column B</span></p></body></html>",
+                                                            None))
+        self.sheet_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"xlsx or CSV (comma seperated)", None))
+        self.sheet_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
+        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Settings", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Send ", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Messages Every", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Minutes", None))
+        self.checkBox.setText(QCoreApplication.translate("MainWindow", u"Send to numbers that are not saved in phone book", None))
+        self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Send Attachments", None))
+        self.attachments_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Images, videos, documents", None))
+        self.attachments_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Contact Card:", None))
+        self.contactCard_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type the number...", None))
+        self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"The Message", None))
+        self.sameFormat_rb.setText(QCoreApplication.translate("MainWindow", u"send as one message", None))
+        self.oneline_rb.setText(QCoreApplication.translate("MainWindow", u"send line by line", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Append {name}", None))
+        self.multi_messages_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Choose multiple messages - txt only (optional)", None))
+        self.multi_messages_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.main_tab), QCoreApplication.translate("MainWindow", u"Tab 1", None))
+        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Phone", None));
+        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Status", None));
+        self.csv_btn.setText(QCoreApplication.translate("MainWindow", u"CSV Export", None))
+        self.newsession_btn.setText(QCoreApplication.translate("MainWindow", u"Start New Session", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.report_tab), QCoreApplication.translate("MainWindow", u"Tab 2", None))
+        self.textBrowser_3.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt; font-weight:600;\">This Feature will be available in the upcoming update.</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:24pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:24pt; font-weight:600;\"><br /></p>\n"
+"<"
+                        "p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt; font-weight:600;\">you can contact me for more infornation</span></p></body></html>", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.timed_tab), QCoreApplication.translate("MainWindow", u"Page", None))
+        self.textBrowser_2.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; font-weight:600;\">Thanks for using this software :)</span></p></body></html>", None))
+        self.textBrowser_4.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt; font-weight:600;\">- Contact Me -</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:16pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#00ff7f;\">Whatsapp</span><span style=\" font-size:12pt; fon"
+                        "t-weight:600;\"> : </span><a href=\"https://web.whatsapp.com/send?phone=201120641378\"><span style=\" font-size:12pt; text-decoration: underline; color:#0000ff;\">+201120641378</span></a></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#5e81ff;\">Facebook</span><span style=\" font-size:12pt; font-weight:600;\"> : </span><a href=\"https://www.facebook.com/lord.ahmed110\"><span style=\" font-size:12pt; text-decoration: underline; color:#0000ff;\">fb.com/lord.ahmed110</span></a></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12"
+                        "pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ffaa00;\">Fiverr</span><span style=\" font-size:12pt; font-weight:600;\"> : </span><a href=\"https://www.fiverr.com/lordahmed\"><span style=\" font-size:12pt; text-decoration: underline; color:#0000ff;\">Fiverr.com/lordahmed</span></a></p></body></html>", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.about_tab), QCoreApplication.translate("MainWindow", u"Page", None))
+        self.commandLinkButton.setText(QCoreApplication.translate("MainWindow", u"\u00a9 Copyright 2020 LorDAhmeD", None))
+    # retranslateUi
