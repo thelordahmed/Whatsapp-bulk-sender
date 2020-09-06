@@ -12,7 +12,7 @@ attachments_enabled = True
 ######################################
 ########### Functionilty #############
 
-TYPE = "default"
+TYPE = "custom"
 version = "2.1.2"
 
 if TYPE == "default":
@@ -25,10 +25,10 @@ if TYPE == "default":
     show_columns_note = True
 else:
     # sheet settings
-    header_row = True
+    header_row = False
     name_row = 1
     phone_row = 2
-    country_code = 4    # assign None to ignore it
+    country_code = 3    # assign None to ignore it
     # Interface text
     show_columns_note = False
 ################################################################

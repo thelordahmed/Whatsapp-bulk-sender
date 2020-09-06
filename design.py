@@ -15,16 +15,14 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
     QPixmap, QRadialGradient)
 from PySide2.QtWidgets import *
 
-from features_controller import version
-
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(745, 659)
+        MainWindow.resize(822, 664)
         MainWindow.setMinimumSize(QSize(745, 0))
-        MainWindow.setMaximumSize(QSize(745, 16777215))
+        MainWindow.setMaximumSize(QSize(16777215, 16777215))
         icon = QIcon()
         icon.addFile(u"Data/imgs/whatsapp.ico", QSize(), QIcon.Normal, QIcon.Off)
         MainWindow.setWindowIcon(icon)
@@ -1189,15 +1187,38 @@ class Ui_MainWindow(object):
         self.gridLayout_2 = QGridLayout(self.centralwidget)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 10)
+        self.commandLinkButton = QCommandLinkButton(self.centralwidget)
+        self.commandLinkButton.setObjectName(u"commandLinkButton")
+        self.commandLinkButton.setMaximumSize(QSize(16777215, 25))
+        font = QFont()
+        font.setFamily(u"Segoe UI")
+        font.setPointSize(8)
+        font.setBold(False)
+        font.setWeight(50)
+        self.commandLinkButton.setFont(font)
+        self.commandLinkButton.setCursor(QCursor(Qt.PointingHandCursor))
+        self.commandLinkButton.setStyleSheet(u"background: transparent;\n"
+"border:0")
+        icon1 = QIcon()
+        iconThemeName = u";"
+        if QIcon.hasThemeIcon(iconThemeName):
+            icon1 = QIcon.fromTheme(iconThemeName)
+        else:
+            icon1.addFile(u"../Yellow Pages sg", QSize(), QIcon.Normal, QIcon.Off)
+        
+        self.commandLinkButton.setIcon(icon1)
+
+        self.gridLayout_2.addWidget(self.commandLinkButton, 1, 0, 1, 1)
+
         self.horizontalLayout_7 = QHBoxLayout()
         self.horizontalLayout_7.setSpacing(15)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.start_btn = QPushButton(self.centralwidget)
         self.start_btn.setObjectName(u"start_btn")
         self.start_btn.setMaximumSize(QSize(16777215, 45))
-        icon1 = QIcon()
-        icon1.addFile(u"Data/imgs/black icons/icons8-play-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.start_btn.setIcon(icon1)
+        icon2 = QIcon()
+        icon2.addFile(u"Data/imgs/black icons/icons8-play-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.start_btn.setIcon(icon2)
         self.start_btn.setIconSize(QSize(34, 48))
 
         self.horizontalLayout_7.addWidget(self.start_btn)
@@ -1205,9 +1226,9 @@ class Ui_MainWindow(object):
         self.stop_btn = QPushButton(self.centralwidget)
         self.stop_btn.setObjectName(u"stop_btn")
         self.stop_btn.setMaximumSize(QSize(16777215, 45))
-        icon2 = QIcon()
-        icon2.addFile(u"Data/imgs/black icons/icons8-stop-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.stop_btn.setIcon(icon2)
+        icon3 = QIcon()
+        icon3.addFile(u"Data/imgs/black icons/icons8-stop-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.stop_btn.setIcon(icon3)
         self.stop_btn.setIconSize(QSize(38, 37))
 
         self.horizontalLayout_7.addWidget(self.stop_btn)
@@ -1216,41 +1237,43 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addLayout(self.horizontalLayout_7, 1, 1, 1, 1)
 
         self.horizontalLayout_8 = QHBoxLayout()
+        self.horizontalLayout_8.setSpacing(0)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.listWidget = QListWidget(self.centralwidget)
         __qlistwidgetitem = QListWidgetItem(self.listWidget)
         __qlistwidgetitem.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
         __qlistwidgetitem.setIcon(icon);
-        icon3 = QIcon()
-        icon3.addFile(u"Data/imgs/white icons/icons8-bar-chart-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4 = QIcon()
+        icon4.addFile(u"Data/imgs/white icons/icons8-bar-chart-500.png", QSize(), QIcon.Normal, QIcon.Off)
         brush = QBrush(QColor(0, 0, 0, 255))
         brush.setStyle(Qt.NoBrush)
         __qlistwidgetitem1 = QListWidgetItem(self.listWidget)
         __qlistwidgetitem1.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
         __qlistwidgetitem1.setBackground(brush);
-        __qlistwidgetitem1.setIcon(icon3);
-        icon4 = QIcon()
-        icon4.addFile(u"Data/imgs/white icons/icons8-clock-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        font = QFont()
-        font.setPointSize(15)
-        font.setBold(True)
-        font.setWeight(75)
-        __qlistwidgetitem2 = QListWidgetItem(self.listWidget)
-        __qlistwidgetitem2.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
-        __qlistwidgetitem2.setFont(font);
-        __qlistwidgetitem2.setIcon(icon4);
+        __qlistwidgetitem1.setIcon(icon4);
         icon5 = QIcon()
-        icon5.addFile(u"Data/imgs/white icons/icons8-about-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        __qlistwidgetitem3 = QListWidgetItem(self.listWidget)
-        __qlistwidgetitem3.setIcon(icon5);
-        __qlistwidgetitem3.setFlags(Qt.ItemIsSelectable|Qt.ItemIsEnabled);
-        self.listWidget.setObjectName(u"listWidget")
-        self.listWidget.setMaximumSize(QSize(155, 16777215))
+        icon5.addFile(u"Data/imgs/white icons/icons8-clock-500.png", QSize(), QIcon.Normal, QIcon.Off)
         font1 = QFont()
-        font1.setPointSize(16)
+        font1.setPointSize(15)
         font1.setBold(True)
         font1.setWeight(75)
-        self.listWidget.setFont(font1)
+        __qlistwidgetitem2 = QListWidgetItem(self.listWidget)
+        __qlistwidgetitem2.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
+        __qlistwidgetitem2.setFont(font1);
+        __qlistwidgetitem2.setIcon(icon5);
+        icon6 = QIcon()
+        icon6.addFile(u"Data/imgs/white icons/icons8-about-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qlistwidgetitem3 = QListWidgetItem(self.listWidget)
+        __qlistwidgetitem3.setIcon(icon6);
+        __qlistwidgetitem3.setFlags(Qt.ItemIsSelectable|Qt.ItemIsEnabled);
+        self.listWidget.setObjectName(u"listWidget")
+        self.listWidget.setMinimumSize(QSize(0, 0))
+        self.listWidget.setMaximumSize(QSize(16777215, 16777215))
+        font2 = QFont()
+        font2.setPointSize(16)
+        font2.setBold(True)
+        font2.setWeight(75)
+        self.listWidget.setFont(font2)
         self.listWidget.setMouseTracking(False)
         self.listWidget.setLayoutDirection(Qt.LeftToRight)
         self.listWidget.setStyleSheet(u"QListView {\n"
@@ -1347,9 +1370,9 @@ class Ui_MainWindow(object):
         self.groupBox = QGroupBox(self.frame)
         self.groupBox.setObjectName(u"groupBox")
         self.groupBox.setMaximumSize(QSize(16777215, 16777215))
-        font2 = QFont()
-        font2.setPointSize(8)
-        self.groupBox.setFont(font2)
+        font3 = QFont()
+        font3.setPointSize(8)
+        self.groupBox.setFont(font3)
         self.groupBox.setStyleSheet(u"QGroupBox{\n"
 "background:transparent;\n"
 "}")
@@ -1361,7 +1384,7 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName(u"gridLayout")
         self.textBrowser = QTextBrowser(self.groupBox)
         self.textBrowser.setObjectName(u"textBrowser")
-        self.textBrowser.setMaximumSize(QSize(16777215, 50))
+        self.textBrowser.setMaximumSize(QSize(16777215, 16777215))
         self.textBrowser.setStyleSheet(u"background:transparent;\n"
 "color:white")
         self.textBrowser.setFrameShape(QFrame.NoFrame)
@@ -1407,13 +1430,13 @@ class Ui_MainWindow(object):
         self.label = QLabel(self.groupBox_2)
         self.label.setObjectName(u"label")
         self.label.setMaximumSize(QSize(50, 16777215))
-        font3 = QFont()
-        font3.setPointSize(11)
-        font3.setBold(True)
-        font3.setWeight(75)
-        self.label.setFont(font3)
+        font4 = QFont()
+        font4.setPointSize(11)
+        font4.setBold(True)
+        font4.setWeight(75)
+        self.label.setFont(font4)
 
-        self.horizontalLayout_5.addWidget(self.label)
+        self.horizontalLayout_5.addWidget(self.label, 0, Qt.AlignHCenter)
 
         self.messages_sbox = QSpinBox(self.groupBox_2)
         self.messages_sbox.setObjectName(u"messages_sbox")
@@ -1422,14 +1445,14 @@ class Ui_MainWindow(object):
         self.messages_sbox.setMaximum(1000)
         self.messages_sbox.setValue(100)
 
-        self.horizontalLayout_5.addWidget(self.messages_sbox)
+        self.horizontalLayout_5.addWidget(self.messages_sbox, 0, Qt.AlignLeft)
 
         self.label_2 = QLabel(self.groupBox_2)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMaximumSize(QSize(120, 16777215))
-        self.label_2.setFont(font3)
+        self.label_2.setFont(font4)
 
-        self.horizontalLayout_5.addWidget(self.label_2)
+        self.horizontalLayout_5.addWidget(self.label_2, 0, Qt.AlignHCenter)
 
         self.minutes_sbox = QSpinBox(self.groupBox_2)
         self.minutes_sbox.setObjectName(u"minutes_sbox")
@@ -1438,16 +1461,16 @@ class Ui_MainWindow(object):
         self.minutes_sbox.setMaximum(1000)
         self.minutes_sbox.setValue(30)
 
-        self.horizontalLayout_5.addWidget(self.minutes_sbox)
+        self.horizontalLayout_5.addWidget(self.minutes_sbox, 0, Qt.AlignHCenter)
 
         self.label_4 = QLabel(self.groupBox_2)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setMaximumSize(QSize(100, 16777215))
-        self.label_4.setFont(font3)
+        self.label_4.setFont(font4)
         self.label_4.setScaledContents(False)
         self.label_4.setWordWrap(False)
 
-        self.horizontalLayout_5.addWidget(self.label_4)
+        self.horizontalLayout_5.addWidget(self.label_4, 0, Qt.AlignHCenter)
 
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_5)
@@ -1569,20 +1592,20 @@ class Ui_MainWindow(object):
         self.tableWidget = QTableWidget(self.report_tab)
         if (self.tableWidget.columnCount() < 3):
             self.tableWidget.setColumnCount(3)
-        icon6 = QIcon()
-        icon6.addFile(u"Data/imgs/white icons/icons8-contacts-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        __qtablewidgetitem = QTableWidgetItem()
-        __qtablewidgetitem.setIcon(icon6);
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         icon7 = QIcon()
-        icon7.addFile(u"Data/imgs/white icons/icons8-phone-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        __qtablewidgetitem1 = QTableWidgetItem()
-        __qtablewidgetitem1.setIcon(icon7);
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        icon7.addFile(u"Data/imgs/white icons/icons8-contacts-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qtablewidgetitem = QTableWidgetItem()
+        __qtablewidgetitem.setIcon(icon7);
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         icon8 = QIcon()
-        icon8.addFile(u"Data/imgs/white icons/icons8-info-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon8.addFile(u"Data/imgs/white icons/icons8-phone-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        __qtablewidgetitem1.setIcon(icon8);
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        icon9 = QIcon()
+        icon9.addFile(u"Data/imgs/white icons/icons8-info-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qtablewidgetitem2 = QTableWidgetItem()
-        __qtablewidgetitem2.setIcon(icon8);
+        __qtablewidgetitem2.setIcon(icon9);
         self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
@@ -1601,9 +1624,9 @@ class Ui_MainWindow(object):
         self.csv_btn = QPushButton(self.report_tab)
         self.csv_btn.setObjectName(u"csv_btn")
         self.csv_btn.setMaximumSize(QSize(150, 16777215))
-        icon9 = QIcon()
-        icon9.addFile(u"Data/imgs/white icons/icons8-save-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.csv_btn.setIcon(icon9)
+        icon10 = QIcon()
+        icon10.addFile(u"Data/imgs/white icons/icons8-save-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.csv_btn.setIcon(icon10)
         self.csv_btn.setIconSize(QSize(22, 22))
 
         self.horizontalLayout_9.addWidget(self.csv_btn)
@@ -1611,9 +1634,9 @@ class Ui_MainWindow(object):
         self.newsession_btn = QPushButton(self.report_tab)
         self.newsession_btn.setObjectName(u"newsession_btn")
         self.newsession_btn.setMaximumSize(QSize(150, 16777215))
-        icon10 = QIcon()
-        icon10.addFile(u"Data/imgs/white icons/icons8-trash-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.newsession_btn.setIcon(icon10)
+        icon11 = QIcon()
+        icon11.addFile(u"Data/imgs/white icons/icons8-trash-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.newsession_btn.setIcon(icon11)
         self.newsession_btn.setIconSize(QSize(19, 18))
 
         self.horizontalLayout_9.addWidget(self.newsession_btn)
@@ -1673,29 +1696,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addLayout(self.horizontalLayout_8, 0, 0, 1, 3)
 
-        self.commandLinkButton = QCommandLinkButton(self.centralwidget)
-        self.commandLinkButton.setObjectName(u"commandLinkButton")
-        self.commandLinkButton.setMaximumSize(QSize(16777215, 25))
-        font4 = QFont()
-        font4.setFamily(u"Segoe UI")
-        font4.setPointSize(8)
-        font4.setBold(False)
-        font4.setWeight(50)
-        self.commandLinkButton.setFont(font4)
-        self.commandLinkButton.setCursor(QCursor(Qt.PointingHandCursor))
-        self.commandLinkButton.setStyleSheet(u"background: transparent;\n"
-"border:0")
-        icon11 = QIcon()
-        iconThemeName = u";"
-        if QIcon.hasThemeIcon(iconThemeName):
-            icon11 = QIcon.fromTheme(iconThemeName)
-        else:
-            icon11.addFile(u"../Yellow Pages sg", QSize(), QIcon.Normal, QIcon.Off)
-        
-        self.commandLinkButton.setIcon(icon11)
-
-        self.gridLayout_2.addWidget(self.commandLinkButton, 1, 0, 1, 1)
-
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -1712,7 +1712,8 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", f"WhatsApp Bulk Sender {version}", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"WhatsApp Bulk Sender 2.0", None))
+        self.commandLinkButton.setText(QCoreApplication.translate("MainWindow", u"\u00a9 Copyright 2020 LorDAhmeD", None))
         self.start_btn.setText("")
         self.stop_btn.setText("")
 
@@ -1729,16 +1730,14 @@ class Ui_MainWindow(object):
         self.listWidget.setSortingEnabled(__sortingEnabled)
 
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Choose the contacts source", None))
-        self.textBrowser.setHtml(QCoreApplication.translate("MainWindow",
-                                                            u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                                            "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-                                                            "p, li { white-space: pre-wrap; }\n"
-                                                            "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-                                                            "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7pt; font-weight:600; color:#ffffff;\">*** IMPORTANT ***</span></p>\n"
-                                                            "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7pt; font-weight:600; color:#ffff00;\">Names</span><span style=\" font-size:7pt; font-weight:600;\"> in Column A</span></p>\n"
-                                                            "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" fo"
-                                                            "nt-size:7pt; font-weight:600; color:#ffff00;\">Phone numbers</span><span style=\" font-size:7pt; font-weight:600;\"> in Column B</span></p></body></html>",
-                                                            None))
+        self.textBrowser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7pt; font-weight:600; color:#ffffff;\">*** IMPORTANT ***</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7pt; font-weight:600; color:#ffff00;\">Names</span><span style=\" font-size:7pt; font-weight:600;\"> in Column A</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" fo"
+                        "nt-size:7pt; font-weight:600; color:#ffff00;\">Phone numbers</span><span style=\" font-size:7pt; font-weight:600;\"> in Column B</span></p></body></html>", None))
         self.sheet_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"xlsx or CSV (comma seperated)", None))
         self.sheet_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Settings", None))
@@ -1796,5 +1795,5 @@ class Ui_MainWindow(object):
                         "pt; font-weight:600;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ffaa00;\">Fiverr</span><span style=\" font-size:12pt; font-weight:600;\"> : </span><a href=\"https://www.fiverr.com/lordahmed\"><span style=\" font-size:12pt; text-decoration: underline; color:#0000ff;\">Fiverr.com/lordahmed</span></a></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.about_tab), QCoreApplication.translate("MainWindow", u"Page", None))
-        self.commandLinkButton.setText(QCoreApplication.translate("MainWindow", u"\u00a9 Copyright 2020 LorDAhmeD", None))
     # retranslateUi
+

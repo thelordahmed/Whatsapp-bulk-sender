@@ -151,7 +151,6 @@ class Main:
                     theMessage = random.choice(multi_messages)
                 else:
                     theMessage = messageFromTextBox
-                print(theMessage)
                 isUnsavedChecked = self.view.checkBox.isChecked()
 
                 if self.wa.number_search(phone) is False:
@@ -184,7 +183,7 @@ class Main:
                 if self.view.oneline_rb.isChecked() is True:
                     self.wa.sending(theMessage, "{name}", name)
                 else:
-                    self.wa.sending_copypaste(theMessage, "{name}", name)
+                    self.wa.sending_sameFormat(theMessage, "{name}", name)
 
                 if contact_card != "":
                     self.wa.sending_contact(contact_card)

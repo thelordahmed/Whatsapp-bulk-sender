@@ -10,7 +10,6 @@ from selenium.common.exceptions import TimeoutException, SessionNotCreatedExcept
     InvalidArgumentException, NoSuchElementException
 import random
 import requests, zipfile, io
-import pyperclip
 
 
 class WhatsApp:
@@ -138,16 +137,33 @@ class WhatsApp:
         message_input.send_keys(Pmessage)
         message_input.send_keys(Keys.ENTER)
 
-    def sending_copypaste(self, message, nameholder, name):
+    # def sending_copypaste(self, message, nameholder, name):
+    #     Pmessage = message.replace(nameholder, name)
+    #     pyperclip.copy(Pmessage)
+    #     message_input = self._window.find_element_by_xpath(self._msg_input)
+    #     actions = ActionChains(self._window)
+    #     actions.move_to_element(message_input)
+    #     actions.click()
+    #     # actions.key_down(Keys.LEFT_CONTROL)
+    #     actions.send_keys(pyperclip.paste())
+    #     # actions.key_up(Keys.LEFT_CONTROL)
+    #     actions.perform()
+    #     sleep(1)
+    #     message_input.send_keys(Keys.ENTER)
+
+    def sending_sameFormat(self, message, nameholder, name):
         Pmessage = message.replace(nameholder, name)
-        pyperclip.copy(Pmessage)
+        message_lines = Pmessage.split("\n")
         message_input = self._window.find_element_by_xpath(self._msg_input)
         actions = ActionChains(self._window)
         actions.move_to_element(message_input)
         actions.click()
-        actions.key_down(Keys.CONTROL)
-        actions.send_keys("v")
-        actions.key_up(Keys.CONTROL)
+        for line in message_lines:
+            actions.send_keys(line)
+            actions.key_down(Keys.SHIFT)
+            actions.key_down(Keys.ENTER)
+            actions.key_up(Keys.SHIFT)
+            actions.key_up(Keys.ENTER)
         actions.perform()
         sleep(1)
         message_input.send_keys(Keys.ENTER)
