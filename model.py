@@ -2,13 +2,15 @@ from openpyxl import load_workbook
 import sqlite3
 import csv
 import features_controller
+import os
 
-
+project_path = os.path.abspath(os.path.dirname(__file__))
 
 
 class Model:
     def __init__(self):
-        self.conn = sqlite3.connect("Data\\data.db")
+        self.data_path = os.path.join(project_path, "Data/data.db")
+        self.conn = sqlite3.connect(self.data_path)
         self.cur = self.conn.cursor()
 
 
