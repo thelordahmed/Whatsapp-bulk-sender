@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>822</width>
-    <height>664</height>
+    <height>764</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -21,6 +21,11 @@
     <width>16777215</width>
     <height>16777215</height>
    </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>arial</family>
+   </font>
   </property>
   <property name="windowTitle">
    <string>WhatsApp Bulk Sender 2.0</string>
@@ -38,6 +43,7 @@ QWidget
 	background-color: qradialgradient(spread:pad, cx:0.522, cy:0.518, radius:2, fx:0.522273, fy:0.506, stop:0.0227273 rgba(23, 27, 36, 255), stop:1 rgba(0, 0, 0, 255));
 	color: #ffffff;
 	border-color: #051a39;
+	font-family:&quot;arial&quot;
 
 }
 
@@ -47,6 +53,7 @@ QLabel
 {
 	background-color: transparent;
 	color: #ffffff;
+font-family:&quot;arial&quot;
 
 }
 
@@ -65,6 +72,7 @@ QMenuBar
 	background-color: #0a0a0a;
 	color: #ffffff;
 	border-color: #051a39;
+font-family:&quot;arial&quot;
 
 }
 
@@ -168,6 +176,7 @@ QPushButton
 	border-radius: 3px;
 	border-color: #051a39;
 	padding: 5px;
+font-family:&quot;arial&quot;
 
 }
 
@@ -216,6 +225,7 @@ QToolButton
 	border-radius: 3px;
 	border-color: #051a39;
 	padding: 3px;
+font-family:&quot;arial&quot;
 
 }
 
@@ -262,6 +272,7 @@ QComboBox
     padding-left: 6px;
     color: #ffffff;
     height: 20px;
+font-family:&quot;arial&quot;
 
 }
 
@@ -333,6 +344,7 @@ QDateTimeEdit
 	border: 1px solid #051a39;
 	border-radius: 3px;
 	padding : 2px;
+font-family:&quot;arial&quot;
 
 }
 
@@ -441,6 +453,7 @@ QLineEdit
 	border-radius: 3px;
 	border-color: #051a39;
 	padding: 2px;
+font-family:&quot;arial&quot;
 
 }
 
@@ -482,6 +495,7 @@ QGroupBox
     border: 1px solid;
     border-color: #607cff;
     margin-top: 22px;
+font-family:&quot;arial&quot;
 
 }
 
@@ -530,6 +544,7 @@ QRadioButton::indicator::unchecked
 	background-color:  #fff;
 	width: 9px; 
 	height: 9px; 
+font-family:&quot;arial&quot;
 
 }
 
@@ -1193,10 +1208,8 @@ QStatusBar
       </property>
       <property name="font">
        <font>
-        <family>Segoe UI</family>
-        <pointsize>8</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
+        <family>arial</family>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="cursor">
@@ -1289,7 +1302,8 @@ border:0</string>
         </property>
         <property name="font">
          <font>
-          <pointsize>16</pointsize>
+          <family>arial</family>
+          <pointsize>19</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -1303,11 +1317,14 @@ border:0</string>
         <property name="styleSheet">
          <string notr="true">QListView {
     background:transparent;
+	
+
 }
 
 ::item{
 width:100px;
 height:130px;
+
 }
 
 ::item:disabled{
@@ -1409,7 +1426,7 @@ background:rgb(71, 71, 71)
          <bool>false</bool>
         </property>
         <property name="currentRow">
-         <number>0</number>
+         <number>-1</number>
         </property>
         <property name="sortingEnabled">
          <bool>false</bool>
@@ -1453,9 +1470,9 @@ background:rgb(71, 71, 71)
          </property>
          <property name="font">
           <font>
-           <pointsize>15</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
+           <pointsize>18</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
           </font>
          </property>
          <property name="textAlignment">
@@ -1571,6 +1588,11 @@ QTabWidget::tab-bar {
               <height>0</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>arial</family>
+             </font>
+            </property>
             <property name="layoutDirection">
              <enum>Qt::LeftToRight</enum>
             </property>
@@ -1603,7 +1625,7 @@ QTabWidget::tab-bar {
                </property>
                <property name="font">
                 <font>
-                 <pointsize>8</pointsize>
+                 <family>arial</family>
                 </font>
                </property>
                <property name="styleSheet">
@@ -1631,6 +1653,11 @@ background:transparent;
                       <height>16777215</height>
                      </size>
                     </property>
+                    <property name="font">
+                     <font>
+                      <family>arial</family>
+                     </font>
+                    </property>
                     <property name="styleSheet">
                      <string notr="true">background:transparent;
 color:white</string>
@@ -1651,10 +1678,10 @@ color:white</string>
                      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#ffffff;&quot;&gt;*** IMPORTANT ***&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#ffff00;&quot;&gt;Names&lt;/span&gt;&lt;span style=&quot; font-size:7pt; font-weight:600;&quot;&gt; in Column A&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#ffff00;&quot;&gt;Phone numbers&lt;/span&gt;&lt;span style=&quot; font-size:7pt; font-weight:600;&quot;&gt; in Column B&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffffff;&quot;&gt;*** IMPORTANT ***&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;&quot;&gt;Names&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt; in Column A &lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:600;&quot;&gt;(optional)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;&quot;&gt;Phone numbers&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt; in Column B&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
@@ -1692,6 +1719,11 @@ p, li { white-space: pre-wrap; }
                  <height>16777215</height>
                 </size>
                </property>
+               <property name="font">
+                <font>
+                 <family>arial</family>
+                </font>
+               </property>
                <property name="title">
                 <string>Settings</string>
                </property>
@@ -1719,9 +1751,7 @@ p, li { white-space: pre-wrap; }
                       </property>
                       <property name="font">
                        <font>
-                        <pointsize>11</pointsize>
-                        <weight>75</weight>
-                        <bold>true</bold>
+                        <family>arial</family>
                        </font>
                       </property>
                       <property name="text">
@@ -1758,9 +1788,7 @@ p, li { white-space: pre-wrap; }
                       </property>
                       <property name="font">
                        <font>
-                        <pointsize>11</pointsize>
-                        <weight>75</weight>
-                        <bold>true</bold>
+                        <family>arial</family>
                        </font>
                       </property>
                       <property name="text">
@@ -1797,9 +1825,7 @@ p, li { white-space: pre-wrap; }
                       </property>
                       <property name="font">
                        <font>
-                        <pointsize>11</pointsize>
-                        <weight>75</weight>
-                        <bold>true</bold>
+                        <family>arial</family>
                        </font>
                       </property>
                       <property name="text">
@@ -2118,11 +2144,11 @@ color:white
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24pt; font-weight:600;&quot;&gt;This Feature will be available in the upcoming update.&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:24pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:24pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;you can contact me for more infornation&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:24pt; font-weight:600;&quot;&gt;This Feature will be available in the upcoming update.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:24pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:24pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;&quot;&gt;you can contact me for more infornation&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -2154,8 +2180,8 @@ color:white
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:22pt; font-weight:600;&quot;&gt;Thanks for using this software :)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;&quot;&gt;Thanks for using this software :)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="openExternalLinks">
              <bool>false</bool>
@@ -2164,6 +2190,11 @@ p, li { white-space: pre-wrap; }
           </item>
           <item>
            <widget class="QTextBrowser" name="textBrowser_4">
+            <property name="font">
+             <font>
+              <family>arial</family>
+             </font>
+            </property>
             <property name="styleSheet">
              <string notr="true">background:transparent;
 color:white;
@@ -2175,14 +2206,14 @@ border:transparent
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;- Contact Me -&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:16pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#00ff7f;&quot;&gt;Whatsapp&lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt; : &lt;/span&gt;&lt;a href=&quot;https://web.whatsapp.com/send?phone=201120641378&quot;&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline; color:#0000ff;&quot;&gt;+201120641378&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#5e81ff;&quot;&gt;Facebook&lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt; : &lt;/span&gt;&lt;a href=&quot;https://www.facebook.com/lord.ahmed110&quot;&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline; color:#0000ff;&quot;&gt;fb.com/lord.ahmed110&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ffaa00;&quot;&gt;Fiverr&lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt; : &lt;/span&gt;&lt;a href=&quot;https://www.fiverr.com/lordahmed&quot;&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline; color:#0000ff;&quot;&gt;Fiverr.com/lordahmed&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;&quot;&gt;- Contact Me -&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:16pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#00ff7f;&quot;&gt;Whatsapp&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt; : &lt;/span&gt;&lt;a href=&quot;https://web.whatsapp.com/send?phone=201120641378&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;&quot;&gt;+201120641378&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#5e81ff;&quot;&gt;Facebook&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt; : &lt;/span&gt;&lt;a href=&quot;https://www.facebook.com/lord.ahmed110&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;&quot;&gt;fb.com/lord.ahmed110&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffaa00;&quot;&gt;Fiverr&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt; : &lt;/span&gt;&lt;a href=&quot;https://www.fiverr.com/lordahmed&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;&quot;&gt;Fiverr.com/lordahmed&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="openExternalLinks">
              <bool>true</bool>

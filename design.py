@@ -20,9 +20,12 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(822, 664)
+        MainWindow.resize(822, 764)
         MainWindow.setMinimumSize(QSize(745, 0))
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
+        font = QFont()
+        font.setFamily(u"arial")
+        MainWindow.setFont(font)
         icon = QIcon()
         icon.addFile(u"Data/imgs/whatsapp.ico", QSize(), QIcon.Normal, QIcon.Off)
         MainWindow.setWindowIcon(icon)
@@ -34,6 +37,7 @@ class Ui_MainWindow(object):
 "	background-color: qradialgradient(spread:pad, cx:0.522, cy:0.518, radius:2, fx:0.522273, fy:0.506, stop:0.0227273 rgba(23, 27, 36, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "	color: #ffffff;\n"
 "	border-color: #051a39;\n"
+"	font-family:\"arial\"\n"
 "\n"
 "}\n"
 "\n"
@@ -43,6 +47,7 @@ class Ui_MainWindow(object):
 "{\n"
 "	background-color: transparent;\n"
 "	color: #ffffff;\n"
+"font-family:\"arial\"\n"
 "\n"
 "}\n"
 "\n"
@@ -61,6 +66,7 @@ class Ui_MainWindow(object):
 "	background-color: #0a0a0a;\n"
 "	color: #ffffff;\n"
 "	border-color: #051a39;\n"
+"font-family:\"arial\"\n"
 "\n"
 "}\n"
 "\n"
@@ -83,14 +89,14 @@ class Ui_MainWindow(object):
 "\n"
 "QMenuBar::item:selected\n"
 "{\n"
-"    background-color: #607cff;\n"
+"    background-color: #607cf"
+                        "f;\n"
 "    border: 1px solid #41cd52;\n"
 "\n"
 "}\n"
 "\n"
 "\n"
-"QMenuBar::item:p"
-                        "ressed\n"
+"QMenuBar::item:pressed\n"
 "{\n"
 "    background-color: #4969ff;\n"
 "    border: 1px solid #000;\n"
@@ -150,14 +156,14 @@ class Ui_MainWindow(object):
 "	border : 1px solid #000000;\n"
 "	background-color: #26264f;\n"
 "	color: #ffffff;\n"
-"	border-color: #051a39;\n"
+"	border"
+                        "-color: #051a39;\n"
 "\n"
 "}\n"
 "\n"
 "\n"
 "/*-----QPushButton-----*/\n"
-"QPushBu"
-                        "tton\n"
+"QPushButton\n"
 "{\n"
 "	background-color: #607cff;\n"
 "	color: #ffffff;\n"
@@ -166,6 +172,7 @@ class Ui_MainWindow(object):
 "	border-radius: 3px;\n"
 "	border-color: #051a39;\n"
 "	padding: 5px;\n"
+"font-family:\"arial\"\n"
 "\n"
 "}\n"
 "\n"
@@ -210,16 +217,17 @@ class Ui_MainWindow(object):
 "{\n"
 "	background-color: #607cff;\n"
 "	color: #ffffff;\n"
-"	border-width: 1px;\n"
+"	border-width: 1px"
+                        ";\n"
 "	border-radius: 3px;\n"
 "	border-color: #051a39;\n"
 "	padding: 3px;\n"
+"font-family:\"arial\"\n"
 "\n"
 "}\n"
 "\n"
 "\n"
-"QToolB"
-                        "utton::disabled\n"
+"QToolButton::disabled\n"
 "{\n"
 "	background-color: #404040;\n"
 "	color: #656565;\n"
@@ -261,6 +269,7 @@ class Ui_MainWindow(object):
 "    padding-left: 6px;\n"
 "    color: #ffffff;\n"
 "    height: 20px;\n"
+"font-family:\"arial\"\n"
 "\n"
 "}\n"
 "\n"
@@ -270,7 +279,8 @@ class Ui_MainWindow(object):
 "	background-color: #404040;\n"
 "	color: #656565;\n"
 "	border-color: #051a39;\n"
-"\n"
+""
+                        "\n"
 "}\n"
 "\n"
 "\n"
@@ -283,8 +293,7 @@ class Ui_MainWindow(object):
 "\n"
 "QComboBox:on\n"
 "{\n"
-"    background-color: #4969f"
-                        "f;\n"
+"    background-color: #4969ff;\n"
 "\n"
 "}\n"
 "\n"
@@ -328,17 +337,18 @@ class Ui_MainWindow(object):
 "QDoubleSpinBox,\n"
 "QDateTimeEdit\n"
 "{\n"
-"	background-color: #525251;\n"
+"	background-c"
+                        "olor: #525251;\n"
 "	color: #ffffff;\n"
 "	border: 1px solid #051a39;\n"
 "	border-radius: 3px;\n"
 "	padding : 2px;\n"
+"font-family:\"arial\"\n"
 "\n"
 "}\n"
 "\n"
 "\n"
-"QSpinBox::disabl"
-                        "ed, \n"
+"QSpinBox::disabled, \n"
 "QDoubleSpinBox::disabled,\n"
 "QDateTimeEdit::disabled\n"
 "{\n"
@@ -382,10 +392,10 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "\n"
-"QSpinBox::up-button:hover, QSpinBox::down-button:hover,\n"
+"QSpinBox::up-b"
+                        "utton:hover, QSpinBox::down-button:hover,\n"
 "QDoubleSpinBox::up-button:hover, QDoubleSpinBox::down-button:hover,\n"
-"QDateTimeEdit::up-button:hover, QDateTimeEdit::down-button:hov"
-                        "er\n"
+"QDateTimeEdit::up-button:hover, QDateTimeEdit::down-button:hover\n"
 "{\n"
 "    background-color: #8399ff;\n"
 "    border: 1px solid #8399ff;\n"
@@ -418,7 +428,8 @@ class Ui_MainWindow(object):
 "QDoubleSpinBox::down-arrow,\n"
 "QDateTimeEdit::down-arrow\n"
 "{\n"
-"    image: url(://arrow-down.png);\n"
+"    imag"
+                        "e: url(://arrow-down.png);\n"
 "    width: 7px;\n"
 "\n"
 "}\n"
@@ -428,8 +439,7 @@ class Ui_MainWindow(object):
 "QDoubleSpinBox::up-arrow,\n"
 "QDateTimeEdit::up-arrow\n"
 "{\n"
-"    image: url(://ar"
-                        "row-up.png);\n"
+"    image: url(://arrow-up.png);\n"
 "    width: 7px;\n"
 "\n"
 "}\n"
@@ -444,6 +454,7 @@ class Ui_MainWindow(object):
 "	border-radius: 3px;\n"
 "	border-color: #051a39;\n"
 "	padding: 2px;\n"
+"font-family:\"arial\"\n"
 "\n"
 "}\n"
 "\n"
@@ -482,9 +493,11 @@ class Ui_MainWindow(object):
 "/*-----QGroupBox-----*/\n"
 "QGroupBox \n"
 "{\n"
-"    border: 1px solid;\n"
+"    border: "
+                        "1px solid;\n"
 "    border-color: #607cff;\n"
 "    margin-top: 22px;\n"
+"font-family:\"arial\"\n"
 "\n"
 "}\n"
 "\n"
@@ -493,8 +506,7 @@ class Ui_MainWindow(object):
 "{\n"
 "    background-color: #607cff;\n"
 "    color: #ffffff;\n"
-"    subcontrol-origin: ma"
-                        "rgin;\n"
+"    subcontrol-origin: margin;\n"
 "    subcontrol-position: top left;\n"
 "    padding: 5px;\n"
 "	border-top-left-radius: 3px;\n"
@@ -534,11 +546,13 @@ class Ui_MainWindow(object):
 "	background-color:  #fff;\n"
 "	width: 9px; \n"
 "	height: 9px; \n"
+"font-family:\"arial\"\n"
 "\n"
 "}\n"
 "\n"
 "\n"
-"QRadioButton::indicator::unchecked:hover\n"
+"QRadioButton::indicator::unchecked:h"
+                        "over\n"
 "{ \n"
 "	border: 2px solid #607cff; \n"
 "	border-radius: 5px; \n"
@@ -552,8 +566,7 @@ class Ui_MainWindow(object):
 "QRadioButton::indicator::checked\n"
 "{ \n"
 "	border: 2px inset darkgray; \n"
-"	border-radius: 5"
-                        "px; \n"
+"	border-radius: 5px; \n"
 "	background-color: #4969ff; \n"
 "	width: 9px; \n"
 "	height: 9px; \n"
@@ -600,7 +613,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "\n"
-"QTableView::item:hover \n"
+"QT"
+                        "ableView::item:hover \n"
 "{\n"
 "    background-color: #26264f;\n"
 "    color: #f0f0f0;\n"
@@ -616,8 +630,7 @@ class Ui_MainWindow(object):
 "\n"
 "}\n"
 "\n"
-""
-                        "\n"
+"\n"
 "QTableView::item:selected:disabled\n"
 "{\n"
 "    background-color: #1a1b1c;\n"
@@ -664,7 +677,8 @@ class Ui_MainWindow(object):
 "QHeaderView::section:checked:disabled\n"
 "{\n"
 "    color: #656565;\n"
-"    background-color: #525251;\n"
+"    background-color: #5"
+                        "25251;\n"
 "\n"
 "}\n"
 "\n"
@@ -679,8 +693,7 @@ class Ui_MainWindow(object):
 "\n"
 "QHeaderView::section::vertical\n"
 "{\n"
-"    border-top: 1px solid #35363"
-                        "5;\n"
+"    border-top: 1px solid #353635;\n"
 "\n"
 "}\n"
 "\n"
@@ -727,7 +740,8 @@ class Ui_MainWindow(object):
 "{\n"
 "	background-color: red;\n"
 "	color: #ffffff;\n"
-"    border: 1px solid;\n"
+""
+                        "    border: 1px solid;\n"
 "    border-color: #607cff;\n"
 "\n"
 "}\n"
@@ -739,8 +753,7 @@ class Ui_MainWindow(object):
 "	border-style: solid;\n"
 "	border-width: 1px;\n"
 "	border-top-left-radius: 3px;\n"
-"	border-t"
-                        "op-right-radius: 3px;\n"
+"	border-top-right-radius: 3px;\n"
 "	border-color: #051a39;\n"
 "	padding: 5px;\n"
 "\n"
@@ -794,7 +807,8 @@ class Ui_MainWindow(object):
 "\n"
 "QTabBar::tab:top:selected \n"
 "{\n"
-"    border-bottom-color: none;\n"
+"    bo"
+                        "rder-bottom-color: none;\n"
 "\n"
 "}\n"
 "\n"
@@ -808,8 +822,7 @@ class Ui_MainWindow(object):
 "\n"
 "QTabBar::tab:top:last, QTabBar::tab:bottom:last,\n"
 "QTabBar::tab:top:only-one, QTabBar::tab:bottom:only-one \n"
-""
-                        "{\n"
+"{\n"
 "    margin-right: 0;\n"
 "\n"
 "}\n"
@@ -861,7 +874,8 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "/*-----QSlider-----*/\n"
-"QSlider::groove:horizontal \n"
+"QSli"
+                        "der::groove:horizontal \n"
 "{\n"
 "	background-color: transparent;\n"
 "	height: 5px;\n"
@@ -878,8 +892,7 @@ class Ui_MainWindow(object):
 "\n"
 "QSlider::add-page:horizontal \n"
 "{\n"
-"	background-col"
-                        "or: #666765;\n"
+"	background-color: #666765;\n"
 "\n"
 "}\n"
 "\n"
@@ -929,7 +942,8 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "QSlider::groove:vertical \n"
-"{\n"
+""
+                        "{\n"
 "	background-color: transparent;\n"
 "	width: 5px;\n"
 "\n"
@@ -949,8 +963,7 @@ class Ui_MainWindow(object):
 "\n"
 "}\n"
 "\n"
-""
-                        "\n"
+"\n"
 "QSlider::handle:vertical \n"
 "{\n"
 "	background-color: #607cff;\n"
@@ -999,7 +1012,8 @@ class Ui_MainWindow(object):
 "QDial\n"
 "{\n"
 "	background-color: #607cff;\n"
-"\n"
+""
+                        "\n"
 "}\n"
 "\n"
 "\n"
@@ -1016,8 +1030,7 @@ class Ui_MainWindow(object):
 "    border: 1px solid #222222;\n"
 "    background-color: #3d3d3d;\n"
 "    height: 13px;\n"
-""
-                        "    margin: 0px 16px 0 16px;\n"
+"    margin: 0px 16px 0 16px;\n"
 "\n"
 "}\n"
 "\n"
@@ -1061,7 +1074,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "\n"
-"QScrollBar::left-arrow:horizontal\n"
+"QScrol"
+                        "lBar::left-arrow:horizontal\n"
 "{\n"
 "    image: url(://arrow-left.png);\n"
 "    width: 6px;\n"
@@ -1076,8 +1090,7 @@ class Ui_MainWindow(object):
 "\n"
 "}\n"
 "\n"
-""
-                        "\n"
+"\n"
 "QScrollBar:vertical\n"
 "{\n"
 "    background-color: #3d3d3d;\n"
@@ -1118,7 +1131,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "\n"
-"QScrollBar::up-arrow:vertical\n"
+"QScrollBar::up-arrow:ver"
+                        "tical\n"
 "{\n"
 "    image: url(://arrow-up.png);\n"
 "    width: 6px;\n"
@@ -1136,8 +1150,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "\n"
-""
-                        "QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical\n"
+"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical\n"
 "{\n"
 "    background: none;\n"
 "\n"
@@ -1190,12 +1203,10 @@ class Ui_MainWindow(object):
         self.commandLinkButton = QCommandLinkButton(self.centralwidget)
         self.commandLinkButton.setObjectName(u"commandLinkButton")
         self.commandLinkButton.setMaximumSize(QSize(16777215, 25))
-        font = QFont()
-        font.setFamily(u"Segoe UI")
-        font.setPointSize(8)
-        font.setBold(False)
-        font.setWeight(50)
-        self.commandLinkButton.setFont(font)
+        font1 = QFont()
+        font1.setFamily(u"arial")
+        font1.setPointSize(10)
+        self.commandLinkButton.setFont(font1)
         self.commandLinkButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.commandLinkButton.setStyleSheet(u"background: transparent;\n"
 "border:0")
@@ -1241,48 +1252,52 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.listWidget = QListWidget(self.centralwidget)
         __qlistwidgetitem = QListWidgetItem(self.listWidget)
-        __qlistwidgetitem.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
-        __qlistwidgetitem.setIcon(icon);
+        __qlistwidgetitem.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter)
+        __qlistwidgetitem.setIcon(icon)
         icon4 = QIcon()
         icon4.addFile(u"Data/imgs/white icons/icons8-bar-chart-500.png", QSize(), QIcon.Normal, QIcon.Off)
         brush = QBrush(QColor(0, 0, 0, 255))
         brush.setStyle(Qt.NoBrush)
         __qlistwidgetitem1 = QListWidgetItem(self.listWidget)
-        __qlistwidgetitem1.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
-        __qlistwidgetitem1.setBackground(brush);
-        __qlistwidgetitem1.setIcon(icon4);
+        __qlistwidgetitem1.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter)
+        __qlistwidgetitem1.setBackground(brush)
+        __qlistwidgetitem1.setIcon(icon4)
         icon5 = QIcon()
         icon5.addFile(u"Data/imgs/white icons/icons8-clock-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        font1 = QFont()
-        font1.setPointSize(15)
-        font1.setBold(True)
-        font1.setWeight(75)
+        font2 = QFont()
+        font2.setPointSize(18)
+        font2.setBold(False)
+        font2.setWeight(50)
         __qlistwidgetitem2 = QListWidgetItem(self.listWidget)
-        __qlistwidgetitem2.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
-        __qlistwidgetitem2.setFont(font1);
-        __qlistwidgetitem2.setIcon(icon5);
+        __qlistwidgetitem2.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter)
+        __qlistwidgetitem2.setFont(font2)
+        __qlistwidgetitem2.setIcon(icon5)
         icon6 = QIcon()
         icon6.addFile(u"Data/imgs/white icons/icons8-about-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qlistwidgetitem3 = QListWidgetItem(self.listWidget)
-        __qlistwidgetitem3.setIcon(icon6);
-        __qlistwidgetitem3.setFlags(Qt.ItemIsSelectable|Qt.ItemIsEnabled);
+        __qlistwidgetitem3.setIcon(icon6)
+        __qlistwidgetitem3.setFlags(Qt.ItemIsSelectable|Qt.ItemIsEnabled)
         self.listWidget.setObjectName(u"listWidget")
         self.listWidget.setMinimumSize(QSize(0, 0))
         self.listWidget.setMaximumSize(QSize(16777215, 16777215))
-        font2 = QFont()
-        font2.setPointSize(16)
-        font2.setBold(True)
-        font2.setWeight(75)
-        self.listWidget.setFont(font2)
+        font3 = QFont()
+        font3.setFamily(u"arial")
+        font3.setPointSize(19)
+        font3.setBold(True)
+        font3.setWeight(75)
+        self.listWidget.setFont(font3)
         self.listWidget.setMouseTracking(False)
         self.listWidget.setLayoutDirection(Qt.LeftToRight)
         self.listWidget.setStyleSheet(u"QListView {\n"
 "    background:transparent;\n"
+"	\n"
+"\n"
 "}\n"
 "\n"
 "::item{\n"
 "width:100px;\n"
 "height:130px;\n"
+"\n"
 "}\n"
 "\n"
 "::item:disabled{\n"
@@ -1358,6 +1373,7 @@ class Ui_MainWindow(object):
         self.frame.setMaximumSize(QSize(16777215, 16777215))
         self.frame.setSizeIncrement(QSize(0, 0))
         self.frame.setBaseSize(QSize(0, 0))
+        self.frame.setFont(font)
         self.frame.setLayoutDirection(Qt.LeftToRight)
         self.frame.setStyleSheet(u"")
         self.frame.setFrameShape(QFrame.NoFrame)
@@ -1370,9 +1386,7 @@ class Ui_MainWindow(object):
         self.groupBox = QGroupBox(self.frame)
         self.groupBox.setObjectName(u"groupBox")
         self.groupBox.setMaximumSize(QSize(16777215, 16777215))
-        font3 = QFont()
-        font3.setPointSize(8)
-        self.groupBox.setFont(font3)
+        self.groupBox.setFont(font)
         self.groupBox.setStyleSheet(u"QGroupBox{\n"
 "background:transparent;\n"
 "}")
@@ -1385,6 +1399,7 @@ class Ui_MainWindow(object):
         self.textBrowser = QTextBrowser(self.groupBox)
         self.textBrowser.setObjectName(u"textBrowser")
         self.textBrowser.setMaximumSize(QSize(16777215, 16777215))
+        self.textBrowser.setFont(font)
         self.textBrowser.setStyleSheet(u"background:transparent;\n"
 "color:white")
         self.textBrowser.setFrameShape(QFrame.NoFrame)
@@ -1419,6 +1434,7 @@ class Ui_MainWindow(object):
         self.groupBox_2 = QGroupBox(self.frame)
         self.groupBox_2.setObjectName(u"groupBox_2")
         self.groupBox_2.setMaximumSize(QSize(16777215, 16777215))
+        self.groupBox_2.setFont(font)
         self.verticalLayout_3 = QVBoxLayout(self.groupBox_2)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(50, -1, 50, -1)
@@ -1430,11 +1446,7 @@ class Ui_MainWindow(object):
         self.label = QLabel(self.groupBox_2)
         self.label.setObjectName(u"label")
         self.label.setMaximumSize(QSize(50, 16777215))
-        font4 = QFont()
-        font4.setPointSize(11)
-        font4.setBold(True)
-        font4.setWeight(75)
-        self.label.setFont(font4)
+        self.label.setFont(font)
 
         self.horizontalLayout_5.addWidget(self.label, 0, Qt.AlignHCenter)
 
@@ -1450,7 +1462,7 @@ class Ui_MainWindow(object):
         self.label_2 = QLabel(self.groupBox_2)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMaximumSize(QSize(120, 16777215))
-        self.label_2.setFont(font4)
+        self.label_2.setFont(font)
 
         self.horizontalLayout_5.addWidget(self.label_2, 0, Qt.AlignHCenter)
 
@@ -1466,7 +1478,7 @@ class Ui_MainWindow(object):
         self.label_4 = QLabel(self.groupBox_2)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setMaximumSize(QSize(100, 16777215))
-        self.label_4.setFont(font4)
+        self.label_4.setFont(font)
         self.label_4.setScaledContents(False)
         self.label_4.setWordWrap(False)
 
@@ -1595,17 +1607,17 @@ class Ui_MainWindow(object):
         icon7 = QIcon()
         icon7.addFile(u"Data/imgs/white icons/icons8-contacts-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qtablewidgetitem = QTableWidgetItem()
-        __qtablewidgetitem.setIcon(icon7);
+        __qtablewidgetitem.setIcon(icon7)
         self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         icon8 = QIcon()
         icon8.addFile(u"Data/imgs/white icons/icons8-phone-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qtablewidgetitem1 = QTableWidgetItem()
-        __qtablewidgetitem1.setIcon(icon8);
+        __qtablewidgetitem1.setIcon(icon8)
         self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         icon9 = QIcon()
         icon9.addFile(u"Data/imgs/white icons/icons8-info-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qtablewidgetitem2 = QTableWidgetItem()
-        __qtablewidgetitem2.setIcon(icon9);
+        __qtablewidgetitem2.setIcon(icon9)
         self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
@@ -1679,6 +1691,7 @@ class Ui_MainWindow(object):
 
         self.textBrowser_4 = QTextBrowser(self.about_tab)
         self.textBrowser_4.setObjectName(u"textBrowser_4")
+        self.textBrowser_4.setFont(font)
         self.textBrowser_4.setStyleSheet(u"background:transparent;\n"
 "color:white;\n"
 "border:transparent\n"
@@ -1704,7 +1717,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.listWidget.currentRowChanged.connect(self.tabWidget.setCurrentIndex)
 
-        self.listWidget.setCurrentRow(0)
+        self.listWidget.setCurrentRow(-1)
         self.tabWidget.setCurrentIndex(0)
 
 
@@ -1733,11 +1746,11 @@ class Ui_MainWindow(object):
         self.textBrowser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7pt; font-weight:600; color:#ffffff;\">*** IMPORTANT ***</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7pt; font-weight:600; color:#ffff00;\">Names</span><span style=\" font-size:7pt; font-weight:600;\"> in Column A</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" fo"
-                        "nt-size:7pt; font-weight:600; color:#ffff00;\">Phone numbers</span><span style=\" font-size:7pt; font-weight:600;\"> in Column B</span></p></body></html>", None))
+"</style></head><body style=\" font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffffff;\">*** IMPORTANT ***</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;\">Names</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> in Column A </span><span style=\" font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:600;\">("
+                        "optional)</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;\">Phone numbers</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> in Column B</span></p></body></html>", None))
         self.sheet_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"xlsx or CSV (comma seperated)", None))
         self.sheet_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Settings", None))
@@ -1769,31 +1782,31 @@ class Ui_MainWindow(object):
         self.textBrowser_3.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt; font-weight:600;\">This Feature will be available in the upcoming update.</span></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:24pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:24pt; font-weight:600;\"><br /></p>\n"
-"<"
-                        "p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt; font-weight:600;\">you can contact me for more infornation</span></p></body></html>", None))
+"</style></head><body style=\" font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:24pt; font-weight:600;\">This Feature will be available in the upcoming update.</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:24pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; fo"
+                        "nt-family:'MS Shell Dlg 2'; font-size:24pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;\">you can contact me for more infornation</span></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.timed_tab), QCoreApplication.translate("MainWindow", u"Page", None))
         self.textBrowser_2.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; font-weight:600;\">Thanks for using this software :)</span></p></body></html>", None))
+"</style></head><body style=\" font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;\">Thanks for using this software :)</span></p></body></html>", None))
         self.textBrowser_4.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt; font-weight:600;\">- Contact Me -</span></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:16pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#00ff7f;\">Whatsapp</span><span style=\" font-size:12pt; fon"
-                        "t-weight:600;\"> : </span><a href=\"https://web.whatsapp.com/send?phone=201120641378\"><span style=\" font-size:12pt; text-decoration: underline; color:#0000ff;\">+201120641378</span></a></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#5e81ff;\">Facebook</span><span style=\" font-size:12pt; font-weight:600;\"> : </span><a href=\"https://www.facebook.com/lord.ahmed110\"><span style=\" font-size:12pt; text-decoration: underline; color:#0000ff;\">fb.com/lord.ahmed110</span></a></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12"
-                        "pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ffaa00;\">Fiverr</span><span style=\" font-size:12pt; font-weight:600;\"> : </span><a href=\"https://www.fiverr.com/lordahmed\"><span style=\" font-size:12pt; text-decoration: underline; color:#0000ff;\">Fiverr.com/lordahmed</span></a></p></body></html>", None))
+"</style></head><body style=\" font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;\">- Contact Me -</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:16pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font"
+                        "-weight:600; color:#00ff7f;\">Whatsapp</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> : </span><a href=\"https://web.whatsapp.com/send?phone=201120641378\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;\">+201120641378</span></a></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#5e81ff;\">Facebook</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> : </span><a href=\"https://www.facebook.com/lord.ahmed110\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt;"
+                        " text-decoration: underline; color:#0000ff;\">fb.com/lord.ahmed110</span></a></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffaa00;\">Fiverr</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> : </span><a href=\"https://www.fiverr.com/lordahmed\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;\">Fiverr.com/lordahmed</span></a></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.about_tab), QCoreApplication.translate("MainWindow", u"Page", None))
     # retranslateUi
 

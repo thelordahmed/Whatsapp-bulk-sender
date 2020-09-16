@@ -12,8 +12,11 @@ attachments_enabled = True
 ######################################
 ########### Functionilty #############
 
-TYPE = "custom"
+TYPE = "default"
 version = "2.1.2"
+
+system = "mac"
+
 
 if TYPE == "default":
     # sheet settings

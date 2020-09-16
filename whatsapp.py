@@ -1,3 +1,4 @@
+import os
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
@@ -10,11 +11,14 @@ from selenium.common.exceptions import TimeoutException, SessionNotCreatedExcept
     InvalidArgumentException, NoSuchElementException
 import random
 import requests, zipfile, io
+from model import project_path
+from features_controller import system
 
 
 class WhatsApp:
-    _browserAuthDirectory = "Data\\browserData"  # browser data location
-    _chromedriverDirectory = "Data\\"  # chromedriver.exe location
+    _browserAuthDirectory = os.path.join(project_path, "Data/browserData")  # browser data location
+    _chromedriverPath = os.path.join(project_path, "Data/chromedriver")  # chromedriver.exe location
+    _dataFolder = os.path.join(project_path, "Data")
     # delaying in seconds
     # this is the range of seconds that will be delayed between messages
     _minSeconds = 5
@@ -50,7 +54,7 @@ class WhatsApp:
         self.backBlue_btn = '//span[@data-icon="back-blue"]/ancestor::button'
         self.backBlue_btn2 = '//span[@data-icon="search"]/ancestor::button'
 
-    # updating chromedriver.exe automatically
+    # updating chromedriver automatically
     @staticmethod
     def _chromedriver_update(zip_extract_path):
         print("chromedriver is outdated! .. updating...")
@@ -59,6 +63,20 @@ class WhatsApp:
         z = zipfile.ZipFile(io.BytesIO(file.content))
         z.extractall(zip_extract_path)
 
+    def _chromedriver_update_mac(self, zip_extract_path):
+        file_name = "chromedriver_macos.zip"
+        file_path = os.path.join(self._dataFolder, file_name)
+        print("chromedriver is outdated! .. updating...")
+        stable_ver = requests.get("https://chromedriver.storage.googleapis.com/LATEST_RELEASE").text
+        file = requests.get(f"https://chromedriver.storage.googleapis.com/{stable_ver}/chromedriver_mac64.zip")
+        with open(file_path, "wb") as f:
+            f.write(file.content)
+        os.system(f"unzip {file_path} -d {self._dataFolder}")
+        sleep(2)
+        os.system(f"rm {file_path}")
+
+
+
     def open(self):
         """
         :return: the window object
@@ -66,16 +84,27 @@ class WhatsApp:
         args = ["hide_console", ]
         if self._handle is None:
             try:
-                self._window = webdriver.Chrome(self._chromedriverDirectory + "\\chromedriver.exe",
+                self._window = webdriver.Chrome(self._chromedriverPath,
                                                 options=self._chrome_options, service_args=args)
             except SessionNotCreatedException:
-                self._chromedriver_update(self._chromedriverDirectory)
-                self._window = webdriver.Chrome(self._chromedriverDirectory + "\\chromedriver.exe",
-                                                options=self._chrome_options, service_args=args)
+                if system == "mac":
+                    self._chromedriver_update_mac(self._dataFolder)
+                    self._window = webdriver.Chrome(self._chromedriverPath,
+                                                    options=self._chrome_options, service_args=args)
+                else:
+                    self._chromedriver_update(self._dataFolder)
+                    self._window = webdriver.Chrome(self._chromedriverPath,
+                                                    options=self._chrome_options, service_args=args)
+
             except WebDriverException:
-                self._chromedriver_update(self._chromedriverDirectory)
-                self._window = webdriver.Chrome(self._chromedriverDirectory + "\\chromedriver.exe",
-                                                options=self._chrome_options, service_args=args)
+                if system == "mac":
+                    self._chromedriver_update_mac(self._dataFolder)
+                    self._window = webdriver.Chrome(self._chromedriverPath,
+                                                    options=self._chrome_options, service_args=args)
+                else:
+                    self._chromedriver_update(self._dataFolder)
+                    self._window = webdriver.Chrome(self._chromedriverPath,
+                                                    options=self._chrome_options, service_args=args)
             self._window.get("https://web.whatsapp.com/")
             self._handle = self._window.current_window_handle
             # waiting for the whatsapp to login
