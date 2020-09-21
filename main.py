@@ -1,4 +1,5 @@
 import csv
+import os
 import random
 from time import sleep
 from model import Model
@@ -7,7 +8,7 @@ from view import View
 from whatsapp import WhatsApp
 from threading import Thread
 from ast import literal_eval
-from features_controller import country_code
+from features_controller import country_code, extra_var, copyright_link
 
 
 
@@ -37,6 +38,10 @@ class Main:
             else:
                 self.model.clearDatabase()
 
+        # check to disable or enable logout btn
+        if os.path.exists(self.wa.browserAuthDirectory) is False:
+            self.view.logout_btn.setDisabled(True)
+
         ###############################################
         ######## Connections ##########################
         self.view.start_btn.clicked.connect(self.start_process)
@@ -44,10 +49,14 @@ class Main:
         self.view.attachments_btn.clicked.connect(self.view.getImagePath)
         self.view.pushButton.clicked.connect(self.view.appendToPlainTextBox)
         self.view.stop_btn.clicked.connect(self.view.changeStateToStopped)
-        self.view.commandLinkButton.clicked.connect(self.view.copyrights)
+        if copyright_link is True:
+            self.view.commandLinkButton.clicked.connect(self.view.copyrights)
         self.view.newsession_btn.clicked.connect(self.newSessionFunc)
         self.view.csv_btn.clicked.connect(self.export_func)
         self.view.multi_messages_btn.clicked.connect(self.view.openMultiFileDialog)
+        if extra_var is not None:
+            self.view.extra_var_btn.clicked.connect(self.view.appendToPlainTextBox_extraVar)
+        self.view.logout_btn.clicked.connect(self.logout_btn_func)
         ###############################################
 
     def newSessionFunc(self):
@@ -74,6 +83,10 @@ class Main:
             print("saving cancelled!")
 
     ###############################################
+
+    def logout_btn_func(self):
+        self.wa.logout_btn()
+        self.view.logout_btn.setDisabled(True)
 
     def process(self):
         model2 = Model()
@@ -136,6 +149,14 @@ class Main:
                     phone = contact[2] + contact[1]
                 else:
                     phone = contact[1]
+
+                # extra variable check
+                if extra_var is not None and country_code is not None:
+                    extra_variable = contact[3]
+                elif extra_var is not None and country_code is None:
+                    extra_variable = contact[2]
+                else:
+                    extra_variable = ""
                 self.view.statusbar.showMessage(f"   >> Sending to {name} <<")
                 if model2.findContact(phone) is not None:
                     continue  # skip if number found in the database
@@ -148,9 +169,9 @@ class Main:
                     paths = literal_eval(paths_string)  # converting the paths string to real list
                     multi_messages = self.getMultiMessages(paths)
                     multi_messages.append(messageFromTextBox)   # adding the view message to the list
-                    theMessage = random.choice(multi_messages)
+                    theMessage = random.choice(multi_messages).replace("{name}", name).replace("{variable}", extra_variable)
                 else:
-                    theMessage = messageFromTextBox
+                    theMessage = messageFromTextBox.replace("{name}", name).replace("{variable}", extra_variable)
                 isUnsavedChecked = self.view.checkBox.isChecked()
 
                 if self.wa.number_search(phone) is False:
@@ -167,7 +188,6 @@ class Main:
                             self.skipToNextNumber(name, phone, "no whatsapp", model2)
                             self.view.statusbar.showMessage(f"   >> Number is not found on whatsapp! <<")
                             continue
-
                     else:
                         pass
                 if self.view.state == "stopped":
@@ -181,9 +201,9 @@ class Main:
                     self.wa.sending_image(attachments_paths_list)
                 # checking if one line message checked or same format
                 if self.view.oneline_rb.isChecked() is True:
-                    self.wa.sending(theMessage, "{name}", name)
+                    self.wa.sending(theMessage)
                 else:
-                    self.wa.sending_sameFormat(theMessage, "{name}", name)
+                    self.wa.sending_sameFormat(theMessage)
 
                 if contact_card != "":
                     self.wa.sending_contact(contact_card)

@@ -107,6 +107,9 @@ class View(QMainWindow, design):
     def appendToPlainTextBox(self):
         self.message_text.insertPlainText("{name}")
 
+    def appendToPlainTextBox_extraVar(self):
+        self.message_text.insertPlainText("{variable}")
+
     def changeStateToStopped(self):
         self.statusbar.showMessage(f"   >> Stopping in progress... <<")
         self.state = "stopped"

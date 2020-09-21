@@ -23,11 +23,11 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,
           [],
-          name='Whatsapp Bulk Sender 2.1.2',
+          name='WhatsApp Bulk Sender',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=False , icon='data\\imgs\\whatsapp.ico')
+          console=False , icon='Data\\whatsapp.ico')

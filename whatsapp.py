@@ -11,20 +11,20 @@ from selenium.common.exceptions import TimeoutException, SessionNotCreatedExcept
     InvalidArgumentException, NoSuchElementException
 import random
 import requests, zipfile, io
-from model import project_path
 from features_controller import system
+import shutil
 
 
 class WhatsApp:
-    _browserAuthDirectory = os.path.join(project_path, "Data/browserData")  # browser data location
-    _chromedriverPath = os.path.join(project_path, "Data/chromedriver")  # chromedriver.exe location
-    _dataFolder = os.path.join(project_path, "Data")
+    browserAuthDirectory = "Data/WhatsappLogin"  # browser data location
+    _chromedriverPath = "Data/chromedriver" # chromedriver.exe location
+    _dataFolder = "Data"
     # delaying in seconds
     # this is the range of seconds that will be delayed between messages
     _minSeconds = 5
     _maxSeconds = 30
     _chrome_options = Options()
-    _chrome_options.add_argument(r'--user-data-dir=' + _browserAuthDirectory)
+    _chrome_options.add_argument(r'--user-data-dir=' + browserAuthDirectory)
 
     def __init__(self):
         self._handle = None
@@ -63,7 +63,7 @@ class WhatsApp:
         z = zipfile.ZipFile(io.BytesIO(file.content))
         z.extractall(zip_extract_path)
 
-    def _chromedriver_update_mac(self, zip_extract_path):
+    def _chromedriver_update_mac(self):
         file_name = "chromedriver_macos.zip"
         file_path = os.path.join(self._dataFolder, file_name)
         print("chromedriver is outdated! .. updating...")
@@ -75,7 +75,8 @@ class WhatsApp:
         sleep(2)
         os.system(f"rm {file_path}")
 
-
+    def logout_btn(self):
+        shutil.rmtree(self.browserAuthDirectory)
 
     def open(self):
         """
@@ -86,9 +87,9 @@ class WhatsApp:
             try:
                 self._window = webdriver.Chrome(self._chromedriverPath,
                                                 options=self._chrome_options, service_args=args)
-            except SessionNotCreatedException:
+            except SessionNotCreatedException and WebDriverException:
                 if system == "mac":
-                    self._chromedriver_update_mac(self._dataFolder)
+                    self._chromedriver_update_mac()
                     self._window = webdriver.Chrome(self._chromedriverPath,
                                                     options=self._chrome_options, service_args=args)
                 else:
@@ -96,15 +97,6 @@ class WhatsApp:
                     self._window = webdriver.Chrome(self._chromedriverPath,
                                                     options=self._chrome_options, service_args=args)
 
-            except WebDriverException:
-                if system == "mac":
-                    self._chromedriver_update_mac(self._dataFolder)
-                    self._window = webdriver.Chrome(self._chromedriverPath,
-                                                    options=self._chrome_options, service_args=args)
-                else:
-                    self._chromedriver_update(self._dataFolder)
-                    self._window = webdriver.Chrome(self._chromedriverPath,
-                                                    options=self._chrome_options, service_args=args)
             self._window.get("https://web.whatsapp.com/")
             self._handle = self._window.current_window_handle
             # waiting for the whatsapp to login
@@ -131,15 +123,9 @@ class WhatsApp:
         except NoSuchElementException:
             self._window.find_element_by_xpath(self.backBlue_btn2).click()
 
-        # try:
-        #     x_button = self._window.find_element_by_xpath(self._cancel_x)
-        #     x_button.click()
-        # except Exception:
-        #     pass
         sleep(1)
         search_bar.send_keys(number)
         # checking if results appear
-        # if this raised a timeout exception .. will handle it in the script
         try:
             WebDriverWait(self._window, 10).until(ec.visibility_of_element_located((
                 By.XPATH, '//*[@id="pane-side"]/div[1]/div/div/div[1]')))
@@ -153,36 +139,19 @@ class WhatsApp:
         except Exception:
             return False
 
-    def sending(self, message, nameholder, name):
+    def sending(self, message):
         """
         when the chat is opened with number_search method, this method is called to send the message
         :param message: text message to be sent
-        :param nameholder: the placeholder text for the contact name like, {name}
-        :param name: the contact name to be included in the message
         :return: None
         """
-        Pmessage = message.replace(nameholder, name)
         message_input = self._window.find_element_by_xpath(self._msg_input)
-        message_input.send_keys(Pmessage)
+        message_input.send_keys(message)
         message_input.send_keys(Keys.ENTER)
 
-    # def sending_copypaste(self, message, nameholder, name):
-    #     Pmessage = message.replace(nameholder, name)
-    #     pyperclip.copy(Pmessage)
-    #     message_input = self._window.find_element_by_xpath(self._msg_input)
-    #     actions = ActionChains(self._window)
-    #     actions.move_to_element(message_input)
-    #     actions.click()
-    #     # actions.key_down(Keys.LEFT_CONTROL)
-    #     actions.send_keys(pyperclip.paste())
-    #     # actions.key_up(Keys.LEFT_CONTROL)
-    #     actions.perform()
-    #     sleep(1)
-    #     message_input.send_keys(Keys.ENTER)
 
-    def sending_sameFormat(self, message, nameholder, name):
-        Pmessage = message.replace(nameholder, name)
-        message_lines = Pmessage.split("\n")
+    def sending_sameFormat(self, message):
+        message_lines = message.split("\n")
         message_input = self._window.find_element_by_xpath(self._msg_input)
         actions = ActionChains(self._window)
         actions.move_to_element(message_input)

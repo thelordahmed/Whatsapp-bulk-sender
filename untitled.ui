@@ -1209,7 +1209,6 @@ QStatusBar
       <property name="font">
        <font>
         <family>arial</family>
-        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="cursor">
@@ -1227,59 +1226,6 @@ border:0</string>
         <normaloff>../Yellow Pages sg</normaloff>../Yellow Pages sg</iconset>
       </property>
      </widget>
-    </item>
-    <item row="1" column="1">
-     <layout class="QHBoxLayout" name="horizontalLayout_7">
-      <property name="spacing">
-       <number>15</number>
-      </property>
-      <item>
-       <widget class="QPushButton" name="start_btn">
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>Data/imgs/black icons/icons8-play-500.png</normaloff>Data/imgs/black icons/icons8-play-500.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>34</width>
-          <height>48</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="stop_btn">
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>Data/imgs/black icons/icons8-stop-500.png</normaloff>Data/imgs/black icons/icons8-stop-500.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>38</width>
-          <height>37</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-     </layout>
     </item>
     <item row="0" column="0" colspan="3">
      <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,1">
@@ -1439,8 +1385,8 @@ background:rgb(71, 71, 71)
           <set>AlignLeading|AlignVCenter</set>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>Data/imgs/whatsapp.ico</normaloff>Data/imgs/whatsapp.ico</iconset>
+          <iconset resource="images.qrc">
+           <normaloff>:/white-icons/Data/imgs/white icons/icons8-home-page-500.png</normaloff>:/white-icons/Data/imgs/white icons/icons8-home-page-500.png</iconset>
          </property>
         </item>
         <item>
@@ -1460,27 +1406,8 @@ background:rgb(71, 71, 71)
           </brush>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>Data/imgs/white icons/icons8-bar-chart-500.png</normaloff>Data/imgs/white icons/icons8-bar-chart-500.png</iconset>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Timed</string>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>18</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="textAlignment">
-          <set>AlignLeading|AlignVCenter</set>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>Data/imgs/white icons/icons8-clock-500.png</normaloff>Data/imgs/white icons/icons8-clock-500.png</iconset>
+          <iconset resource="images.qrc">
+           <normaloff>:/white-icons/Data/imgs/white icons/icons8-combo-chart-500.png</normaloff>:/white-icons/Data/imgs/white icons/icons8-combo-chart-500.png</iconset>
          </property>
         </item>
         <item>
@@ -1488,8 +1415,8 @@ background:rgb(71, 71, 71)
           <string>About</string>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>Data/imgs/white icons/icons8-about-500.png</normaloff>Data/imgs/white icons/icons8-about-500.png</iconset>
+          <iconset resource="images.qrc">
+           <normaloff>:/white-icons/Data/imgs/white icons/icons8-about-500.png</normaloff>:/white-icons/Data/imgs/white icons/icons8-about-500.png</iconset>
          </property>
          <property name="flags">
           <set>ItemIsSelectable|ItemIsEnabled</set>
@@ -1678,7 +1605,7 @@ color:white</string>
                      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffffff;&quot;&gt;*** IMPORTANT ***&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;&quot;&gt;Names&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt; in Column A &lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:600;&quot;&gt;(optional)&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;&quot;&gt;Phone numbers&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt; in Column B&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -2036,8 +1963,8 @@ p, li { white-space: pre-wrap; }
               <string>Name</string>
              </property>
              <property name="icon">
-              <iconset>
-               <normaloff>Data/imgs/white icons/icons8-contacts-500.png</normaloff>Data/imgs/white icons/icons8-contacts-500.png</iconset>
+              <iconset resource="images.qrc">
+               <normaloff>:/white-icons/Data/imgs/white icons/icons8-contacts-500.png</normaloff>:/white-icons/Data/imgs/white icons/icons8-contacts-500.png</iconset>
              </property>
             </column>
             <column>
@@ -2045,8 +1972,8 @@ p, li { white-space: pre-wrap; }
               <string>Phone</string>
              </property>
              <property name="icon">
-              <iconset>
-               <normaloff>Data/imgs/white icons/icons8-phone-500.png</normaloff>Data/imgs/white icons/icons8-phone-500.png</iconset>
+              <iconset resource="images.qrc">
+               <normaloff>:/white-icons/Data/imgs/white icons/icons8-phone-500.png</normaloff>:/white-icons/Data/imgs/white icons/icons8-phone-500.png</iconset>
              </property>
             </column>
             <column>
@@ -2054,8 +1981,8 @@ p, li { white-space: pre-wrap; }
               <string>Status</string>
              </property>
              <property name="icon">
-              <iconset>
-               <normaloff>Data/imgs/white icons/icons8-info-500.png</normaloff>Data/imgs/white icons/icons8-info-500.png</iconset>
+              <iconset resource="images.qrc">
+               <normaloff>:/white-icons/Data/imgs/white icons/icons8-about-500.png</normaloff>:/white-icons/Data/imgs/white icons/icons8-about-500.png</iconset>
              </property>
             </column>
            </widget>
@@ -2074,8 +2001,8 @@ p, li { white-space: pre-wrap; }
                <string>CSV Export</string>
               </property>
               <property name="icon">
-               <iconset>
-                <normaloff>Data/imgs/white icons/icons8-save-500.png</normaloff>Data/imgs/white icons/icons8-save-500.png</iconset>
+               <iconset resource="images.qrc">
+                <normaloff>:/white-icons/Data/imgs/white icons/icons8-save-500.png</normaloff>:/white-icons/Data/imgs/white icons/icons8-save-500.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -2097,8 +2024,8 @@ p, li { white-space: pre-wrap; }
                <string>Start New Session</string>
               </property>
               <property name="icon">
-               <iconset>
-                <normaloff>Data/imgs/white icons/icons8-trash-500.png</normaloff>Data/imgs/white icons/icons8-trash-500.png</iconset>
+               <iconset resource="images.qrc">
+                <normaloff>:/white-icons/Data/imgs/white icons/icons8-trash-can-500.png</normaloff>:/white-icons/Data/imgs/white icons/icons8-trash-can-500.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -2109,48 +2036,6 @@ p, li { white-space: pre-wrap; }
              </widget>
             </item>
            </layout>
-          </item>
-         </layout>
-        </widget>
-        <widget class="QWidget" name="timed_tab">
-         <attribute name="title">
-          <string>Page</string>
-         </attribute>
-         <layout class="QVBoxLayout" name="verticalLayout_8" stretch="0">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>110</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QTextBrowser" name="textBrowser_3">
-            <property name="styleSheet">
-             <string notr="true">background:transparent;
-color:white
-
-</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="html">
-             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:24pt; font-weight:600;&quot;&gt;This Feature will be available in the upcoming update.&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:24pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:24pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;&quot;&gt;you can contact me for more infornation&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
           </item>
          </layout>
         </widget>
@@ -2180,8 +2065,11 @@ color:white
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;&quot;&gt;Thanks for using this software :)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;&quot;&gt;Thanks for using my software :)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="openExternalLinks">
              <bool>false</bool>
@@ -2206,7 +2094,10 @@ border:transparent
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;&quot;&gt;- Contact Me -&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:16pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#00ff7f;&quot;&gt;Whatsapp&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt; : &lt;/span&gt;&lt;a href=&quot;https://web.whatsapp.com/send?phone=201120641378&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;&quot;&gt;+201120641378&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2226,11 +2117,89 @@ p, li { white-space: pre-wrap; }
       </item>
      </layout>
     </item>
+    <item row="1" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <property name="spacing">
+       <number>15</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="start_btn">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="images.qrc">
+          <normaloff>:/black-icons/Data/imgs/black icons/icons8-play-500.png</normaloff>:/black-icons/Data/imgs/black icons/icons8-play-500.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>34</width>
+          <height>48</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stop_btn">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="images.qrc">
+          <normaloff>:/black-icons/Data/imgs/black icons/icons8-stop-500.png</normaloff>:/black-icons/Data/imgs/black icons/icons8-stop-500.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>38</width>
+          <height>37</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="1" colspan="2" alignment="Qt::AlignRight">
+     <widget class="QPushButton" name="logout_btn">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>arial</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">margin-right : 20px</string>
+      </property>
+      <property name="text">
+       <string>Logout from current Whatsapp</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>listWidget</sender>

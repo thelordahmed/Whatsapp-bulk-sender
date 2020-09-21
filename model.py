@@ -2,14 +2,11 @@ from openpyxl import load_workbook
 import sqlite3
 import csv
 import features_controller
-import os
-
-project_path = os.path.abspath(os.path.dirname(__file__))
 
 
 class Model:
     def __init__(self):
-        self.data_path = os.path.join(project_path, "Data/data.db")
+        self.data_path = "Data\\data.db"
         self.conn = sqlite3.connect(self.data_path)
         self.cur = self.conn.cursor()
 
@@ -35,34 +32,39 @@ class Model:
                 else:
                     name = row[features_controller.name_row-1]
 
+                # [name, phone]
+                record = [name, str(row[features_controller.phone_row - 1])]
+                # country code check
                 if features_controller.country_code is not None:
                     if row[features_controller.country_code - 1] is None:
                         c_code = ""
                     else:
                         c_code = str(row[features_controller.country_code - 1])
-
-                    # (name, phone, country code)
-                    record = (name, str(row[features_controller.phone_row - 1]), c_code)
-                    datalist.append(record)
-                else:
-                    # (name, phone)
-                    record = (name, str(row[features_controller.phone_row-1]))
-                    datalist.append(record)
+                    # [name, phone, country code]
+                    record.append(c_code)
+                # extra variable check
+                if features_controller.extra_var is not None:
+                    if row[features_controller.extra_var - 1] is None:
+                        extra_variable = ""
+                    else:
+                        extra_variable = str(row[features_controller.extra_var - 1])
+                    # [name, phone, country code(if found), extra variable]
+                    record.append(extra_variable)
+                datalist.append(tuple(record))
         elif ".csv" in path:
             with open(path, encoding="utf-8") as csvf:
                 reader = csv.reader(csvf)
                 datalist = []
-
-                if features_controller.country_code is not None:
-                    for row in reader:
-                        # (name, phone, country code)
-                        record = (row[features_controller.name_row - 1], str(row[features_controller.phone_row - 1]), str(row[features_controller.country_code - 1]))
-                        datalist.append(record)
-                else:
-                    for row in reader:
-                        # (name, phone)
-                        record = (row[features_controller.name_row-1], str(row[features_controller.phone_row-1]))
-                        datalist.append(record)
+                for row in reader:
+                    # [name, phone]
+                    record = [row[features_controller.name_row - 1], str(row[features_controller.phone_row - 1])]
+                    if features_controller.country_code is not None:
+                        # [name, phone, country code]
+                        record.append(str(row[features_controller.country_code - 1]))
+                    if features_controller.extra_var is not None:
+                        # (name, phone, country code(if found), extra variable)
+                        record.append(str(row[features_controller.extra_var - 1]))
+                    datalist.append(tuple(record))
         if features_controller.header_row:
             del datalist[0]
         return datalist

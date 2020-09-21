@@ -12,10 +12,10 @@ attachments_enabled = True
 ######################################
 ########### Functionilty #############
 
-TYPE = "default"
-version = "2.1.2"
+TYPE = "custom"
+version = "2.2.2"
 
-system = "mac"
+system = "windows"
 
 
 if TYPE == "default":
@@ -24,14 +24,18 @@ if TYPE == "default":
     name_row = 1
     phone_row = 2
     country_code = None  # assign None to ignore it
-    # Interface text
+    extra_var = None  # assign None to ignore it
+    # Interface
     show_columns_note = True
+    copyright_link = True
 else:
     # sheet settings
     header_row = False
     name_row = 1
     phone_row = 2
-    country_code = 3    # assign None to ignore it
-    # Interface text
-    show_columns_note = False
+    country_code = None    # assign None to ignore it
+    extra_var = 3    # assign None to ignore it
+    # Interface
+    show_columns_note = True
+    copyright_link = True
 ################################################################
