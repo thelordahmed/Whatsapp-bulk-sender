@@ -1,1 +1,0 @@
-pyinstaller -i "data\imgs\whatsapp.ico" -F -w -n "Whatsapp Bulk Sender 2.1.2" main.py

@@ -25,34 +25,32 @@ class WhatsApp:
     _maxSeconds = 30
     _chrome_options = Options()
     _chrome_options.add_argument(r'--user-data-dir=' + browserAuthDirectory)
+    _handle = None
+    _window = None
+    _search_bar = '//*[@id="side"]/div[1]/div/label/div/div[2]'
+    _sbar_arrow = '//*[@id="side"]/div[1]/div/button'
+    _profile_header = '//*[@id="main"]/header/div[2]/div/div/span'
+    _group_pos = '//*[@id="app"]/div/div/div[2]/div[3]/span/div/span/div/div/div[1]/div[5]' \
+                 '/div[2]/div/div/div/div/div[2]/div[1]/div/span'
+    _msg_input = '//*[@id="main"]/footer/div[1]/div[2]/div/div[2]'
+    _cancel_x = '//*[@id="side"]/div[1]/div/span/button'
+    _attachment = '//span[@data-icon="clip"]/parent::div'
+    # self._attachment called first then wait for self._imageinput to appear
+    _imageinput = 'ul > li:first-child input'  # CSS Selector
+    # this button appears when the photo is loaded
+    _sendimagebtn = '//span[@data-icon="send-light"]'
+    _sendimagebtn2 = '//span[@data-icon="send"]'
+    # Contact Card sending
+    _attachContactBtn = 'ul > li:last-child button'  # CSS Selector
+    _contactSearchBar = '//*[@id="app"]/div/span[2]/div/span/div/div/div/div/div/div/div[1]/div/label/div/div[2]'
+    _sendBtn = '//span[@data-icon="send"]/parent::div'
+    _xBtn = '//span[@data-icon="x"]/ancestor::header/descendant::button'
+    # phone not connected
+    phone_alert = '//span[@data-icon="alert-phone"]'
+    computer_alert = '//span[@data-icon="alert-computer"]'
+    backBlue_btn = '//span[@data-icon="back-blue"]/ancestor::button'
+    backBlue_btn2 = '//span[@data-icon="search"]/ancestor::button'
 
-    def __init__(self):
-        self._handle = None
-        self._window = None
-        self._search_bar = '//*[@id="side"]/div[1]/div/label/div/div[2]'
-        self._sbar_arrow = '//*[@id="side"]/div[1]/div/button'
-        self._profile_header = '//*[@id="main"]/header/div[2]/div/div/span'
-        self._group_pos = '//*[@id="app"]/div/div/div[2]/div[3]/span/div/span/div/div/div[1]/div[5]' \
-                          '/div[2]/div/div/div/div/div[2]/div[1]/div/span'
-        self._msg_input = '//*[@id="main"]/footer/div[1]/div[2]/div/div[2]'
-        self._cancel_x = '//*[@id="side"]/div[1]/div/span/button'
-        self._attachment = '//span[@data-icon="clip"]/parent::div'
-        # self._attachment called first then wait for self._imageinput to appear
-        self._imageinput = 'ul > li:first-child input'  # CSS Selector
-        # this button appears when the photo is loaded
-        self._sendimagebtn = '//span[@data-icon="send-light"]'
-        self._sendimagebtn2 = '//span[@data-icon="send"]'
-        # Contact Card sending
-        self._attachContactBtn = 'ul > li:last-child button'  # CSS Selector
-        self._contactSearchBar = '//*[@id="app"]/div/span[2]/div/span/div/div/div/div/div/div/div[1]/div/label/div/div[2]'
-        self._sendBtn = '//span[@data-icon="send"]/parent::div'
-        self._xBtn = '//span[@data-icon="x"]/ancestor::header/descendant::button'
-
-        # phone not connected
-        self.phone_alert = '//span[@data-icon="alert-phone"]'
-        self.computer_alert = '//span[@data-icon="alert-computer"]'
-        self.backBlue_btn = '//span[@data-icon="back-blue"]/ancestor::button'
-        self.backBlue_btn2 = '//span[@data-icon="search"]/ancestor::button'
 
     # updating chromedriver automatically
     @staticmethod

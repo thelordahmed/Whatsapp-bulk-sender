@@ -2,7 +2,7 @@
 ########## Features #################
 
 # extra
-multi_messages_enabled = True
+multi_messages_enabled = False
 # Standard Package
 contact_card_enabled = True
 attachments_enabled = True
@@ -12,8 +12,8 @@ attachments_enabled = True
 ######################################
 ########### Functionilty #############
 
-TYPE = "custom"
-version = "2.2.2"
+TYPE = "default"
+version = "2.2.1"
 
 system = "windows"
 
