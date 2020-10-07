@@ -13,6 +13,7 @@ import random
 import requests, zipfile, io
 from features_controller import system
 import shutil
+from multiprocessing import Queue
 
 
 class WhatsApp:
@@ -131,11 +132,20 @@ class WhatsApp:
             return False
         sleep(random.randint(3, 5))
 
-        contact_xpath = '//*[@id="pane-side"]//div[2]/div[1]/div[1]/span'  # this xpath chooses only the contact chat; not groups or messages
-        try:
-            self._window.find_element_by_xpath(contact_xpath).click()
-        except Exception:
+        # --------------- fixing choosing wrong chat elem bug ---------------
+        search_bar.send_keys(Keys.ENTER)
+
+        # check if number was found or not
+        if search_bar.text != "":
             return False
+        # ----------------------------------------------------------------
+
+
+        # contact_xpath = '//*[@id="pane-side"]//div[2]/div[1]/div[1]/span'  # this xpath chooses only the contact chat; not groups or messages
+        # try:
+        #     self._window.find_element_by_xpath(contact_xpath).click()
+        # except Exception:
+        #     return False
 
     def sending(self, message):
         """
