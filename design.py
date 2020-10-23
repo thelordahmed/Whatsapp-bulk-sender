@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'untitled.ui'
+## Form generated from reading UI file 'extra var.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.1
 ##
@@ -1529,6 +1529,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addWidget(self.pushButton)
 
+        self.extra_var_btn = QPushButton(self.groupBox_4)
+        self.extra_var_btn.setObjectName(u"extra_var_btn")
+
+        self.verticalLayout_4.addWidget(self.extra_var_btn)
+
         self.message_text = QPlainTextEdit(self.groupBox_4)
         self.message_text.setObjectName(u"message_text")
 
@@ -1731,7 +1736,8 @@ class Ui_MainWindow(object):
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffffff;\">*** IMPORTANT ***</span></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;\">Names</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> in Column A </span><span style=\" font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:600;\""
                         ">(optional)</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;\">Phone numbers</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> in Column B</span></p></body></html>", None))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;\">Phone numbers</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> in Column B</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;\">Extra variable</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> in Column C </span><span style=\" font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:600;\">(optional)</span></p></body></html>", None))
         self.sheet_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"xlsx or CSV (comma seperated)", None))
         self.sheet_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Settings", None))
@@ -1748,6 +1754,7 @@ class Ui_MainWindow(object):
         self.sameFormat_rb.setText(QCoreApplication.translate("MainWindow", u"send as one message", None))
         self.oneline_rb.setText(QCoreApplication.translate("MainWindow", u"send line by line", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Append {name}", None))
+        self.extra_var_btn.setText(QCoreApplication.translate("MainWindow", u"Append {variable}", None))
         self.multi_messages_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Choose multiple messages - txt only (optional)", None))
         self.multi_messages_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.main_tab), QCoreApplication.translate("MainWindow", u"Tab 1", None))
