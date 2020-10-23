@@ -1,0 +1,4 @@
+* in the excel sheet .. names must be in column A and numbers in column B
+
+* to be able to send messages to numbers that are not saved in your phone book,
+  you have to include the country key with the number, like this (+491721xxxxx).

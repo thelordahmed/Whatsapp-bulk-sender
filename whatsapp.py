@@ -178,9 +178,9 @@ class WhatsApp:
     def sending_image(self, paths):
         for path in paths:
             try:
-                sleep(random.randint(1, 3))
+                sleep(random.randint(1,3))
                 self._window.find_element_by_xpath(self._attachment).click()
-                sleep(random.randint(1, 3))
+                sleep(random.randint(1,3))
             except Exception as e:
                 print(e)
                 print("clicking attachment button error")
@@ -195,7 +195,7 @@ class WhatsApp:
                 print("image path is not correct")
                 return False
 
-            sleep(random.randint(2, 3))
+            sleep(random.randint(2,3))
             try:
                 try:    # fixing a bug - xpath changed
                     WebDriverWait(self._window, 10).until(ec.presence_of_element_located((By.XPATH, self._sendimagebtn2))).click()
@@ -205,13 +205,13 @@ class WhatsApp:
                 print("send btn didn't appear")
                 print("choosed image maybe not supported")
                 return False
-            sleep(random.randint(3, 6))
+            sleep(random.randint(3,6))
 
     def sending_contact(self, contact_number):
         try:
-            sleep(random.randint(1, 3))
+            sleep(random.randint(1,3))
             self._window.find_element_by_xpath(self._attachment).click()
-            sleep(random.randint(1, 3))
+            sleep(random.randint(1,3))
         except Exception as e:
             print(e)
             print("clicking attachment button error")
