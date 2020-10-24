@@ -1,5 +1,6 @@
 import csv
 import os
+import platform
 import random
 from time import sleep
 from model import Model
@@ -18,6 +19,9 @@ class Signals(QtCore.QObject):
 
 class Main:
     def __init__(self):
+        if platform.system() == "Darwin":
+            os.system("mkdir ~/Library/WhatsappSenderData")
+            os.system("mkdir ~/Library/WhatsappSenderData/Data")
         self.model = Model()
         self.view = View()
         self.wa = WhatsApp()

@@ -4,9 +4,9 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['E:\\My Projects\\whatsapp bulk new edition'],
+             pathex=['/Users/lordahmed/Desktop/my projects/Whatsapp-bulk-sender'],
              binaries=[],
-             datas=[('Data/chromedriver.exe', 'Data/.'), ('Data/data.db', 'Data/.')],
+             datas=[],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -19,19 +19,19 @@ pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,
           a.scripts,
+          a.binaries,
+          a.zipfiles,
+          a.datas,
           [],
-          exclude_binaries=True,
-          name='Whatsapp Bulk Sender',
+          name='WhatsApp Bulk Sender',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=False , icon='Data\\whatsapp.ico')
-coll = COLLECT(exe,
-               a.binaries,
-               a.zipfiles,
-               a.datas,
-               strip=False,
-               upx=True,
-               upx_exclude=[],
-               name='Whatsapp Bulk Sender')
+          upx_exclude=[],
+          runtime_tmpdir=None,
+          console=False )
+app = BUNDLE(exe,
+             name='WhatsApp Bulk Sender.app',
+             icon=None,
+             bundle_identifier=None)

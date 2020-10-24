@@ -15,9 +15,6 @@ attachments_enabled = True
 TYPE = "default"
 version = "2.2.1"
 
-system = "windows"
-
-
 if TYPE == "default":
     # sheet settings
     header_row = False

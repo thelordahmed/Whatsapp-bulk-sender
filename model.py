@@ -1,13 +1,29 @@
+import os
+
+import requests
 from openpyxl import load_workbook
 import sqlite3
 import csv
 import features_controller
+import platform
 
 
 class Model:
     def __init__(self):
-        self.data_path = "Data\\data.db"
+        if platform.system() == "Darwin":
+            self.data_path = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data/data.db"
+        else:
+            self.data_path = "Data\\data.db"
+        create_table_interface = """
+        CREATE TABLE IF NOT EXISTS interface ( "sheet_path" TEXT, "messages" TEXT, "minutes" TEXT, "checkbox" INTEGER, "image_path" TEXT, "message" TEXT, "card" TEXT );
+        """
+        create_table_sentContacts = """
+        CREATE TABLE IF NOT EXISTS sent_contacts (name TEXT, phone TEXT, status TEXT);
+        """
         self.conn = sqlite3.connect(self.data_path)
+        self.conn.execute(create_table_interface)
+        self.conn.execute(create_table_sentContacts)
+
         self.cur = self.conn.cursor()
 
 

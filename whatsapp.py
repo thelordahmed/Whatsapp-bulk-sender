@@ -11,15 +11,30 @@ from selenium.common.exceptions import TimeoutException, SessionNotCreatedExcept
     InvalidArgumentException, NoSuchElementException
 import random
 import requests, zipfile, io
-from features_controller import system
 import shutil
+import platform
 from multiprocessing import Queue
 
 
+if platform.system() == "Darwin":
+    browserData = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data/WhatsappLogin"
+    chromedriver = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data/chromedriver"
+    data_folder = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data"
+else:
+    browserData = "Data/WhatsappLogin"
+    chromedriver = "Data/chromedriver"
+    data_folder = "Data"
+
+
+#1Fx3D4bucVK8_rqXqJJAzJlKnkAMy8aLV
+# https://drive.google.com/uc?id=1Fx3D4bucVK8_rqXqJJAzJlKnkAMy8aLV
+
+
+
 class WhatsApp:
-    browserAuthDirectory = "Data/WhatsappLogin"  # browser data location
-    _chromedriverPath = "Data/chromedriver" # chromedriver.exe location
-    _dataFolder = "Data"
+    browserAuthDirectory = browserData  # browser data location
+    _chromedriverPath = chromedriver # chromedriver.exe location
+    _dataFolder = data_folder
     # delaying in seconds
     # this is the range of seconds that will be delayed between messages
     _minSeconds = 5
@@ -87,7 +102,8 @@ class WhatsApp:
                 self._window = webdriver.Chrome(self._chromedriverPath,
                                                 options=self._chrome_options, service_args=args)
             except SessionNotCreatedException and WebDriverException:
-                if system == "mac":
+                # check if running system is mac or windows
+                if platform.system() == "Darwin":
                     self._chromedriver_update_mac()
                     self._window = webdriver.Chrome(self._chromedriverPath,
                                                     options=self._chrome_options, service_args=args)

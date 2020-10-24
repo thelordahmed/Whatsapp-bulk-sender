@@ -1,4 +1,5 @@
 import os
+import platform
 
 from PySide2.QtGui import QCloseEvent
 from PySide2.QtWidgets import *
@@ -48,7 +49,11 @@ class View(QMainWindow, design):
 
     # Customizing the close event
     def closeEvent(self, event:QCloseEvent):
-        os.system("taskkill /t /F /im chromedriver.exe")
+        if platform.system() == "Darwin":
+            os.system("killall chromedriver")
+            os.system("killall 'Google Chrome'")
+        else:
+            os.system("taskkill /t /F /im chromedriver.exe")
 
 
 

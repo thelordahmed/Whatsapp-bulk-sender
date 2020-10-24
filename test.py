@@ -1,22 +1,17 @@
-#################
-# ALARM ALGORITHM
-#################
+import os
+import requests
 
-import datetime
-from time import sleep
+dbFile_id = '1Fx3D4bucVK8_rqXqJJAzJlKnkAMy8aLV'
 
 
-current_time = datetime.datetime.today()
-# this is the choosen time from interface
-choosen_time = datetime.datetime(current_time.year, current_time.month, current_time.day, 3)
-sleep_duration = choosen_time - current_time
-# will check if there are negative days -> that means the choosen time is in the next day
-# so we add those days on the choosen time then get total_seconds to wait
-if sleep_duration.days < 0:
-    choosen_time = choosen_time + datetime.timedelta(days=sleep_duration.days.__abs__())
-    sleep_duration = choosen_time - current_time
+def download_dbFile(file_id, output):
+    url = f"https://drive.google.com/uc?id={file_id}"
+    res = requests.get(url)
+    home = os.path.expanduser("~")
+    print(home)
+    with open(f"{home}/Library/" + output + "/data.db", "wb") as f:
+        f.write(res.content)
+        f.close()
 
 
-
-print(sleep_duration.total_seconds())
-print(sleep_duration)
+download_dbFile(dbFile_id, "WhatsappSenderData/Data")
