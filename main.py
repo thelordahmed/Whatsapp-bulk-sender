@@ -1,4 +1,5 @@
 import csv
+import datetime
 import os
 import platform
 import random
@@ -140,6 +141,23 @@ class Main:
         messages_sent = 0
 
         for contact in data_list:
+            if self.view.time_groupBox.isChecked() is True:
+                # start and end time check ------------
+                start_time = self.view.from_time.time().toPython()
+                end_time = self.view.to_time.time().toPython()
+                startTime_return = self.wa.startTime_check(start_time)
+                endTime_return = self.wa.endTime_check(end_time, start_time)
+                if startTime_return is not True:
+                    self.view.statusbar.showMessage(f"  ==>>  Waiting... will start sending at {start_time.strftime('%I:%M %p')} <<==  ")
+                    self.view.stop_btn.setDisabled(True)
+                    sleep(startTime_return)
+                    self.view.stop_btn.setEnabled(True)
+                if endTime_return is not True:
+                    self.view.stop_btn.setDisabled(True)
+                    self.view.statusbar.showMessage(f"  ==>>  Waiting... will start sending tomorrow at {start_time.strftime('%I:%M %p')} <<==  ")
+                    sleep(endTime_return)
+                    self.view.stop_btn.setEnabled(True)
+                # ---------------------------------------
             try:  # handeler for unknown errors
                 if self.view.state == "stopped":
                     break

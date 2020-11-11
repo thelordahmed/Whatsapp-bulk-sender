@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(776, 674)
+        MainWindow.resize(776, 694)
         MainWindow.setMinimumSize(QSize(745, 0))
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
         font = QFont()
@@ -1239,10 +1239,14 @@ class Ui_MainWindow(object):
         __qlistwidgetitem1.setBackground(brush);
         __qlistwidgetitem1.setIcon(icon3);
         icon4 = QIcon()
-        icon4.addFile(u":/white-icons/Data/imgs/white icons/icons8-about-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u":/white-icons/Data/imgs/white icons/icons8-clock-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qlistwidgetitem2 = QListWidgetItem(self.listWidget)
         __qlistwidgetitem2.setIcon(icon4);
-        __qlistwidgetitem2.setFlags(Qt.ItemIsSelectable|Qt.ItemIsEnabled);
+        icon5 = QIcon()
+        icon5.addFile(u":/white-icons/Data/imgs/white icons/icons8-about-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qlistwidgetitem3 = QListWidgetItem(self.listWidget)
+        __qlistwidgetitem3.setIcon(icon5);
+        __qlistwidgetitem3.setFlags(Qt.ItemIsSelectable|Qt.ItemIsEnabled);
         self.listWidget.setObjectName(u"listWidget")
         self.listWidget.setMinimumSize(QSize(0, 0))
         self.listWidget.setMaximumSize(QSize(16777215, 16777215))
@@ -1591,18 +1595,18 @@ class Ui_MainWindow(object):
         self.tableWidget = QTableWidget(self.report_tab)
         if (self.tableWidget.columnCount() < 3):
             self.tableWidget.setColumnCount(3)
-        icon5 = QIcon()
-        icon5.addFile(u":/white-icons/Data/imgs/white icons/icons8-contacts-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        __qtablewidgetitem = QTableWidgetItem()
-        __qtablewidgetitem.setIcon(icon5);
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         icon6 = QIcon()
-        icon6.addFile(u":/white-icons/Data/imgs/white icons/icons8-phone-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u":/white-icons/Data/imgs/white icons/icons8-contacts-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qtablewidgetitem = QTableWidgetItem()
+        __qtablewidgetitem.setIcon(icon6);
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        icon7 = QIcon()
+        icon7.addFile(u":/white-icons/Data/imgs/white icons/icons8-phone-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qtablewidgetitem1 = QTableWidgetItem()
-        __qtablewidgetitem1.setIcon(icon6);
+        __qtablewidgetitem1.setIcon(icon7);
         self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
-        __qtablewidgetitem2.setIcon(icon4);
+        __qtablewidgetitem2.setIcon(icon5);
         self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
@@ -1621,9 +1625,9 @@ class Ui_MainWindow(object):
         self.csv_btn = QPushButton(self.report_tab)
         self.csv_btn.setObjectName(u"csv_btn")
         self.csv_btn.setMaximumSize(QSize(150, 16777215))
-        icon7 = QIcon()
-        icon7.addFile(u":/white-icons/Data/imgs/white icons/icons8-save-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.csv_btn.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u":/white-icons/Data/imgs/white icons/icons8-save-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.csv_btn.setIcon(icon8)
         self.csv_btn.setIconSize(QSize(22, 22))
 
         self.horizontalLayout_9.addWidget(self.csv_btn)
@@ -1631,9 +1635,9 @@ class Ui_MainWindow(object):
         self.newsession_btn = QPushButton(self.report_tab)
         self.newsession_btn.setObjectName(u"newsession_btn")
         self.newsession_btn.setMaximumSize(QSize(150, 16777215))
-        icon8 = QIcon()
-        icon8.addFile(u":/white-icons/Data/imgs/white icons/icons8-trash-can-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.newsession_btn.setIcon(icon8)
+        icon9 = QIcon()
+        icon9.addFile(u":/white-icons/Data/imgs/white icons/icons8-trash-can-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.newsession_btn.setIcon(icon9)
         self.newsession_btn.setIconSize(QSize(19, 18))
 
         self.horizontalLayout_9.addWidget(self.newsession_btn)
@@ -1642,6 +1646,46 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.addLayout(self.horizontalLayout_9)
 
         self.tabWidget.addTab(self.report_tab, "")
+        self.schedule_tab = QWidget()
+        self.schedule_tab.setObjectName(u"schedule_tab")
+        self.time_groupBox = QGroupBox(self.schedule_tab)
+        self.time_groupBox.setObjectName(u"time_groupBox")
+        self.time_groupBox.setGeometry(QRect(100, 180, 301, 108))
+        self.time_groupBox.setCheckable(True)
+        self.time_groupBox.setChecked(False)
+        self.verticalLayout_8 = QVBoxLayout(self.time_groupBox)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.horizontalLayout_10 = QHBoxLayout()
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.label_3 = QLabel(self.time_groupBox)
+        self.label_3.setObjectName(u"label_3")
+
+        self.horizontalLayout_10.addWidget(self.label_3)
+
+        self.from_time = QTimeEdit(self.time_groupBox)
+        self.from_time.setObjectName(u"from_time")
+
+        self.horizontalLayout_10.addWidget(self.from_time)
+
+
+        self.verticalLayout_8.addLayout(self.horizontalLayout_10)
+
+        self.horizontalLayout_11 = QHBoxLayout()
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.label_6 = QLabel(self.time_groupBox)
+        self.label_6.setObjectName(u"label_6")
+
+        self.horizontalLayout_11.addWidget(self.label_6)
+
+        self.to_time = QTimeEdit(self.time_groupBox)
+        self.to_time.setObjectName(u"to_time")
+
+        self.horizontalLayout_11.addWidget(self.to_time)
+
+
+        self.verticalLayout_8.addLayout(self.horizontalLayout_11)
+
+        self.tabWidget.addTab(self.schedule_tab, "")
         self.about_tab = QWidget()
         self.about_tab.setObjectName(u"about_tab")
         self.verticalLayout_9 = QVBoxLayout(self.about_tab)
@@ -1684,9 +1728,9 @@ class Ui_MainWindow(object):
         self.start_btn = QPushButton(self.centralwidget)
         self.start_btn.setObjectName(u"start_btn")
         self.start_btn.setMaximumSize(QSize(16777215, 45))
-        icon9 = QIcon()
-        icon9.addFile(u":/black-icons/Data/imgs/black icons/icons8-play-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.start_btn.setIcon(icon9)
+        icon10 = QIcon()
+        icon10.addFile(u":/black-icons/Data/imgs/black icons/icons8-play-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.start_btn.setIcon(icon10)
         self.start_btn.setIconSize(QSize(34, 48))
 
         self.horizontalLayout_7.addWidget(self.start_btn)
@@ -1694,9 +1738,9 @@ class Ui_MainWindow(object):
         self.stop_btn = QPushButton(self.centralwidget)
         self.stop_btn.setObjectName(u"stop_btn")
         self.stop_btn.setMaximumSize(QSize(16777215, 45))
-        icon10 = QIcon()
-        icon10.addFile(u":/black-icons/Data/imgs/black icons/icons8-stop-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.stop_btn.setIcon(icon10)
+        icon11 = QIcon()
+        icon11.addFile(u":/black-icons/Data/imgs/black icons/icons8-stop-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.stop_btn.setIcon(icon11)
         self.stop_btn.setIconSize(QSize(38, 37))
 
         self.horizontalLayout_7.addWidget(self.stop_btn)
@@ -1728,7 +1772,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.listWidget.currentRowChanged.connect(self.tabWidget.setCurrentIndex)
 
-        self.listWidget.setCurrentRow(-1)
+        self.listWidget.setCurrentRow(0)
         self.tabWidget.setCurrentIndex(0)
 
 
@@ -1746,7 +1790,9 @@ class Ui_MainWindow(object):
         ___qlistwidgetitem1 = self.listWidget.item(1)
         ___qlistwidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Report", None));
         ___qlistwidgetitem2 = self.listWidget.item(2)
-        ___qlistwidgetitem2.setText(QCoreApplication.translate("MainWindow", u"About", None));
+        ___qlistwidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Schedule", None));
+        ___qlistwidgetitem3 = self.listWidget.item(3)
+        ___qlistwidgetitem3.setText(QCoreApplication.translate("MainWindow", u"About", None));
         self.listWidget.setSortingEnabled(__sortingEnabled)
 
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Choose the contacts source", None))
@@ -1786,6 +1832,10 @@ class Ui_MainWindow(object):
         self.csv_btn.setText(QCoreApplication.translate("MainWindow", u"CSV Export", None))
         self.newsession_btn.setText(QCoreApplication.translate("MainWindow", u"Start New Session", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.report_tab), QCoreApplication.translate("MainWindow", u"Tab 2", None))
+        self.time_groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Time Range", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"From", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"To", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.schedule_tab), QCoreApplication.translate("MainWindow", u"Page", None))
         self.textBrowser_2.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

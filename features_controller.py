@@ -3,6 +3,7 @@
 
 # extra
 multi_messages_enabled = False
+scheduled_sending = False
 # Standard Package
 contact_card_enabled = True
 attachments_enabled = True

@@ -1,6 +1,7 @@
 import os
 import platform
 
+from PySide2 import QtCore
 from PySide2.QtGui import QCloseEvent
 from PySide2.QtWidgets import *
 from webbrowser import open
@@ -18,6 +19,7 @@ class View(QMainWindow, design):
         self.state = "stopped"
         self.statusbar.showMessage(f"   >> Ready! <<")
 
+
         if features_controller.contact_card_enabled is False:
             self.label_5.setDisabled(True)
             self.contactCard_le.setDisabled(True)
@@ -31,7 +33,10 @@ class View(QMainWindow, design):
         if features_controller.show_columns_note is False:
             self.textBrowser.hide()
 
-    ######################################
+        if features_controller.scheduled_sending is False:
+            self.listWidget.item(2).setFlags(QtCore.Qt.NoItemFlags)
+
+######################################
 ######### SLOTS ######################
     
     def startbtn_process(self):

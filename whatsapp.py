@@ -13,8 +13,9 @@ import random
 import requests, zipfile, io
 import shutil
 import platform
+from datetime import datetime, timedelta
+from datetime import time as time_obj
 from multiprocessing import Queue
-
 
 if platform.system() == "Darwin":
     browserData = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data/WhatsappLogin"
@@ -24,10 +25,6 @@ else:
     browserData = "Data/WhatsappLogin"
     chromedriver = "Data/chromedriver"
     data_folder = "Data"
-
-
-#1Fx3D4bucVK8_rqXqJJAzJlKnkAMy8aLV
-# https://drive.google.com/uc?id=1Fx3D4bucVK8_rqXqJJAzJlKnkAMy8aLV
 
 
 
@@ -317,3 +314,52 @@ class WhatsApp:
             return False
         except Exception:
             pass
+
+    @staticmethod
+    def is_it_today(date):
+        """
+        :param date: datetime object
+        :return: True if today - None if not today or empty cell
+        """
+        if date is not None:
+            today = datetime(year=datetime.now().year, month=datetime.now().month, day=datetime.now().day)
+            if date == today:
+                return True
+
+    @staticmethod
+    def startTime_check(time):
+        """
+        :param time: datetime.time object
+        :return: True if it's now or past time & returns total seconds if it's future time (to use in sleep method)
+        """
+        if time is None:
+            return None
+        now = datetime.now()
+        time = datetime(year=now.year, month=now.month, day=now.day, hour=time.hour, minute=time.minute)
+        if now >= time:
+            return True
+        else:
+            sleep_duration = time - now
+            if sleep_duration.days < 0:
+                sleep_duration = time - now
+            return sleep_duration.total_seconds()
+
+    @staticmethod
+    def endTime_check(time, start_time):
+        """
+        :param start_time: datetime.time object
+        :param time: datetime.time object
+        :return: True if current hour is less than end time & returns total seconds till start time on next day (to use in sleep method)
+        """
+        if time is None:
+            return None
+        now = datetime.now()
+        time = datetime(year=now.year, month=now.month, day=now.day, hour=time.hour, minute=time.minute)
+        start_time = datetime(year=now.year, month=now.month, day=now.day, hour=start_time.hour, minute=start_time.minute)
+        if now < time:
+            return True
+        else:
+            day_seconds = 86400
+            sleep_duration = now - start_time
+            sleep_duration = day_seconds - sleep_duration.total_seconds()
+            return sleep_duration

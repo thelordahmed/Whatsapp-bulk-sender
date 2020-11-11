@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>776</width>
-    <height>674</height>
+    <height>694</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -1378,7 +1378,7 @@ background:rgb(71, 71, 71)
          <bool>false</bool>
         </property>
         <property name="currentRow">
-         <number>-1</number>
+         <number>0</number>
         </property>
         <property name="sortingEnabled">
          <bool>false</bool>
@@ -1414,6 +1414,15 @@ background:rgb(71, 71, 71)
          <property name="icon">
           <iconset resource="images.qrc">
            <normaloff>:/white-icons/Data/imgs/white icons/icons8-combo-chart-500.png</normaloff>:/white-icons/Data/imgs/white icons/icons8-combo-chart-500.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Schedule</string>
+         </property>
+         <property name="icon">
+          <iconset resource="images.qrc">
+           <normaloff>:/white-icons/Data/imgs/white icons/icons8-clock-500.png</normaloff>:/white-icons/Data/imgs/white icons/icons8-clock-500.png</iconset>
          </property>
         </item>
         <item>
@@ -2123,6 +2132,60 @@ p, li { white-space: pre-wrap; }
            </layout>
           </item>
          </layout>
+        </widget>
+        <widget class="QWidget" name="schedule_tab">
+         <attribute name="title">
+          <string>Page</string>
+         </attribute>
+         <widget class="QGroupBox" name="time_groupBox">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>180</y>
+            <width>301</width>
+            <height>108</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Time Range</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_10">
+             <item>
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>From</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTimeEdit" name="from_time"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_11">
+             <item>
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>To</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTimeEdit" name="to_time"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
         </widget>
         <widget class="QWidget" name="about_tab">
          <attribute name="title">
