@@ -282,12 +282,15 @@ class WhatsApp:
 
         ok_btn = '//*[@id="app"]/div/span[2]/div/span/div/div/div/div/div/div[2]/div'
         loading_div = '//*[@id="startup"]/div'
+        trying_to_connect_phone = '//div[@data-animate-modal-popup="true"]/div/div[2]/hr'
         # waiting for loading div to disappear
+        # TODO - this loading may stay forever... I need to take care of this
         WebDriverWait(self._window, 60).until(ec.invisibility_of_element_located(
             (By.XPATH, loading_div)))
         sleep(2)
+        # if "Trying to Connect Phone" appeared => wait for it to disappear
+        WebDriverWait(self._window, 3600).until(ec.invisibility_of_element_located((By.XPATH, trying_to_connect_phone)))
         try:
-            # TODO -- "trying to connect phone" may appear, I need to take care of this
             WebDriverWait(self._window, random.randint(5, 10)).until(ec.visibility_of_element_located(
                 (By.XPATH, ok_btn))).click()
             return False
