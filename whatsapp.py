@@ -30,7 +30,7 @@ else:
 
 class WhatsApp:
     browserAuthDirectory = browserData  # browser data location
-    _chromedriverPath = chromedriver # chromedriver.exe location
+    _chromedriverPath = chromedriver  # chromedriver.exe location
     _dataFolder = data_folder
     # delaying in seconds
     # this is the range of seconds that will be delayed between messages
@@ -63,6 +63,7 @@ class WhatsApp:
     computer_alert = '//span[@data-icon="alert-computer"]'
     backBlue_btn = '//span[@data-icon="back-blue"]/ancestor::button'
     backBlue_btn2 = '//span[@data-icon="search"]/ancestor::button'
+    caption_input = '//span//div[contains(@class, "selectable-text")and contains(@class, "copyable-text")]'
 
 
     # updating chromedriver automatically
@@ -187,13 +188,28 @@ class WhatsApp:
         sleep(1)
         message_input.send_keys(Keys.ENTER)
 
+    def _sending_sameFormat_captionInput(self, message):
+        message_lines = message.split("\n")
+        message_input = self._window.find_element_by_xpath(self.caption_input)
+        actions = ActionChains(self._window)
+        actions.move_to_element(message_input)
+        actions.click()
+        for line in message_lines:
+            actions.send_keys(line)
+            actions.key_down(Keys.SHIFT)
+            actions.key_down(Keys.ENTER)
+            actions.key_up(Keys.SHIFT)
+            actions.key_up(Keys.ENTER)
+        actions.perform()
+        sleep(1)
+
 
     def sending_image(self, paths):
         for path in paths:
             try:
-                sleep(random.randint(1,3))
+                sleep(random.randint(1, 3))
                 self._window.find_element_by_xpath(self._attachment).click()
-                sleep(random.randint(1,3))
+                sleep(random.randint(1, 3))
             except Exception as e:
                 print(e)
                 print("clicking attachment button error")
@@ -208,7 +224,7 @@ class WhatsApp:
                 print("image path is not correct")
                 return False
 
-            sleep(random.randint(2,3))
+            sleep(random.randint(2, 3))
             try:
                 try:    # fixing a bug - xpath changed
                     WebDriverWait(self._window, 10).until(ec.presence_of_element_located((By.XPATH, self._sendimagebtn2))).click()
@@ -218,7 +234,44 @@ class WhatsApp:
                 print("send btn didn't appear")
                 print("choosed image maybe not supported")
                 return False
-            sleep(random.randint(3,6))
+            sleep(random.randint(3, 6))
+
+
+    def sending_image_with_caption(self, paths, message):
+        for path in paths:
+            try:
+                sleep(random.randint(1, 3))
+                self._window.find_element_by_xpath(self._attachment).click()
+                sleep(random.randint(1, 3))
+            except Exception as e:
+                print(e)
+                print("clicking attachment button error")
+                return False
+            # waits for the image button to appear then send the path
+            try:
+                WebDriverWait(self._window, 10).until(ec.presence_of_element_located((By.CSS_SELECTOR, self._imageinput))).send_keys(path)
+            except TimeoutException:
+                print("image input button didn't appear")
+                return False
+            except InvalidArgumentException:
+                print("image path is not correct")
+                return False
+
+            sleep(random.randint(2, 3))
+            try:
+                try:    # fixing a bug - xpath changed
+                    sendBtn = WebDriverWait(self._window, 10).until(ec.presence_of_element_located((By.XPATH, self._sendimagebtn2)))
+                    self._sending_sameFormat_captionInput(message)
+                    sendBtn.click()
+                except TimeoutException:
+                    sendBtn = WebDriverWait(self._window, 10).until(ec.presence_of_element_located((By.XPATH, self._sendimagebtn)))
+                    self._sending_sameFormat_captionInput(message)
+                    sendBtn.click()
+            except TimeoutException:
+                print("send btn didn't appear")
+                print("choosed image maybe not supported")
+                return False
+            sleep(random.randint(3, 6))
 
     def sending_contact(self, contact_number):
         try:

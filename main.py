@@ -220,12 +220,17 @@ class Main:
                 #########
                 if attachments_paths_string != "":
                     attachments_paths_list = literal_eval(attachments_paths_string)
-                    self.wa.sending_image(attachments_paths_list)
+                    if self.view.caption.isChecked() is True:
+                        self.wa.sending_image_with_caption(attachments_paths_list, theMessage)
+                    else:
+                        self.wa.sending_image(attachments_paths_list)
                 # checking if one line message checked or same format
-                if self.view.oneline_rb.isChecked() is True:
-                    self.wa.sending(theMessage)
-                else:
-                    self.wa.sending_sameFormat(theMessage)
+                # and checking if caption option is active or not
+                if self.view.caption.isChecked() is False:
+                    if self.view.oneline_rb.isChecked() is True:
+                        self.wa.sending(theMessage)
+                    else:
+                        self.wa.sending_sameFormat(theMessage)
 
                 if contact_card != "":
                     self.wa.sending_contact(contact_card)

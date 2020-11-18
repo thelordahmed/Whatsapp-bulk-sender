@@ -1521,6 +1521,11 @@ class Ui_MainWindow(object):
 
         self.formLayout.setLayout(1, QFormLayout.LabelRole, self.horizontalLayout)
 
+        self.caption = QCheckBox(self.groupBox_3)
+        self.caption.setObjectName(u"caption")
+
+        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.caption)
+
 
         self.verticalLayout_5.addWidget(self.groupBox_3)
 
@@ -1816,6 +1821,7 @@ class Ui_MainWindow(object):
         self.attachments_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Contact Card:", None))
         self.contactCard_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type the number...", None))
+        self.caption.setText(QCoreApplication.translate("MainWindow", u"Send text as caption", None))
         self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"The Message", None))
         self.sameFormat_rb.setText(QCoreApplication.translate("MainWindow", u"send as one message", None))
         self.oneline_rb.setText(QCoreApplication.translate("MainWindow", u"send line by line", None))
