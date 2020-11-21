@@ -14,7 +14,7 @@ attachments_enabled = True
 ########### Functionilty #############
 
 TYPE = "default"
-version = "2.2.1"
+version = "2.3.1"
 
 if TYPE == "default":
     # sheet settings
@@ -36,4 +36,5 @@ else:
     # Interface
     show_columns_note = True
     copyright_link = True
+
 ################################################################
