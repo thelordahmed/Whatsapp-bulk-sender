@@ -17,7 +17,6 @@ class View(QMainWindow, design):
         self.show()
         self.stop_btn.setDisabled(True)
         self.state = "stopped"
-        self.statusbar.showMessage(f"   >> Ready! <<")
 
 
         if features_controller.contact_card_enabled is False:

@@ -20,16 +20,23 @@ class Signals(QtCore.QObject):
 
 class Main:
     def __init__(self):
+        self.language = "italian"
         if platform.system() == "Darwin":
             os.system("mkdir ~/Library/WhatsappSenderData")
             os.system("mkdir ~/Library/WhatsappSenderData/Data")
         self.model = Model()
         self.view = View()
         self.wa = WhatsApp()
-        self.status = {
-            "sent": "Message Sent!",
-            "no whatsapp": "Number is not found on whatsapp",
-        }
+        if self.language == "italian":
+            self.status = {
+                "sent": "Messaggio inviato!",
+                "no whatsapp": "Numero non trovato su whatsapp",
+            }
+        else:
+            self.status = {
+                "sent": "Message Sent!",
+                "no whatsapp": "Number is not found on whatsapp",
+            }
         # Continue last sending session confirmation
         if len(self.model.getAllRecords()) != 0:
             res = self.view.confirmMessage("Continue last session?",
@@ -123,7 +130,11 @@ class Main:
 
         # disabling start button and activating stop button
         self.view.startbtn_process()
-        self.view.statusbar.showMessage(f"   >> Opening WhatsApp Web... <<")
+        if self.language == "italian":
+            self.view.statusbar.showMessage(f"   >> Apertura di WhatsApp Web... <<")
+
+        else:
+            self.view.statusbar.showMessage(f"   >> Opening WhatsApp Web... <<")
 
         # handling browser error
         try:
@@ -132,8 +143,12 @@ class Main:
             print(e)
             self.view.state = "error"
             self.view.stopbtn_process()
-            self.view.statusbar.showMessage(
-                "There's something wrong with Chrome browser .. please try updating google chrome")
+            if self.language == "italian":
+                self.view.statusbar.showMessage(
+                    "C'è qualcosa di sbagliato nel browser Chrome .. prova ad aggiornare Google Chrome")
+            else:
+                self.view.statusbar.showMessage(
+                    "There's something wrong with Chrome browser .. please try updating google chrome")
 
         # switching to report panel
         self.view.listWidget.setCurrentRow(1)
@@ -148,13 +163,20 @@ class Main:
                 startTime_return = self.wa.startTime_check(start_time)
                 endTime_return = self.wa.endTime_check(end_time, start_time)
                 if startTime_return is not True:
-                    self.view.statusbar.showMessage(f"  ==>>  Waiting... will start sending at {start_time.strftime('%I:%M %p')} <<==  ")
+                    if self.language == "italian":
+                        self.view.statusbar.showMessage(
+                            f"  ==>>  In attesa ... inizierà l'invio alle {start_time.strftime('%I:%M %p')} <<==  ")
+                    else:
+                        self.view.statusbar.showMessage(f"  ==>>  Waiting... will start sending at {start_time.strftime('%I:%M %p')} <<==  ")
                     self.view.stop_btn.setDisabled(True)
                     sleep(startTime_return)
                     self.view.stop_btn.setEnabled(True)
                 if endTime_return is not True:
                     self.view.stop_btn.setDisabled(True)
-                    self.view.statusbar.showMessage(f"  ==>>  Waiting... will start sending tomorrow at {start_time.strftime('%I:%M %p')} <<==  ")
+                    if self.language == "italian":
+                        self.view.statusbar.showMessage(f"  ==>>  In attesa ... inizierà l'invio domani alle {start_time.strftime('%I:%M %p')} <<==  ")
+                    else:
+                        self.view.statusbar.showMessage(f"  ==>>  Waiting... will start sending tomorrow at {start_time.strftime('%I:%M %p')} <<==  ")
                     sleep(endTime_return)
                     self.view.stop_btn.setEnabled(True)
                 # ---------------------------------------
@@ -163,7 +185,11 @@ class Main:
                     break
                 if int(self.view.messages_sbox.text()) == messages_sent:
                     mins = self.view.minutes_sbox.text()
-                    self.view.statusbar.showMessage(f"   >> Reached the Sending Limit .. waiting for {mins} mins <<")
+                    if self.language == "italian":
+                        self.view.statusbar.showMessage(f"   >> Raggiunto il limite di invio ... in attesa di {mins} minuti <<")
+
+                    else:
+                        self.view.statusbar.showMessage(f"   >> Reached the Sending Limit .. waiting for {mins} mins <<")
                     sleep(int(self.view.minutes_sbox.text()) * 60)
                     messages_sent = 0
                 name = contact[0]
@@ -179,7 +205,10 @@ class Main:
                     extra_variable = contact[2]
                 else:
                     extra_variable = ""
-                self.view.statusbar.showMessage(f"   >> Sending to {name} <<")
+                if self.language == "italian":
+                    self.view.statusbar.showMessage(f"   >> Invio a {name} <<")
+                else:
+                    self.view.statusbar.showMessage(f"   >> Sending to {name} <<")
                 if model2.findContact(phone) is not None:
                     continue  # skip if number found in the database
                 attachments_paths_string = self.view.attachments_le.text()
@@ -204,11 +233,9 @@ class Main:
                             if self.wa.unsaved_number_search(phone) is False:
                                 if self.connectionLoop(phone, "unsaved") == "search is already false":
                                     self.skipToNextNumber(name, phone, "no whatsapp", model2)
-                                    self.view.statusbar.showMessage(f"   >> Number is not found on whatsapp! <<")
                                     continue
                         else:
                             self.skipToNextNumber(name, phone, "no whatsapp", model2)
-                            self.view.statusbar.showMessage(f"   >> Number is not found on whatsapp! <<")
                             continue
                     else:
                         pass
@@ -236,7 +263,6 @@ class Main:
                     self.wa.sending_contact(contact_card)
                 messages_sent += 1
 
-                self.view.statusbar.showMessage(f"   >> Message Sent Successfully! <<")
                 self.skipToNextNumber(name, phone, "sent", model2)
             except Exception as e:
                 self.view.state = "error"
@@ -246,12 +272,24 @@ class Main:
         # -------------------- Finished behaviour ------------------------
         if self.view.state == "stopped":
             self.view.stopbtn_process()
-            self.view.statusbar.showMessage(f"   >> Stopped! <<")
+            if self.language == "italian":
+                self.view.statusbar.showMessage(f"   >> Fermato! <<")
+
+            else:
+                self.view.statusbar.showMessage(f"   >> Stopped! <<")
         elif self.view.state == "error":
             self.view.stopbtn_process()
-            self.view.statusbar.showMessage(f"   >> something wrong happened.. please restart the bot and try again!<<")
+            if self.language == "italian":
+                self.view.statusbar.showMessage(f"   >> è successo qualcosa di sbagliato .. riavvia il bot e riprova!! <<")
+
+            else:
+                self.view.statusbar.showMessage(
+                    f"   >> something wrong happened.. please restart the bot and try again!<<")
         else:
-            self.view.statusbar.showMessage(f"   >> Sending Session Completed Successfully! <<")
+            if self.language == "italian":
+                self.view.statusbar.showMessage(f"   >> Invio della sessione completato con successo! <<")
+            else:
+                self.view.statusbar.showMessage(f"   >> Sending Session Completed Successfully! <<")
             self.view.stopbtn_process()
             self.view.state = "stopped"
         # ---------------------------------------------------------------
@@ -273,7 +311,10 @@ class Main:
     def connectionLoop(self, phone, unsavedOrNormal="normal"):
         if self.wa.connectionCheck() is False:
             while self.wa.connectionCheck() is False and self.view.state == "started":
-                self.view.statusbar.showMessage("   **** Connection Lost .. trying to connect in 5 seconds ****", 3)
+                if self.language == "italian":
+                    self.view.statusbar.showMessage("   **** Connessione persa .. tentativo di connessione in 5 secondi ****", 3)
+                else:
+                    self.view.statusbar.showMessage("   **** Connection Lost .. trying to connect in 5 seconds ****", 3)
                 sleep(5)
             # when connection is back - try to search the same number again
             if unsavedOrNormal == "nomral":
