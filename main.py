@@ -39,8 +39,12 @@ class Main:
             }
         # Continue last sending session confirmation
         if len(self.model.getAllRecords()) != 0:
-            res = self.view.confirmMessage("Continue last session?",
-                                           "Do you want to Continue the last sending session?")
+            if self.language == "italian":
+                res = self.view.confirmMessage("Continuare l'ultima sessione?",
+                                               "Vuoi continuare l'ultima sessione di invio?")
+            else:
+                res = self.view.confirmMessage("Continue last session?",
+                                               "Do you want to Continue the last sending session?")
             if res is True:
                 values = self.model.getInterfaceValues()
                 self.view.loadInterfaceValues(values)
@@ -72,7 +76,11 @@ class Main:
         ###############################################
 
     def newSessionFunc(self):
-        res = self.view.confirmMessage("clear current session data?", "Do you want to start a new session?")
+        if self.language == "italian":
+            res = self.view.confirmMessage("cancellare i dati della sessione corrente?", "Vuoi iniziare una nuova sessione?")
+
+        else:
+            res = self.view.confirmMessage("clear current session data?", "Do you want to start a new session?")
         if res is True:
             self.model.clearDatabase()
             self.view.tableWidget.setRowCount(0)
