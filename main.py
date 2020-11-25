@@ -10,7 +10,7 @@ from view import View
 from whatsapp import WhatsApp
 from threading import Thread
 from ast import literal_eval
-from features_controller import country_code, extra_var, copyright_link
+from features_controller import country_code, extra_var, copyright_link, language
 
 
 
@@ -20,10 +20,12 @@ class Signals(QtCore.QObject):
 
 class Main:
     def __init__(self):
-        self.language = "italian"
+        self.language = language
         if platform.system() == "Darwin":
             os.system("mkdir ~/Library/WhatsappSenderData")
             os.system("mkdir ~/Library/WhatsappSenderData/Data")
+        else:
+            os.system("mkdir Data")
         self.model = Model()
         self.view = View()
         self.wa = WhatsApp()

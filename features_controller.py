@@ -3,7 +3,7 @@
 
 # extra
 multi_messages_enabled = False
-scheduled_sending = False
+scheduled_sending = True
 # Standard Package
 contact_card_enabled = True
 attachments_enabled = True
@@ -15,6 +15,7 @@ attachments_enabled = True
 
 TYPE = "default"
 version = "2.3.1"
+language = "en"
 
 if TYPE == "default":
     # sheet settings
