@@ -10,7 +10,7 @@ from view import View
 from whatsapp import WhatsApp
 from threading import Thread
 from ast import literal_eval
-from features_controller import country_code, extra_var, copyright_link, language
+from features_controller import country_code, extra_var, copyright_link, language, demo
 
 
 
@@ -165,6 +165,8 @@ class Main:
 
         messages_sent = 0
 
+        if demo is True:
+            data_list = data_list[:3]
         for contact in data_list:
             if self.view.time_groupBox.isChecked() is True:
                 # start and end time check ------------
