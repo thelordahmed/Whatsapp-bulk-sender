@@ -18,10 +18,10 @@ multi_messages_enabled = False
 
 TYPE = "default"
 version = "2.3.1"
-language = "italian"
+language = "en"
 demo = True
 # custom functionality
-repeat_every_24h = True
+repeat_every_24h = False
 
 if TYPE == "default":
     # sheet settings

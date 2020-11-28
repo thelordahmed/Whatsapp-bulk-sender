@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'italian.ui'
+## Form generated from reading UI file 'untitled.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.1
 ##
@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(809, 702)
+        MainWindow.resize(776, 694)
         MainWindow.setMinimumSize(QSize(745, 0))
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
         font = QFont()
@@ -1644,7 +1644,7 @@ class Ui_MainWindow(object):
 
         self.newsession_btn = QPushButton(self.report_tab)
         self.newsession_btn.setObjectName(u"newsession_btn")
-        self.newsession_btn.setMaximumSize(QSize(200, 16777215))
+        self.newsession_btn.setMaximumSize(QSize(150, 16777215))
         icon9 = QIcon()
         icon9.addFile(u":/white-icons/Data/imgs/white icons/icons8-trash-can-500.png", QSize(), QIcon.Normal, QIcon.Off)
         self.newsession_btn.setIcon(icon9)
@@ -1782,7 +1782,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.listWidget.currentRowChanged.connect(self.tabWidget.setCurrentIndex)
 
-        self.listWidget.setCurrentRow(-1)
+        self.listWidget.setCurrentRow(0)
         self.tabWidget.setCurrentIndex(0)
 
 
@@ -1796,57 +1796,57 @@ class Ui_MainWindow(object):
         __sortingEnabled = self.listWidget.isSortingEnabled()
         self.listWidget.setSortingEnabled(False)
         ___qlistwidgetitem = self.listWidget.item(0)
-        ___qlistwidgetitem.setText(QCoreApplication.translate("MainWindow", u"principale", None));
+        ___qlistwidgetitem.setText(QCoreApplication.translate("MainWindow", u"Main", None));
         ___qlistwidgetitem1 = self.listWidget.item(1)
-        ___qlistwidgetitem1.setText(QCoreApplication.translate("MainWindow", u"rapporti", None));
+        ___qlistwidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Report", None));
         ___qlistwidgetitem2 = self.listWidget.item(2)
-        ___qlistwidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Programma", None));
+        ___qlistwidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Schedule", None));
         ___qlistwidgetitem3 = self.listWidget.item(3)
-        ___qlistwidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Di", None));
+        ___qlistwidgetitem3.setText(QCoreApplication.translate("MainWindow", u"About", None));
         self.listWidget.setSortingEnabled(__sortingEnabled)
 
-        self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Scegli la fonte dei contatti", None))
+        self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Choose the contacts source", None))
         self.textBrowser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'arial'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffffff;\">*** </span><span style=\" font-size:13pt; font-weight:600;\">importante</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffffff;\"> ***</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:13pt; color:#fffb00;\">Nomi</span><span style=\" font-size:13pt;\"> nella colonna A (facoltativo)</sp"
-                        "an></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:13pt; color:#fffb00;\">Numeri di telefono</span><span style=\" font-size:13pt;\"> nella colonna B</span></p></body></html>", None))
-        self.sheet_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"xlsx o CSV (separato da virgola)", None))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffffff;\">*** IMPORTANT ***</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;\">Names</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> in Column A </span><span style=\" font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:600;\""
+                        ">(optional)</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;\">Phone numbers</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> in Column B</span></p></body></html>", None))
+        self.sheet_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"xlsx or CSV (comma seperated)", None))
         self.sheet_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
-        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"impostazioni", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"invia", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"messaggi ogni", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"minuti", None))
-        self.checkBox.setText(QCoreApplication.translate("MainWindow", u"Invia a numeri che non vengono salvati nella rubrica", None))
-        self.repeat_sending.setText(QCoreApplication.translate("MainWindow", u"ripetere l'invio ogni 24 ore", None))
-        self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Invia allegati", None))
-        self.attachments_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Immagini, video, documenti", None))
+        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Settings", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Send ", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Messages Every", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Minutes", None))
+        self.checkBox.setText(QCoreApplication.translate("MainWindow", u"Send to numbers that are not saved in phone book", None))
+        self.repeat_sending.setText(QCoreApplication.translate("MainWindow", u"Repeat sending every 24 hours", None))
+        self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Send Attachments", None))
+        self.attachments_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Images, videos, documents", None))
         self.attachments_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Scheda di contatto:", None))
-        self.contactCard_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Digita il numero ...", None))
-        self.caption.setText(QCoreApplication.translate("MainWindow", u"Invia testo come didascalia", None))
-        self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"Il messaggio", None))
-        self.sameFormat_rb.setText(QCoreApplication.translate("MainWindow", u"inviare come un messaggio", None))
-        self.oneline_rb.setText(QCoreApplication.translate("MainWindow", u"inviare riga per riga", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"aggiungere {name}", None))
-        self.multi_messages_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Scegli pi\u00f9 messaggi - solo txt (opzionale)", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Contact Card:", None))
+        self.contactCard_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type the number...", None))
+        self.caption.setText(QCoreApplication.translate("MainWindow", u"Send text as caption", None))
+        self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"The Message", None))
+        self.sameFormat_rb.setText(QCoreApplication.translate("MainWindow", u"send as one message", None))
+        self.oneline_rb.setText(QCoreApplication.translate("MainWindow", u"send line by line", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Append {name}", None))
+        self.multi_messages_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Choose multiple messages - txt only (optional)", None))
         self.multi_messages_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.main_tab), QCoreApplication.translate("MainWindow", u"Tab 1", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Name", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Telefono", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Phone", None));
         ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Stato", None));
-        self.csv_btn.setText(QCoreApplication.translate("MainWindow", u"Esportazione CSV", None))
-        self.newsession_btn.setText(QCoreApplication.translate("MainWindow", u"Inizia una nuova sessione", None))
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Status", None));
+        self.csv_btn.setText(QCoreApplication.translate("MainWindow", u"CSV Export", None))
+        self.newsession_btn.setText(QCoreApplication.translate("MainWindow", u"Start New Session", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.report_tab), QCoreApplication.translate("MainWindow", u"Tab 2", None))
-        self.time_groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Intervallo di tempo", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"A partire dal", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Per", None))
+        self.time_groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Time Range", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"From", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"To", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.schedule_tab), QCoreApplication.translate("MainWindow", u"Page", None))
         self.textBrowser_2.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -1856,7 +1856,7 @@ class Ui_MainWindow(object):
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;\"><br /></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;\"><br /></p>\n"
 "<p align=\"center\" style=\" m"
-                        "argin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt; font-weight:600;\">Grazie per aver utilizzato il mio software</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;\"> :)</span></p></body></html>", None))
+                        "argin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;\">Thanks for using my software :)</span></p></body></html>", None))
         self.textBrowser_4.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -1865,18 +1865,18 @@ class Ui_MainWindow(object):
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;\"><br /></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;\"><br /></p>\n"
 "<p align=\"center\" style=\" m"
-                        "argin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;\">- </span><span style=\" font-size:24pt; font-weight:600;\">contattami</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;\"> -</span></p>\n"
+                        "argin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;\">- Contact Me -</span></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:16pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#00ff7f;\">Whatsapp</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> : </span><a href=\"https://web.whatsapp.com/send?phone=201120641378\"><span style=\" font-fam"
-                        "ily:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;\">+201120641378</span></a></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#00ff7f;\">Whatsapp</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> : </span><a href=\"https://web.whatsapp.com/send?phone=201120641378\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;\">+201120641378</span></a></p>\n"
+"<p align=\"center\" style=\""
+                        "-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#5e81ff;\">Facebook</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> : </span><a href=\"https://www.facebook.com/lord.ahmed110\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;\">fb.com/lord.ahmed110</span></a></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block"
-                        "-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffaa00;\">Fiverr</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> : </span><a href=\"https://www.fiverr.com/lordahmed\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;\">Fiverr.com/lordahmed</span></a></p></body></html>", None))
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-"
+                        "top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffaa00;\">Fiverr</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> : </span><a href=\"https://www.fiverr.com/lordahmed\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;\">Fiverr.com/lordahmed</span></a></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.about_tab), QCoreApplication.translate("MainWindow", u"Page", None))
         self.start_btn.setText("")
         self.stop_btn.setText("")
-        self.logout_btn.setText(QCoreApplication.translate("MainWindow", u"Esci dall'attuale Whatsapp", None))
+        self.logout_btn.setText(QCoreApplication.translate("MainWindow", u"Logout from current Whatsapp", None))
     # retranslateUi
 
