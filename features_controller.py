@@ -18,7 +18,7 @@ version = "2.3.1"
 language = "en"
 demo = False
 # custom functionality
-repeat_every_24h = False
+repeat_every_24h = True
 
 if TYPE == "default":
     # sheet settings

@@ -10,7 +10,7 @@ from view import View
 from whatsapp import WhatsApp
 from threading import Thread
 from ast import literal_eval
-from features_controller import country_code, extra_var, copyright_link, language, demo
+from features_controller import country_code, extra_var, copyright_link, language, demo, repeat_every_24h
 
 
 
@@ -281,12 +281,24 @@ class Main:
                 print(e)
                 break
 
+        # Custom functionlity
+        # -------- sleep 24 hours then clear the data base and resend all messages -----------
+        if repeat_every_24h is True and self.view.state != "stopped":
+            if self.language == "italian":
+                self.view.statusbar.showMessage(f"   >> Completato, inizierà a inviare di nuovo tra 24 ore! <<")
+            else:
+                self.view.statusbar.showMessage(f"   >> Completed, will start sending again in 24 hours! <<")
+            # sleep(86400)
+            sleep(5)
+            model2.clearDatabase()
+            self.view.tableWidget.setRowCount(0)
+            self.process()
+
         # -------------------- Finished behaviour ------------------------
         if self.view.state == "stopped":
             self.view.stopbtn_process()
             if self.language == "italian":
                 self.view.statusbar.showMessage(f"   >> Fermato! <<")
-
             else:
                 self.view.statusbar.showMessage(f"   >> Stopped! <<")
         elif self.view.state == "error":
