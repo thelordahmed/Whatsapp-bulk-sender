@@ -283,16 +283,15 @@ class Main:
 
         # Custom functionlity
         # -------- sleep 24 hours then clear the data base and resend all messages -----------
-        if repeat_every_24h is True and self.view.state != "stopped":
+        if self.view.repeat_sending.isChecked() is True and self.view.state != "stopped":
             if self.language == "italian":
                 self.view.statusbar.showMessage(f"   >> Completato, inizierà a inviare di nuovo tra 24 ore! <<")
             else:
                 self.view.statusbar.showMessage(f"   >> Completed, will start sending again in 24 hours! <<")
-            # sleep(86400)
-            sleep(5)
+            sleep(86400)
             model2.clearDatabase()
             self.view.tableWidget.setRowCount(0)
-            self.process()
+            self.process()  # Recursive function
 
         # -------------------- Finished behaviour ------------------------
         if self.view.state == "stopped":

@@ -1,22 +1,25 @@
 #####################################
 ########## Features #################
+#####################################
 
-# extra
-multi_messages_enabled = False
-scheduled_sending = False
 # Standard Package
 contact_card_enabled = True
 attachments_enabled = True
+# Premium Package
+scheduled_sending = False
+#
+# extra
+multi_messages_enabled = False
+
 
 ######################################
-#--------------------------------------------------------------------------------
-######################################
 ########### Functionilty #############
+######################################
 
 TYPE = "default"
 version = "2.3.1"
-language = "en"
-demo = False
+language = "italian"
+demo = True
 # custom functionality
 repeat_every_24h = True
 

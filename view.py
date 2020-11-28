@@ -17,6 +17,9 @@ class View(QMainWindow, design):
         self.show()
         self.stop_btn.setDisabled(True)
         self.state = "stopped"
+        if features_controller.repeat_every_24h is False:
+            self.repeat_sending.setDisabled(True)
+            self.repeat_sending.setStyleSheet("color:grey")
 
 
         if features_controller.contact_card_enabled is False:
