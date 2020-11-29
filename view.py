@@ -20,11 +20,15 @@ class View(QMainWindow, design):
         if features_controller.repeat_every_24h is False:
             self.repeat_sending.setDisabled(True)
             self.repeat_sending.setStyleSheet("color:grey")
+        if features_controller.demo is True:
+            self.setWindowTitle(f"WhatsApp Bulk Sender {features_controller.version} ******** (((( DEMO VERSION - 3 messages maximum ))))")
+        else:
+            self.setWindowTitle(f"WhatsApp Bulk Sender {features_controller.version}")
 
 
         if features_controller.contact_card_enabled is False:
-            self.label_5.setDisabled(True)
-            self.contactCard_le.setDisabled(True)
+            self.label_5.hide()
+            self.contactCard_le.hide()
 
         if features_controller.attachments_enabled is False:
             self.groupBox_3.setDisabled(True)

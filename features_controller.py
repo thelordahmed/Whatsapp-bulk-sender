@@ -3,13 +3,22 @@
 #####################################
 
 # Standard Package
-contact_card_enabled = True
 attachments_enabled = True
+contact_card_enabled = False    # a bug needs to be fixed on mac first
 # Premium Package
 scheduled_sending = False
 #
-# extra
-multi_messages_enabled = False
+#
+#
+packages = ["normal", "standard", "premium"]
+package = packages[0]   # CHOOSE WHICH PACKAGE TO COMPILE
+# extras
+multi_messages_enabled = True
+repeat_every_24h = False
+extra_var = None  # assign None to disable it. to activate it, put the column number
+
+
+
 
 
 ######################################
@@ -17,11 +26,9 @@ multi_messages_enabled = False
 ######################################
 
 TYPE = "default"
-version = "2.3.1"
+version = "2.4.1"
 language = "en"
-demo = True
-# custom functionality
-repeat_every_24h = False
+demo = False
 
 if TYPE == "default":
     # sheet settings
@@ -29,7 +36,6 @@ if TYPE == "default":
     name_row = 1
     phone_row = 2
     country_code = None  # assign None to ignore it
-    extra_var = None  # assign None to ignore it
     # Interface
     show_columns_note = True
     copyright_link = True
@@ -39,7 +45,6 @@ else:
     name_row = 1
     phone_row = 2
     country_code = None    # assign None to ignore it
-    extra_var = 3    # assign None to ignore it
     # Interface
     show_columns_note = True
     copyright_link = True
