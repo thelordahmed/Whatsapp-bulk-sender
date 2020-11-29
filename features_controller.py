@@ -2,33 +2,37 @@
 ########## Features #################
 #####################################
 
-# Standard Package
-attachments_enabled = True
-contact_card_enabled = False    # a bug needs to be fixed on mac first
-# Premium Package
-scheduled_sending = False
-#
-#
-#
+
 packages = ["normal", "standard", "premium"]
-package = packages[0]   # CHOOSE WHICH PACKAGE TO COMPILE
+##########################################################
+package = packages[1]   # CHOOSE WHICH PACKAGE TO COMPILE
+demo = False
+##########################################################
+if package == "normal":
+    attachments_enabled = False
+    scheduled_sending = False
+elif package == "standard":
+    attachments_enabled = True
+    scheduled_sending = False
+elif package == "premium":
+    attachments_enabled = True
+    scheduled_sending = True
 # extras
-multi_messages_enabled = True
+multi_messages_enabled = False
 repeat_every_24h = False
 extra_var = None  # assign None to disable it. to activate it, put the column number
-
-
-
 
 
 ######################################
 ########### Functionilty #############
 ######################################
 
+contact_card_enabled = False    #TODO - a bug needs to be fixed - wrong xpath
+
+
 TYPE = "default"
 version = "2.4.1"
 language = "en"
-demo = False
 
 if TYPE == "default":
     # sheet settings
