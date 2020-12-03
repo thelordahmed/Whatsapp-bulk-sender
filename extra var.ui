@@ -1493,7 +1493,7 @@ QTabWidget::tab-bar {
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0">
           <item>
-           <widget class="QFrame" name="repeat_sending">
+           <widget class="QFrame" name="frame">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
               <horstretch>1</horstretch>
@@ -1786,7 +1786,7 @@ p, li { white-space: pre-wrap; }
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="checkBox_2">
+                   <widget class="QCheckBox" name="repeat_sending">
                     <property name="text">
                      <string>Repeat sending every 24 hours</string>
                     </property>

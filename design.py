@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'untitled.ui'
+## Form generated from reading UI file 'extra var.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.1
 ##
@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(776, 694)
+        MainWindow.resize(822, 845)
         MainWindow.setMinimumSize(QSize(745, 0))
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
         font = QFont()
@@ -1195,14 +1195,9 @@ class Ui_MainWindow(object):
 "")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
-        self.centralwidget.setSizePolicy(sizePolicy)
         self.gridLayout_2 = QGridLayout(self.centralwidget)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_2.setContentsMargins(0, 0, 0, 10)
         self.commandLinkButton = QCommandLinkButton(self.centralwidget)
         self.commandLinkButton.setObjectName(u"commandLinkButton")
         self.commandLinkButton.setMaximumSize(QSize(16777215, 25))
@@ -1312,11 +1307,6 @@ class Ui_MainWindow(object):
 
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
-        self.tabWidget.setSizePolicy(sizePolicy1)
         self.tabWidget.setMaximumSize(QSize(16777215, 16777215))
         self.tabWidget.setStyleSheet(u"\n"
 "QTabWidget::tab-bar {\n"
@@ -1337,14 +1327,13 @@ class Ui_MainWindow(object):
         self.main_tab.setAutoFillBackground(False)
         self.verticalLayout_6 = QVBoxLayout(self.main_tab)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.verticalLayout_6.setContentsMargins(-1, 0, -1, 0)
         self.frame = QFrame(self.main_tab)
         self.frame.setObjectName(u"frame")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
-        sizePolicy2.setHorizontalStretch(1)
-        sizePolicy2.setVerticalStretch(1)
-        sizePolicy2.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
-        self.frame.setSizePolicy(sizePolicy2)
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(1)
+        sizePolicy.setVerticalStretch(1)
+        sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy)
         self.frame.setMinimumSize(QSize(0, 0))
         self.frame.setMaximumSize(QSize(16777215, 16777215))
         self.frame.setSizeIncrement(QSize(0, 0))
@@ -1359,11 +1348,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.setSpacing(10)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.verticalLayout_5.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.verticalLayout_5.setContentsMargins(-1, 0, -1, 0)
         self.groupBox = QGroupBox(self.frame)
         self.groupBox.setObjectName(u"groupBox")
-        sizePolicy.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
-        self.groupBox.setSizePolicy(sizePolicy)
         self.groupBox.setMaximumSize(QSize(16777215, 16777215))
         self.groupBox.setFont(font)
         self.groupBox.setStyleSheet(u"QGroupBox{\n"
@@ -1373,14 +1359,11 @@ class Ui_MainWindow(object):
         self.groupBox.setFlat(False)
         self.verticalLayout = QVBoxLayout(self.groupBox)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(-1, 5, -1, 5)
         self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
         self.textBrowser = QTextBrowser(self.groupBox)
         self.textBrowser.setObjectName(u"textBrowser")
-        sizePolicy1.setHeightForWidth(self.textBrowser.sizePolicy().hasHeightForWidth())
-        self.textBrowser.setSizePolicy(sizePolicy1)
-        self.textBrowser.setMaximumSize(QSize(16777215, 80))
+        self.textBrowser.setMaximumSize(QSize(16777215, 16777215))
         self.textBrowser.setFont(font)
         self.textBrowser.setStyleSheet(u"background:transparent;\n"
 "color:white")
@@ -1415,13 +1398,11 @@ class Ui_MainWindow(object):
 
         self.groupBox_2 = QGroupBox(self.frame)
         self.groupBox_2.setObjectName(u"groupBox_2")
-        sizePolicy.setHeightForWidth(self.groupBox_2.sizePolicy().hasHeightForWidth())
-        self.groupBox_2.setSizePolicy(sizePolicy)
         self.groupBox_2.setMaximumSize(QSize(16777215, 16777215))
         self.groupBox_2.setFont(font)
         self.verticalLayout_3 = QVBoxLayout(self.groupBox_2)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(50, 5, 50, 5)
+        self.verticalLayout_3.setContentsMargins(50, -1, 50, -1)
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.horizontalLayout_5 = QHBoxLayout()
@@ -1489,12 +1470,9 @@ class Ui_MainWindow(object):
 
         self.groupBox_3 = QGroupBox(self.frame)
         self.groupBox_3.setObjectName(u"groupBox_3")
-        sizePolicy.setHeightForWidth(self.groupBox_3.sizePolicy().hasHeightForWidth())
-        self.groupBox_3.setSizePolicy(sizePolicy)
         self.groupBox_3.setMaximumSize(QSize(16777215, 16777215))
         self.formLayout = QFormLayout(self.groupBox_3)
         self.formLayout.setObjectName(u"formLayout")
-        self.formLayout.setContentsMargins(-1, 5, -1, 5)
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.attachments_le = QLineEdit(self.groupBox_3)
@@ -1536,13 +1514,10 @@ class Ui_MainWindow(object):
 
         self.groupBox_4 = QGroupBox(self.frame)
         self.groupBox_4.setObjectName(u"groupBox_4")
-        sizePolicy.setHeightForWidth(self.groupBox_4.sizePolicy().hasHeightForWidth())
-        self.groupBox_4.setSizePolicy(sizePolicy)
         self.groupBox_4.setMaximumSize(QSize(16777215, 16777215))
         self.groupBox_4.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.verticalLayout_4 = QVBoxLayout(self.groupBox_4)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.verticalLayout_4.setContentsMargins(-1, 5, -1, 5)
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(80, -1, -1, -1)
@@ -1568,9 +1543,13 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addWidget(self.pushButton)
 
+        self.extra_var_btn = QPushButton(self.groupBox_4)
+        self.extra_var_btn.setObjectName(u"extra_var_btn")
+
+        self.verticalLayout_4.addWidget(self.extra_var_btn)
+
         self.message_text = QPlainTextEdit(self.groupBox_4)
         self.message_text.setObjectName(u"message_text")
-        self.message_text.setMaximumSize(QSize(16777215, 60))
 
         self.verticalLayout_4.addWidget(self.message_text)
 
@@ -1656,11 +1635,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.addLayout(self.horizontalLayout_9)
 
         self.tabWidget.addTab(self.report_tab, "")
-        self.schedule_tab = QWidget()
-        self.schedule_tab.setObjectName(u"schedule_tab")
-        self.time_groupBox = QGroupBox(self.schedule_tab)
+        self.tab = QWidget()
+        self.tab.setObjectName(u"tab")
+        self.time_groupBox = QGroupBox(self.tab)
         self.time_groupBox.setObjectName(u"time_groupBox")
-        self.time_groupBox.setGeometry(QRect(100, 180, 301, 108))
+        self.time_groupBox.setGeometry(QRect(134, 276, 301, 108))
         self.time_groupBox.setCheckable(True)
         self.time_groupBox.setChecked(False)
         self.verticalLayout_8 = QVBoxLayout(self.time_groupBox)
@@ -1695,7 +1674,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addLayout(self.horizontalLayout_11)
 
-        self.tabWidget.addTab(self.schedule_tab, "")
+        self.tabWidget.addTab(self.tab, "")
         self.about_tab = QWidget()
         self.about_tab.setObjectName(u"about_tab")
         self.verticalLayout_9 = QVBoxLayout(self.about_tab)
@@ -1760,11 +1739,11 @@ class Ui_MainWindow(object):
 
         self.logout_btn = QPushButton(self.centralwidget)
         self.logout_btn.setObjectName(u"logout_btn")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.logout_btn.sizePolicy().hasHeightForWidth())
-        self.logout_btn.setSizePolicy(sizePolicy3)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.logout_btn.sizePolicy().hasHeightForWidth())
+        self.logout_btn.setSizePolicy(sizePolicy1)
         font2 = QFont()
         font2.setFamily(u"arial")
         font2.setBold(False)
@@ -1782,7 +1761,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.listWidget.currentRowChanged.connect(self.tabWidget.setCurrentIndex)
 
-        self.listWidget.setCurrentRow(0)
+        self.listWidget.setCurrentRow(-1)
         self.tabWidget.setCurrentIndex(0)
 
 
@@ -1813,7 +1792,8 @@ class Ui_MainWindow(object):
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffffff;\">*** IMPORTANT ***</span></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;\">Names</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> in Column A </span><span style=\" font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:600;\""
                         ">(optional)</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;\">Phone numbers</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> in Column B</span></p></body></html>", None))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;\">Phone numbers</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> in Column B</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;\">Extra variable</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> in Column C </span><span style=\" font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:600;\">(optional)</span></p></body></html>", None))
         self.sheet_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"xlsx or CSV (comma seperated)", None))
         self.sheet_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Settings", None))
@@ -1832,6 +1812,7 @@ class Ui_MainWindow(object):
         self.sameFormat_rb.setText(QCoreApplication.translate("MainWindow", u"send as one message", None))
         self.oneline_rb.setText(QCoreApplication.translate("MainWindow", u"send line by line", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Append {name}", None))
+        self.extra_var_btn.setText(QCoreApplication.translate("MainWindow", u"Append {variable}", None))
         self.multi_messages_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Choose multiple messages - txt only (optional)", None))
         self.multi_messages_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.main_tab), QCoreApplication.translate("MainWindow", u"Tab 1", None))
@@ -1847,7 +1828,7 @@ class Ui_MainWindow(object):
         self.time_groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Time Range", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"From", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"To", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.schedule_tab), QCoreApplication.translate("MainWindow", u"Page", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Page", None))
         self.textBrowser_2.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

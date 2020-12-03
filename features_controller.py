@@ -30,27 +30,18 @@ extra_var = None  # assign None to disable it. to activate it, put the column nu
 contact_card_enabled = False    #TODO - a bug needs to be fixed - wrong xpath
 
 
-TYPE = "default"
+# SETTINGS
 version = "2.4.1"
 language = "en"
 
-if TYPE == "default":
-    # sheet settings
-    header_row = False
-    name_row = 1
-    phone_row = 2
-    country_code = None  # assign None to ignore it
-    # Interface
-    show_columns_note = True
-    copyright_link = True
-else:
-    # sheet settings
-    header_row = False
-    name_row = 1
-    phone_row = 2
-    country_code = None    # assign None to ignore it
-    # Interface
-    show_columns_note = True
-    copyright_link = True
+# sheet settings
+header_row = False
+name_row = 1
+phone_row = 2
+country_code = None  # assign None to ignore it
+# Interface
+show_columns_note = True
+copyright_link = True
+
 
 ################################################################
