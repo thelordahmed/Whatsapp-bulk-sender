@@ -5,7 +5,7 @@
 
 packages = ["normal", "standard", "premium"]
 ##########################################################
-package = packages[1]   # CHOOSE WHICH PACKAGE TO COMPILE
+package = packages[2]   # CHOOSE WHICH PACKAGE TO COMPILE
 demo = False
 ##########################################################
 if package == "normal":

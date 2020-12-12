@@ -1,0 +1,4 @@
+([('Whatsapp Bulk Sender Mac',
+   '/Users/ahmedsaeed/Desktop/my projects/Whatsapp-bulk-sender/dist/Whatsapp '
+   'Bulk Sender Mac',
+   'EXECUTABLE')],)
