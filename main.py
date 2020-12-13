@@ -11,6 +11,7 @@ from whatsapp import WhatsApp
 from threading import Thread
 from ast import literal_eval
 from features_controller import country_code, extra_var, copyright_link, language, demo, repeat_every_24h
+import pyqtgraph
 
 
 
@@ -67,6 +68,7 @@ class Main:
         self.view.attachments_btn.clicked.connect(self.view.getImagePath)
         self.view.pushButton.clicked.connect(self.view.appendToPlainTextBox)
         self.view.stop_btn.clicked.connect(self.view.changeStateToStopped)
+        self.view.append_newmessage.clicked.connect(self.view.appendToPlainTextBox_newmessage)
         if copyright_link is True:
             self.view.commandLinkButton.clicked.connect(self.view.copyrights)
         self.view.newsession_btn.clicked.connect(self.newSessionFunc)
@@ -109,6 +111,68 @@ class Main:
     def logout_btn_func(self):
         self.wa.logout_btn()
         self.view.logout_btn.setDisabled(True)
+
+    @staticmethod
+    def getMultiMessages(paths):
+        """
+
+        :param paths: list of paths string
+        :return: list of messages
+        """
+        messages = []
+        for path in paths:
+            with open(path, encoding="utf-8") as f:
+                message = f.read()
+            messages.append(message)
+        return messages
+
+
+    def connectionLoop(self, phone, unsavedOrNormal="normal"):
+        if self.wa.connectionCheck() is False:
+            while self.wa.connectionCheck() is False and self.view.state == "started":
+                if self.language == "italian":
+                    self.view.statusbar.showMessage("   **** Connessione persa .. tentativo di connessione in 5 secondi ****", 3)
+                else:
+                    self.view.statusbar.showMessage("   **** Connection Lost .. trying to connect in 5 seconds ****", 3)
+                sleep(5)
+            # when connection is back - try to search the same number again
+            if unsavedOrNormal == "nomral":
+                if self.wa.number_search(phone) is False:
+                    return "search is already false"
+                else:
+                    return "number found"
+            else:
+                if self.wa.unsaved_number_search(phone) is False:
+                    return "search is already false"
+                else:
+                    return "number found"
+        else:
+            return "search is already false"
+
+    def skipToNextNumber(self, name, phone, status, modelObj):
+        modelObj.addTodata((name, phone, self.status[status]))
+        self.view.addToTableWidget((name, phone, self.status[status]))
+
+    def sending_code(self, message, attachments_paths):
+        if "{new message}" in message:
+            messages = message.split("{new message}")
+        else:
+            messages = [message]
+        if attachments_paths is not None:
+            if self.view.textCaption_rb.isChecked() is True:
+                # sending the first message only as caption (that's what most clients need!)
+                self.wa.sending_image_with_caption(attachments_paths, messages[0])
+                if len(messages) > 1:
+                    for i in messages[1:]:
+                        self.wa.sending_sameFormat(i)
+            else:
+                for i in messages:
+                    self.wa.sending_sameFormat(i)
+                self.wa.sending_image(attachments_paths)
+        else:
+            for i in messages:
+                self.wa.sending_sameFormat(i)
+
 
     def process(self):
         model2 = Model()
@@ -257,24 +321,20 @@ class Main:
                 #########
                 # Sending
                 #########
-                if self.view.textFirst_ch.isChecked():
-                    # checking if caption option is active or not
-                    if self.view.caption.isChecked() is False:
-                        self.wa.sending_sameFormat(theMessage)
-
                 if attachments_paths_string != "":
                     attachments_paths_list = literal_eval(attachments_paths_string)
-                    if self.view.caption.isChecked() is True:
-                        self.wa.sending_image_with_caption(attachments_paths_list, theMessage)
-                    else:
-                        self.wa.sending_image(attachments_paths_list)
-                if self.view.textFirst_ch.isChecked() is False:
-                    # checking if caption option is active or not
-                    if self.view.caption.isChecked() is False:
-                        self.wa.sending_sameFormat(theMessage)
+                else:
+                    attachments_paths_list = None
 
-                if contact_card != "":
-                    self.wa.sending_contact(contact_card)
+                self.sending_code(theMessage, attachments_paths_list)
+                # CONTACT CARD
+                if self.view.contact_groupbox.isChecked():
+                    if "," in contact_card:
+                        numbers = contact_card.split(",")
+                        for num in numbers:
+                            self.wa.sending_contact(num)
+                    else:
+                        self.wa.sending_contact(contact_card)
                 messages_sent += 1
 
                 self.skipToNextNumber(name, phone, "sent", model2)
@@ -319,48 +379,6 @@ class Main:
             self.view.state = "stopped"
         # ---------------------------------------------------------------
 
-    def getMultiMessages(self, paths):
-        """
-
-        :param paths: list of paths string
-        :return: list of messages
-        """
-        messages = []
-        for path in paths:
-            with open(path, encoding="utf-8") as f:
-                message = f.read()
-            messages.append(message)
-        return messages
-
-
-    def connectionLoop(self, phone, unsavedOrNormal="normal"):
-        if self.wa.connectionCheck() is False:
-            while self.wa.connectionCheck() is False and self.view.state == "started":
-                if self.language == "italian":
-                    self.view.statusbar.showMessage("   **** Connessione persa .. tentativo di connessione in 5 secondi ****", 3)
-                else:
-                    self.view.statusbar.showMessage("   **** Connection Lost .. trying to connect in 5 seconds ****", 3)
-                sleep(5)
-            # when connection is back - try to search the same number again
-            if unsavedOrNormal == "nomral":
-                if self.wa.number_search(phone) is False:
-                    return "search is already false"
-                else:
-                    return "number found"
-            else:
-                if self.wa.unsaved_number_search(phone) is False:
-                    return "search is already false"
-                else:
-                    return "number found"
-        else:
-            return "search is already false"
-
-    def skipToNextNumber(self, name, phone, status, modelObj):
-        modelObj.addTodata((name, phone, self.status[status]))
-        self.view.addToTableWidget((name, phone, self.status[status]))
-
-
-###########################################################
 
 
 if __name__ == '__main__':

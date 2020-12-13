@@ -1,7 +1,7 @@
 import os
 import platform
 
-from PySide2 import QtCore
+from PySide2 import QtCore, QtGui
 from PySide2.QtGui import QCloseEvent
 from PySide2.QtWidgets import *
 from webbrowser import open
@@ -13,6 +13,7 @@ import features_controller
 class View(QMainWindow, design):
     def __init__(self, parent=None):
         super(View, self).__init__(parent)
+        self.setAttribute(QtCore.Qt.WA_DeleteOnClose)
         self.setupUi(self)
         self.show()
         self.stop_btn.setDisabled(True)
@@ -122,6 +123,10 @@ class View(QMainWindow, design):
 
     def appendToPlainTextBox(self):
         self.message_text.insertPlainText("{name}")
+
+    def appendToPlainTextBox_newmessage(self):
+        self.message_text.insertPlainText("\n\n\n{new message}\n\n")
+        self.message_text.moveCursor(QtGui.QTextCursor.End)
 
     def appendToPlainTextBox_extraVar(self):
         self.message_text.insertPlainText("{variable}")

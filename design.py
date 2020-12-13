@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(776, 715)
+        MainWindow.resize(776, 746)
         MainWindow.setMinimumSize(QSize(745, 0))
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
         font = QFont()
@@ -1201,6 +1201,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
         self.centralwidget.setSizePolicy(sizePolicy)
         self.gridLayout_2 = QGridLayout(self.centralwidget)
+        self.gridLayout_2.setSpacing(5)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
         self.commandLinkButton = QCommandLinkButton(self.centralwidget)
@@ -1375,6 +1376,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(-1, 5, -1, 5)
         self.gridLayout = QGridLayout()
+        self.gridLayout.setSpacing(5)
         self.gridLayout.setObjectName(u"gridLayout")
         self.textBrowser = QTextBrowser(self.groupBox)
         self.textBrowser.setObjectName(u"textBrowser")
@@ -1423,6 +1425,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(50, 5, 50, 5)
         self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setSpacing(3)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setSpacing(0)
@@ -1481,11 +1484,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.repeat_sending)
 
-        self.textFirst_ch = QCheckBox(self.groupBox_2)
-        self.textFirst_ch.setObjectName(u"textFirst_ch")
-
-        self.verticalLayout_2.addWidget(self.textFirst_ch)
-
 
         self.verticalLayout_3.addLayout(self.verticalLayout_2)
 
@@ -1499,7 +1497,9 @@ class Ui_MainWindow(object):
         self.groupBox_3.setMaximumSize(QSize(16777215, 16777215))
         self.formLayout = QFormLayout(self.groupBox_3)
         self.formLayout.setObjectName(u"formLayout")
-        self.formLayout.setContentsMargins(-1, 5, -1, 5)
+        self.formLayout.setHorizontalSpacing(5)
+        self.formLayout.setVerticalSpacing(10)
+        self.formLayout.setContentsMargins(-1, 10, -1, 10)
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.attachments_le = QLineEdit(self.groupBox_3)
@@ -1516,25 +1516,40 @@ class Ui_MainWindow(object):
 
         self.formLayout.setLayout(0, QFormLayout.SpanningRole, self.horizontalLayout_2)
 
-        self.horizontalLayout = QHBoxLayout()
+        self.contact_groupbox = QGroupBox(self.groupBox_3)
+        self.contact_groupbox.setObjectName(u"contact_groupbox")
+        self.contact_groupbox.setMinimumSize(QSize(200, 0))
+        self.contact_groupbox.setCheckable(True)
+        self.contact_groupbox.setChecked(False)
+        self.horizontalLayout = QHBoxLayout(self.contact_groupbox)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.label_5 = QLabel(self.groupBox_3)
-        self.label_5.setObjectName(u"label_5")
-
-        self.horizontalLayout.addWidget(self.label_5)
-
-        self.contactCard_le = QLineEdit(self.groupBox_3)
+        self.horizontalLayout.setContentsMargins(10, 10, 10, 5)
+        self.contactCard_le = QLineEdit(self.contact_groupbox)
         self.contactCard_le.setObjectName(u"contactCard_le")
+        sizePolicy1.setHeightForWidth(self.contactCard_le.sizePolicy().hasHeightForWidth())
+        self.contactCard_le.setSizePolicy(sizePolicy1)
 
         self.horizontalLayout.addWidget(self.contactCard_le)
 
 
-        self.formLayout.setLayout(1, QFormLayout.LabelRole, self.horizontalLayout)
+        self.formLayout.setWidget(4, QFormLayout.SpanningRole, self.contact_groupbox)
 
-        self.caption = QCheckBox(self.groupBox_3)
-        self.caption.setObjectName(u"caption")
+        self.horizontalLayout_12 = QHBoxLayout()
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.horizontalLayout_12.setContentsMargins(0, 0, -1, -1)
+        self.textFirst_rb = QRadioButton(self.groupBox_3)
+        self.textFirst_rb.setObjectName(u"textFirst_rb")
+        self.textFirst_rb.setChecked(True)
 
-        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.caption)
+        self.horizontalLayout_12.addWidget(self.textFirst_rb)
+
+        self.textCaption_rb = QRadioButton(self.groupBox_3)
+        self.textCaption_rb.setObjectName(u"textCaption_rb")
+
+        self.horizontalLayout_12.addWidget(self.textCaption_rb)
+
+
+        self.formLayout.setLayout(2, QFormLayout.SpanningRole, self.horizontalLayout_12)
 
 
         self.verticalLayout_5.addWidget(self.groupBox_3)
@@ -1548,10 +1563,22 @@ class Ui_MainWindow(object):
         self.verticalLayout_4 = QVBoxLayout(self.groupBox_4)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(-1, 5, -1, 5)
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setSpacing(5)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, -1, -1)
         self.pushButton = QPushButton(self.groupBox_4)
         self.pushButton.setObjectName(u"pushButton")
 
-        self.verticalLayout_4.addWidget(self.pushButton)
+        self.horizontalLayout_3.addWidget(self.pushButton)
+
+        self.append_newmessage = QPushButton(self.groupBox_4)
+        self.append_newmessage.setObjectName(u"append_newmessage")
+
+        self.horizontalLayout_3.addWidget(self.append_newmessage)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout_3)
 
         self.message_text = QPlainTextEdit(self.groupBox_4)
         self.message_text.setObjectName(u"message_text")
@@ -1807,15 +1834,16 @@ class Ui_MainWindow(object):
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Minutes", None))
         self.checkBox.setText(QCoreApplication.translate("MainWindow", u"Send to numbers that are not saved in phone book", None))
         self.repeat_sending.setText(QCoreApplication.translate("MainWindow", u"Repeat sending every 24 hours", None))
-        self.textFirst_ch.setText(QCoreApplication.translate("MainWindow", u"Send text before attachments", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Send Attachments", None))
         self.attachments_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Images, videos, documents", None))
         self.attachments_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Contact Card:", None))
-        self.contactCard_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type the number...", None))
-        self.caption.setText(QCoreApplication.translate("MainWindow", u"Send text as caption", None))
+        self.contact_groupbox.setTitle(QCoreApplication.translate("MainWindow", u"Contacts Card Sending", None))
+        self.contactCard_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type numbers seperated by comma \",\" for multiple cards...", None))
+        self.textFirst_rb.setText(QCoreApplication.translate("MainWindow", u"Send text before attachments", None))
+        self.textCaption_rb.setText(QCoreApplication.translate("MainWindow", u"Send text as caption", None))
         self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"The Message", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Append {name}", None))
+        self.append_newmessage.setText(QCoreApplication.translate("MainWindow", u"new message", None))
         self.multi_messages_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Choose multiple messages - txt only (optional)", None))
         self.multi_messages_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.main_tab), QCoreApplication.translate("MainWindow", u"Tab 1", None))

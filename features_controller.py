@@ -18,16 +18,17 @@ elif package == "premium":
     attachments_enabled = True
     scheduled_sending = True
 # extras
+contact_card_enabled = True
 multi_messages_enabled = False
 repeat_every_24h = False
 extra_var = None  # assign None to disable it. to activate it, put the column number
+
 
 
 ######################################
 ########### Functionilty #############
 ######################################
 
-contact_card_enabled = False    #TODO - a bug needs to be fixed - wrong xpath
 
 
 # SETTINGS

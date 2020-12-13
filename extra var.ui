@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>822</width>
-    <height>726</height>
+    <height>780</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -1863,6 +1863,12 @@ p, li { white-space: pre-wrap; }
              </item>
              <item>
               <widget class="QGroupBox" name="groupBox_3">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
@@ -1872,17 +1878,17 @@ p, li { white-space: pre-wrap; }
                <property name="title">
                 <string>Send Attachments</string>
                </property>
-               <layout class="QFormLayout" name="formLayout">
+               <layout class="QFormLayout" name="formLayout_2">
                 <property name="topMargin">
-                 <number>5</number>
+                 <number>10</number>
                 </property>
                 <property name="bottomMargin">
-                 <number>5</number>
+                 <number>10</number>
                 </property>
                 <item row="0" column="0" colspan="2">
-                 <layout class="QHBoxLayout" name="horizontalLayout_2">
+                 <layout class="QHBoxLayout" name="horizontalLayout_3">
                   <item>
-                   <widget class="QLineEdit" name="attachments_le">
+                   <widget class="QLineEdit" name="attachments_le_2">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>
@@ -1892,7 +1898,7 @@ p, li { white-space: pre-wrap; }
                    </widget>
                   </item>
                   <item>
-                   <widget class="QToolButton" name="attachments_btn">
+                   <widget class="QToolButton" name="attachments_btn_2">
                     <property name="text">
                      <string>...</string>
                     </property>
@@ -1900,29 +1906,57 @@ p, li { white-space: pre-wrap; }
                   </item>
                  </layout>
                 </item>
-                <item row="1" column="0">
-                 <layout class="QHBoxLayout" name="horizontalLayout">
-                  <item>
-                   <widget class="QLabel" name="label_5">
-                    <property name="text">
-                     <string>Contact Card:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLineEdit" name="contactCard_le">
-                    <property name="placeholderText">
-                     <string>Type the number...</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QCheckBox" name="caption">
+                <item row="1" column="0" colspan="2">
+                 <widget class="QCheckBox" name="caption_2">
                   <property name="text">
                    <string>Send text as caption</string>
                   </property>
+                 </widget>
+                </item>
+                <item row="2" column="0" colspan="2">
+                 <widget class="QGroupBox" name="contact_groupbox">
+                  <property name="minimumSize">
+                   <size>
+                    <width>200</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="title">
+                   <string>Contacts Card Sending</string>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="checked">
+                   <bool>false</bool>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_13">
+                   <property name="leftMargin">
+                    <number>10</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>10</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>10</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>5</number>
+                   </property>
+                   <item>
+                    <widget class="QLineEdit" name="contactCard_le_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="placeholderText">
+                      <string>Type numbers seperated by comma &quot;,&quot; for multiple cards...</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                </layout>
