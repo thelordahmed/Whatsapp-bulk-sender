@@ -11,7 +11,6 @@ from whatsapp import WhatsApp
 from threading import Thread
 from ast import literal_eval
 from features_controller import country_code, extra_var, copyright_link, language, demo, repeat_every_24h
-import pyqtgraph
 
 
 
@@ -161,17 +160,17 @@ class Main:
         if attachments_paths is not None:
             if self.view.textCaption_rb.isChecked() is True:
                 # sending the first message only as caption (that's what most clients need!)
-                self.wa.sending_image_with_caption(attachments_paths, messages[0])
+                self.wa.sending_image_with_caption(attachments_paths, messages[0].strip())
                 if len(messages) > 1:
                     for i in messages[1:]:
-                        self.wa.sending_sameFormat(i)
+                        self.wa.sending_sameFormat(i.strip())
             else:
                 for i in messages:
-                    self.wa.sending_sameFormat(i)
+                    self.wa.sending_sameFormat(i.strip())
                 self.wa.sending_image(attachments_paths)
         else:
             for i in messages:
-                self.wa.sending_sameFormat(i)
+                self.wa.sending_sameFormat(i.strip())
 
 
     def process(self):
