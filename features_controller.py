@@ -11,14 +11,16 @@ demo = False
 if package == "normal":
     attachments_enabled = False
     scheduled_sending = False
+    contact_card_enabled = False
 elif package == "standard":
     attachments_enabled = True
     scheduled_sending = False
+    contact_card_enabled = True
 elif package == "premium":
     attachments_enabled = True
     scheduled_sending = True
+    contact_card_enabled = True
 # extras
-contact_card_enabled = True
 multi_messages_enabled = False
 repeat_every_24h = False
 extra_var = None  # assign None to disable it. to activate it, put the column number
