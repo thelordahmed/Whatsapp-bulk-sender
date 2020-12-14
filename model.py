@@ -1,6 +1,4 @@
 import os
-
-import requests
 from openpyxl import load_workbook
 import sqlite3
 import csv

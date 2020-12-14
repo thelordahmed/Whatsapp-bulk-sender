@@ -13,8 +13,7 @@ import random
 import requests, zipfile, io
 import shutil
 import platform
-from datetime import datetime, timedelta
-from datetime import time as time_obj
+from datetime import datetime
 from multiprocessing import Queue
 
 if platform.system() == "Darwin":

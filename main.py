@@ -1,5 +1,4 @@
 import csv
-import datetime
 import os
 import platform
 import random
@@ -10,7 +9,7 @@ from view import View
 from whatsapp import WhatsApp
 from threading import Thread
 from ast import literal_eval
-from features_controller import country_code, extra_var, copyright_link, language, demo, repeat_every_24h
+from features_controller import country_code, extra_var, copyright_link, language, demo
 
 
 
