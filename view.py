@@ -2,7 +2,7 @@ import os
 import platform
 
 from PySide2 import QtCore, QtGui
-from PySide2.QtGui import QCloseEvent
+from PySide2.QtGui import QCloseEvent, QTextOption, Qt
 from PySide2.QtWidgets import *
 from webbrowser import open
 # Import your design class
@@ -17,6 +17,15 @@ class View(QMainWindow, design):
         self.setupUi(self)
         self.show()
         self.stop_btn.setDisabled(True)
+        # TODO - add a label about those shorcuts to the interface
+        # --- shortcuts START
+        self.shortcutR = QShortcut(
+            QtGui.QKeySequence('Ctrl+r'), self.message_text)
+        self.shortcutL = QShortcut(
+            QtGui.QKeySequence('Ctrl+l'), self.message_text)
+        self.shortcutR.activated.connect(lambda: self.message_text.document().setDefaultTextOption(QTextOption(Qt.AlignRight)))
+        self.shortcutL.activated.connect(lambda: self.message_text.document().setDefaultTextOption(QTextOption(Qt.AlignLeft)))
+        # --- shortcuts END
         self.state = "stopped"
         if features_controller.repeat_every_24h is False:
             self.repeat_sending.setDisabled(True)
@@ -56,7 +65,7 @@ class View(QMainWindow, design):
         self.stop_btn.setDisabled(True)
 
     def copyrights(self):
-        open("https://www.fiverr.com/lordahmed")
+        open(features_controller.copyright_url)
     ######################################
 
     # Customizing the close event
