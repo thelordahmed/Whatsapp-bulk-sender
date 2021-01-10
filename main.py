@@ -10,15 +10,22 @@ from whatsapp import WhatsApp
 from threading import Thread
 from ast import literal_eval
 from features_controller import country_code, extra_var, copyright_link, language, demo
+from license_validation import License
 
+if platform.system() == "Darwin":
+    data_folder = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data"
+else:
+    data_folder = "Data"
 
 
 class Signals(QtCore.QObject):
     start_btn = QtCore.Signal()
 
 
+
 class Main:
     def __init__(self):
+        self.api_url = "https://softwarekeys.herokuapp.com"
         self.language = language
         if platform.system() == "Darwin":
             os.system("mkdir ~/Library/WhatsappSenderData")
@@ -26,7 +33,15 @@ class Main:
         else:
             os.system("mkdir Data")
         self.model = Model()
-        self.view = View()
+        self.view = View(self.api_url)
+        self.license = License(self.api_url, self.view)
+        # Sending Key Request if pre-saved key found
+        try:
+            with open(os.path.join(data_folder, "license_key.txt"), "r") as f:
+                key = f.read()
+            self.license.validate(key)
+        except FileNotFoundError:
+            pass
         self.wa = WhatsApp()
         if self.language == "italian":
             self.status = {

@@ -1,6 +1,7 @@
 import os
 import platform
 
+import requests
 from PySide2 import QtCore, QtGui
 from PySide2.QtGui import QCloseEvent, QTextOption, Qt
 from PySide2.QtWidgets import *
@@ -11,12 +12,18 @@ import features_controller
 
 
 class View(QMainWindow, design):
-    def __init__(self, parent=None):
+    def __init__(self, api_url,parent=None):
         super(View, self).__init__(parent)
         self.setAttribute(QtCore.Qt.WA_DeleteOnClose)
         self.setupUi(self)
         self.show()
+        self.api_url = api_url
         self.stop_btn.setDisabled(True)
+        # hidding all to validate license first
+        self.main_frame.hide()
+        self.buttons_frame.hide()
+        self.logout_btn.hide()
+        self.license_frame.show()
         # TODO - add a label about those shorcuts to the interface
         # --- shortcuts START
         self.shortcutR = QShortcut(
@@ -75,8 +82,7 @@ class View(QMainWindow, design):
             os.system("killall 'Google Chrome'")
         else:
             os.system("taskkill /t /F /im chromedriver.exe")
-
-
+        requests.put(f"{self.api_url}/connected/decrease")
 
     def addToTableWidget(self, data):  # slot >> trigger singal
         """

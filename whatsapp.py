@@ -16,6 +16,7 @@ import platform
 from datetime import datetime
 from multiprocessing import Queue
 
+
 if platform.system() == "Darwin":
     browserData = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data/WhatsappLogin"
     chromedriver = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data/chromedriver"
@@ -208,7 +209,7 @@ class WhatsApp:
         try:
             sleep(random.randint(1, 3))
             self._window.find_element_by_xpath(self._attachment).click()
-            sleep(random.randint(1, 3))
+            sleep(random.randint(1, 2))
         except Exception as e:
             print(e)
             print("clicking attachment button error")
@@ -277,9 +278,9 @@ class WhatsApp:
 
     def sending_contact(self, contact_number):
         try:
-            sleep(random.randint(1,3))
+            sleep(random.randint(1, 3))
             self._window.find_element_by_xpath(self._attachment).click()
-            sleep(random.randint(1,3))
+            sleep(random.randint(1, 3))
         except Exception as e:
             print(e)
             print("clicking attachment button error")

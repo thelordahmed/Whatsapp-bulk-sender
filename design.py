@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'custom white label.ui'
+## Form generated from reading UI file 'untitled.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.2
 ##
@@ -21,13 +21,11 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(776, 746)
+        MainWindow.resize(776, 817)
         MainWindow.setMinimumSize(QSize(745, 0))
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
         font = QFont()
         font.setFamily(u"arial")
-        font.setKerning(True)
-        font.setStyleStrategy(QFont.PreferDefault)
         MainWindow.setFont(font)
         icon = QIcon()
         icon.addFile(u"Data/imgs/whatsapp.ico", QSize(), QIcon.Normal, QIcon.Off)
@@ -39,9 +37,8 @@ class Ui_MainWindow(object):
 "	\n"
 "	background-color: qradialgradient(spread:pad, cx:0.522, cy:0.518, radius:2, fx:0.522273, fy:0.506, stop:0.0227273 rgba(23, 27, 36, 255), stop:1 rgba(0, 0, 0, 255));\n"
 "	color: #ffffff;\n"
-"	border-color: #39050d;\n"
-"	font-family:\"arial\";\n"
-"font-size:12px;\n"
+"	border-color: #051a39;\n"
+"	font-family:\"arial\"\n"
 "\n"
 "}\n"
 "\n"
@@ -69,7 +66,7 @@ class Ui_MainWindow(object):
 "{\n"
 "	background-color: #0a0a0a;\n"
 "	color: #ffffff;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "font-family:\"arial\"\n"
 "\n"
 "}\n"
@@ -79,7 +76,7 @@ class Ui_MainWindow(object):
 "{\n"
 "	background-color: #404040;\n"
 "	color: #656565;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "\n"
 "}\n"
 "\n"
@@ -93,8 +90,8 @@ class Ui_MainWindow(object):
 "\n"
 "QMenuBar::item:selected\n"
 "{\n"
-"    bac"
-                        "kground-color: #D91E24;\n"
+"    background-color: #607cf"
+                        "f;\n"
 "    border: 1px solid #41cd52;\n"
 "\n"
 "}\n"
@@ -102,7 +99,7 @@ class Ui_MainWindow(object):
 "\n"
 "QMenuBar::item:pressed\n"
 "{\n"
-"    background-color: #ff3b3b;\n"
+"    background-color: #4969ff;\n"
 "    border: 1px solid #000;\n"
 "    margin-bottom: -1px;\n"
 "    padding-bottom: 1px;\n"
@@ -142,7 +139,7 @@ class Ui_MainWindow(object):
 "\n"
 "QMenu::item:selected\n"
 "{\n"
-"    background-color: #ff3b3b;\n"
+"    background-color: #4969ff;\n"
 "    color: #ffffff;\n"
 "\n"
 "}\n"
@@ -159,9 +156,9 @@ class Ui_MainWindow(object):
 "{\n"
 "	border : 1px solid #000000;\n"
 "	background-color: #26264f;\n"
-"	color:"
-                        " #ffffff;\n"
-"	border-color: #390805;\n"
+"	color: #ffffff;\n"
+"	border"
+                        "-color: #051a39;\n"
 "\n"
 "}\n"
 "\n"
@@ -169,12 +166,12 @@ class Ui_MainWindow(object):
 "/*-----QPushButton-----*/\n"
 "QPushButton\n"
 "{\n"
-"	background-color: #D91E24;\n"
+"	background-color: #607cff;\n"
 "	color: #ffffff;\n"
 "	border-style: solid;\n"
 "	border-width: 1px;\n"
 "	border-radius: 3px;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "	padding: 5px;\n"
 "font-family:\"arial\"\n"
 "\n"
@@ -185,19 +182,19 @@ class Ui_MainWindow(object):
 "{\n"
 "	background-color: #404040;\n"
 "	color: #656565;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "\n"
 "}\n"
 "\n"
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: #ff8383;\n"
+"	background-color: #8399ff;\n"
 "	color: #ffffff;\n"
 "	border-style: solid;\n"
 "	border-width: 1px;\n"
 "	border-radius: 3px;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "	padding: 5px;\n"
 "\n"
 "}\n"
@@ -205,12 +202,12 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::pressed\n"
 "{\n"
-"	background-color: #ff3b3b;\n"
+"	background-color: #4969ff;\n"
 "	color: #ffffff;\n"
 "	border-style: solid;\n"
 "	border-width: 1px;\n"
 "	border-radius: 3px;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "	padding: 5px;\n"
 "\n"
 "}\n"
@@ -219,12 +216,12 @@ class Ui_MainWindow(object):
 "/*-----QToolButton-----*/\n"
 "QToolButton\n"
 "{\n"
-"	background-color: #D91E24;\n"
+"	background-color: #607cff;\n"
 "	color: #ffffff;\n"
-""
-                        "	border-width: 1px;\n"
+"	border-width: 1px"
+                        ";\n"
 "	border-radius: 3px;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "	padding: 3px;\n"
 "font-family:\"arial\"\n"
 "\n"
@@ -235,18 +232,18 @@ class Ui_MainWindow(object):
 "{\n"
 "	background-color: #404040;\n"
 "	color: #656565;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "\n"
 "}\n"
 "\n"
 "\n"
 "QToolButton::hover\n"
 "{\n"
-"	background-color: #ff8383;\n"
+"	background-color: #8399ff;\n"
 "	color: #ffffff;\n"
 "	border-width: 1px;\n"
 "	border-radius: 3px;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "	padding: 3px;\n"
 "\n"
 "}\n"
@@ -254,11 +251,11 @@ class Ui_MainWindow(object):
 "\n"
 "QToolButton::pressed\n"
 "{\n"
-"	background-color: #ff3b3b;\n"
+"	background-color: #4969ff;\n"
 "	color: #ffffff;\n"
 "	border-width: 1px;\n"
 "	border-radius: 3px;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "	padding: 3px;\n"
 "\n"
 "}\n"
@@ -267,7 +264,7 @@ class Ui_MainWindow(object):
 "/*-----QComboBox-----*/\n"
 "QComboBox\n"
 "{\n"
-"    background-color: #D91E24;\n"
+"    background-color: #607cff;\n"
 "    border: 1px solid;\n"
 "    border-radius: 3px;\n"
 "    padding-left: 6px;\n"
@@ -282,22 +279,22 @@ class Ui_MainWindow(object):
 "{\n"
 "	background-color: #404040;\n"
 "	color: #656565;\n"
-"	border"
-                        "-color: #390805;\n"
-"\n"
+"	border-color: #051a39;\n"
+""
+                        "\n"
 "}\n"
 "\n"
 "\n"
 "QComboBox:hover\n"
 "{\n"
-"    background-color: #ff8383;\n"
+"    background-color: #8399ff;\n"
 "\n"
 "}\n"
 "\n"
 "\n"
 "QComboBox:on\n"
 "{\n"
-"    background-color: #ff3b3b;\n"
+"    background-color: #4969ff;\n"
 "\n"
 "}\n"
 "\n"
@@ -307,7 +304,7 @@ class Ui_MainWindow(object):
 "    background-color: #383838;\n"
 "    color: #ffffff;\n"
 "    border: 1px solid black;\n"
-"    selection-background-color: #ff3b3b;\n"
+"    selection-background-color: #4969ff;\n"
 "    selection-color: #ffffff;\n"
 "    outline: 0;\n"
 "\n"
@@ -340,11 +337,11 @@ class Ui_MainWindow(object):
 "QSpinBox, \n"
 "QDoubleSpinBox,\n"
 "QDateTimeEdit\n"
-""
-                        "{\n"
-"	background-color: #525251;\n"
+"{\n"
+"	background-c"
+                        "olor: #525251;\n"
 "	color: #ffffff;\n"
-"	border: 1px solid #390805;\n"
+"	border: 1px solid #051a39;\n"
 "	border-radius: 3px;\n"
 "	padding : 2px;\n"
 "font-family:\"arial\"\n"
@@ -358,7 +355,7 @@ class Ui_MainWindow(object):
 "{\n"
 "	background-color: #404040;\n"
 "	color: #656565;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "\n"
 "}\n"
 "\n"
@@ -368,7 +365,7 @@ class Ui_MainWindow(object):
 "QDateTimeEdit::hover\n"
 "{\n"
 "    background-color: #626262;\n"
-"    border: 1px solid #D91E24;\n"
+"    border: 1px solid #607cff;\n"
 "    color:  #fff;\n"
 "    padding: 2px\n"
 "\n"
@@ -379,7 +376,7 @@ class Ui_MainWindow(object):
 "QDoubleSpinBox::up-button, QDoubleSpinBox::down-button,\n"
 "QDateTimeEdit::up-button, QDateTimeEdit::down-button\n"
 "{\n"
-"    background-color: #D91E24;\n"
+"    background-color: #607cff;\n"
 "	border-radius: 2px;\n"
 "\n"
 "}\n"
@@ -391,18 +388,18 @@ class Ui_MainWindow(object):
 "{\n"
 "	background-color: #404040;\n"
 "	color: #656565;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "\n"
 "}\n"
 "\n"
-""
-                        "\n"
-"QSpinBox::up-button:hover, QSpinBox::down-button:hover,\n"
+"\n"
+"QSpinBox::up-b"
+                        "utton:hover, QSpinBox::down-button:hover,\n"
 "QDoubleSpinBox::up-button:hover, QDoubleSpinBox::down-button:hover,\n"
 "QDateTimeEdit::up-button:hover, QDateTimeEdit::down-button:hover\n"
 "{\n"
-"    background-color: #ff8383;\n"
-"    border: 1px solid #ff8383;\n"
+"    background-color: #8399ff;\n"
+"    border: 1px solid #8399ff;\n"
 "\n"
 "}\n"
 "\n"
@@ -413,7 +410,7 @@ class Ui_MainWindow(object):
 "{\n"
 "	background-color: #404040;\n"
 "	color: #656565;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "\n"
 "}\n"
 "\n"
@@ -422,18 +419,18 @@ class Ui_MainWindow(object):
 "QDoubleSpinBox::up-button:pressed, QDoubleSpinBox::down-button::pressed,\n"
 "QDateTimeEdit::up-button:pressed, QDateTimeEdit::down-button::pressed\n"
 "{\n"
-"    background-color: #ff3b3b;\n"
-"    border: 1px solid #ff3b3b;\n"
+"    background-color: #4969ff;\n"
+"    border: 1px solid #4969ff;\n"
 "\n"
 "}\n"
 "\n"
 "\n"
 "QSpinBox::down-arrow,\n"
 "QDoubleSpinBox::down-arrow,\n"
-"QDateTimeEdit::down-arrow"
-                        "\n"
+"QDateTimeEdit::down-arrow\n"
 "{\n"
-"    image: url(://arrow-down.png);\n"
+"    imag"
+                        "e: url(://arrow-down.png);\n"
 "    width: 7px;\n"
 "\n"
 "}\n"
@@ -456,7 +453,7 @@ class Ui_MainWindow(object):
 "	color: #ffffff;\n"
 "	border-width: 1px;\n"
 "	border-radius: 3px;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "	padding: 2px;\n"
 "font-family:\"arial\"\n"
 "\n"
@@ -469,7 +466,7 @@ class Ui_MainWindow(object):
 "	color: #656565;\n"
 "	border-width: 1px;\n"
 "	border-radius: 3px;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "	padding: 2px;\n"
 "\n"
 "}\n"
@@ -480,7 +477,7 @@ class Ui_MainWindow(object):
 "{\n"
 "	background-color: #ffffff;\n"
 "	color: #010201;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "\n"
 "}\n"
 "\n"
@@ -489,28 +486,26 @@ class Ui_MainWindow(object):
 "{\n"
 "	background-color: #404040;\n"
 "	color: #656565;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "\n"
 "}\n"
 "\n"
 "\n"
 "/*-----QGroupBox-----*/\n"
 "QGroupBox \n"
-""
-                        "{\n"
-"    border: 1px solid;\n"
-"    border-color: #D91E24;\n"
+"{\n"
+"    border: "
+                        "1px solid;\n"
+"    border-color: #607cff;\n"
 "    margin-top: 22px;\n"
-"font-family:\"arial\";\n"
-"font-size:13px;\n"
-"font-weight:bold\n"
+"font-family:\"arial\"\n"
 "\n"
 "}\n"
 "\n"
 "\n"
 "QGroupBox::title  \n"
 "{\n"
-"    background-color: #D91E24;\n"
+"    background-color: #607cff;\n"
 "    color: #ffffff;\n"
 "    subcontrol-origin: margin;\n"
 "    subcontrol-position: top left;\n"
@@ -553,14 +548,14 @@ class Ui_MainWindow(object):
 "	width: 9px; \n"
 "	height: 9px; \n"
 "font-family:\"arial\"\n"
-""
-                        "\n"
+"\n"
 "}\n"
 "\n"
 "\n"
-"QRadioButton::indicator::unchecked:hover\n"
+"QRadioButton::indicator::unchecked:h"
+                        "over\n"
 "{ \n"
-"	border: 2px solid #D91E24; \n"
+"	border: 2px solid #607cff; \n"
 "	border-radius: 5px; \n"
 "	background-color:  #fff;\n"
 "	width: 9px; \n"
@@ -573,7 +568,7 @@ class Ui_MainWindow(object):
 "{ \n"
 "	border: 2px inset darkgray; \n"
 "	border-radius: 5px; \n"
-"	background-color: #ff3b3b; \n"
+"	background-color: #4969ff; \n"
 "	width: 9px; \n"
 "	height: 9px; \n"
 "\n"
@@ -600,7 +595,7 @@ class Ui_MainWindow(object):
 "QTableView\n"
 "{\n"
 "    background-color: transparent;\n"
-"    border: 1px solid #4b3232;\n"
+"    border: 1px solid #32414B;\n"
 "    color: #f0f0f0;\n"
 "    gridline-color: #8faaff;\n"
 "    outline : 0;\n"
@@ -611,16 +606,16 @@ class Ui_MainWindow(object):
 "QTableView::disabled\n"
 "{\n"
 "    background-color: #242526;\n"
-"    border: 1px solid #4b3232;\n"
+"    border: 1px solid #32414B;\n"
 "    color: #656565;\n"
-"    gridline-color: "
-                        "#656565;\n"
+"    gridline-color: #656565;\n"
 "    outline : 0;\n"
 "\n"
 "}\n"
 "\n"
 "\n"
-"QTableView::item:hover \n"
+"QT"
+                        "ableView::item:hover \n"
 "{\n"
 "    background-color: #26264f;\n"
 "    color: #f0f0f0;\n"
@@ -631,7 +626,7 @@ class Ui_MainWindow(object):
 "QTableView::item:selected \n"
 "{\n"
 "    background-color: #1a1b1c;\n"
-"    border: 2px solid #ff3b3b;\n"
+"    border: 2px solid #4969ff;\n"
 "    color: #F0F0F0;\n"
 "\n"
 "}\n"
@@ -675,16 +670,16 @@ class Ui_MainWindow(object):
 "QHeaderView::section:checked\n"
 "{\n"
 "    color: #fff;\n"
-"    background-color: #ff3b3b;\n"
+"    background-color: #4969ff;\n"
 "\n"
 "}\n"
 "\n"
 "\n"
 "QHeaderView::section:checked:disabled\n"
-""
-                        "{\n"
+"{\n"
 "    color: #656565;\n"
-"    background-color: #525251;\n"
+"    background-color: #5"
+                        "25251;\n"
 "\n"
 "}\n"
 "\n"
@@ -728,7 +723,7 @@ class Ui_MainWindow(object):
 "	border-width: 1px;\n"
 "	border-top-left-radius: 3px;\n"
 "	border-top-right-radius: 3px;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "	padding: 5px;\n"
 "\n"
 "}\n"
@@ -743,24 +738,24 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "QTabWidget::pane \n"
-""
-                        "{\n"
+"{\n"
 "	background-color: red;\n"
 "	color: #ffffff;\n"
-"    border: 1px solid;\n"
-"    border-color: #D91E24;\n"
+""
+                        "    border: 1px solid;\n"
+"    border-color: #607cff;\n"
 "\n"
 "}\n"
 "\n"
 "QTabBar::tab:selected\n"
 "{\n"
-"    background-color: #D91E24;\n"
+"    background-color: #607cff;\n"
 "	color: #ffffff;\n"
 "	border-style: solid;\n"
 "	border-width: 1px;\n"
 "	border-top-left-radius: 3px;\n"
 "	border-top-right-radius: 3px;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "	padding: 5px;\n"
 "\n"
 "}\n"
@@ -783,7 +778,7 @@ class Ui_MainWindow(object):
 "\n"
 "QTabBar::tab:!selected:hover \n"
 "{\n"
-"    background-color: #ff8383;\n"
+"    background-color: #8399ff;\n"
 "\n"
 "}\n"
 "\n"
@@ -809,12 +804,12 @@ class Ui_MainWindow(object):
 "    padding: 5px 10px 5px 10px;\n"
 "\n"
 "}\n"
-""
-                        "\n"
+"\n"
 "\n"
 "QTabBar::tab:top:selected \n"
 "{\n"
-"    border-bottom-color: none;\n"
+"    bo"
+                        "rder-bottom-color: none;\n"
 "\n"
 "}\n"
 "\n"
@@ -875,13 +870,13 @@ class Ui_MainWindow(object):
 "QTabBar::tab:left:only-one, QTabBar::tab:right:only-one \n"
 "{\n"
 "    margin-bottom: 0;\n"
-""
-                        "\n"
+"\n"
 "}\n"
 "\n"
 "\n"
 "/*-----QSlider-----*/\n"
-"QSlider::groove:horizontal \n"
+"QSli"
+                        "der::groove:horizontal \n"
 "{\n"
 "	background-color: transparent;\n"
 "	height: 5px;\n"
@@ -891,7 +886,7 @@ class Ui_MainWindow(object):
 "\n"
 "QSlider::sub-page:horizontal \n"
 "{\n"
-"	background-color: #D91E24;\n"
+"	background-color: #607cff;\n"
 "\n"
 "}\n"
 "\n"
@@ -905,7 +900,7 @@ class Ui_MainWindow(object):
 "\n"
 "QSlider::handle:horizontal \n"
 "{\n"
-"	background-color: #D91E24;\n"
+"	background-color: #607cff;\n"
 "	width: 14px;\n"
 "	margin-top: -6px;\n"
 "	margin-bottom: -6px;\n"
@@ -916,7 +911,7 @@ class Ui_MainWindow(object):
 "\n"
 "QSlider::handle:horizontal:hover \n"
 "{\n"
-"	background-color: #D91E24;\n"
+"	background-color: #607cff;\n"
 "	border-radius: 3px;\n"
 "\n"
 "}\n"
@@ -943,13 +938,13 @@ class Ui_MainWindow(object):
 "	background-color: #eee;\n"
 "	border: 1px solid #aaa;\n"
 "	border-radius: 3px;\n"
-""
-                        "\n"
+"\n"
 "}\n"
 "\n"
 "\n"
 "QSlider::groove:vertical \n"
-"{\n"
+""
+                        "{\n"
 "	background-color: transparent;\n"
 "	width: 5px;\n"
 "\n"
@@ -958,7 +953,7 @@ class Ui_MainWindow(object):
 "\n"
 "QSlider::sub-page:vertical \n"
 "{\n"
-"	background-color: #D91E24;\n"
+"	background-color: #607cff;\n"
 "\n"
 "}\n"
 "\n"
@@ -972,7 +967,7 @@ class Ui_MainWindow(object):
 "\n"
 "QSlider::handle:vertical \n"
 "{\n"
-"	background-color: #D91E24;\n"
+"	background-color: #607cff;\n"
 "	height: 14px;\n"
 "	margin-left: -6px;\n"
 "	margin-right: -6px;\n"
@@ -983,7 +978,7 @@ class Ui_MainWindow(object):
 "\n"
 "QSlider::handle:vertical:hover \n"
 "{\n"
-"	background-color: #D91E24;\n"
+"	background-color: #607cff;\n"
 "	border-radius: 3px;\n"
 "\n"
 "}\n"
@@ -1014,12 +1009,12 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "\n"
-"/*-----QDial-----"
-                        "*/\n"
+"/*-----QDial-----*/\n"
 "QDial\n"
 "{\n"
-"	background-color: #D91E24;\n"
-"\n"
+"	background-color: #607cff;\n"
+""
+                        "\n"
 "}\n"
 "\n"
 "\n"
@@ -1043,7 +1038,7 @@ class Ui_MainWindow(object):
 "\n"
 "QScrollBar::handle:horizontal\n"
 "{\n"
-"    background: #D91E24;\n"
+"    background: #607cff;\n"
 "    min-height: 20px;\n"
 "\n"
 "}\n"
@@ -1052,7 +1047,7 @@ class Ui_MainWindow(object):
 "QScrollBar::add-line:horizontal\n"
 "{\n"
 "    border: 1px solid #1b1b19;\n"
-"    background-color: #D91E24;\n"
+"    background-color: #607cff;\n"
 "    width: 14px;\n"
 "    subcontrol-position: right;\n"
 "    subcontrol-origin: margin;\n"
@@ -1063,7 +1058,7 @@ class Ui_MainWindow(object):
 "QScrollBar::sub-line:horizontal\n"
 "{\n"
 "    border: 1px solid #1b1b19;\n"
-"    background-color: #D91E24;\n"
+"    background-color: #607cff;\n"
 "    width: 14px;\n"
 "    subcontrol-position: left;\n"
 "    subcontrol-origin: margin;\n"
@@ -1074,14 +1069,14 @@ class Ui_MainWindow(object):
 "QScrollBar::right-arrow:horizontal\n"
 "{\n"
 "    image: url(://arrow-right.png);\n"
-"    width: 6p"
-                        "x;\n"
+"    width: 6px;\n"
 "    height: 6px;\n"
 "\n"
 "}\n"
 "\n"
 "\n"
-"QScrollBar::left-arrow:horizontal\n"
+"QScrol"
+                        "lBar::left-arrow:horizontal\n"
 "{\n"
 "    image: url(://arrow-left.png);\n"
 "    width: 6px;\n"
@@ -1109,7 +1104,7 @@ class Ui_MainWindow(object):
 "\n"
 "QScrollBar::handle:vertical\n"
 "{\n"
-"    background-color: #D91E24;\n"
+"    background-color: #607cff;\n"
 "    min-height: 20px;\n"
 "\n"
 "}\n"
@@ -1118,7 +1113,7 @@ class Ui_MainWindow(object):
 "QScrollBar::add-line:vertical\n"
 "{\n"
 "    border: 1px solid #1b1b19;\n"
-"    background-color: #D91E24;\n"
+"    background-color: #607cff;\n"
 "    height: 14px;\n"
 "    subcontrol-position: bottom;\n"
 "    subcontrol-origin: margin;\n"
@@ -1129,16 +1124,16 @@ class Ui_MainWindow(object):
 "QScrollBar::sub-line:vertical\n"
 "{\n"
 "    border: 1px solid #1b1b19;\n"
-"    background-color: #D91E24;\n"
+"    background-color: #607cff;\n"
 "    height: 14px;\n"
 "    subcontrol-position: top;\n"
-"    subcontrol-origin: ma"
-                        "rgin;\n"
+"    subcontrol-origin: margin;\n"
 "\n"
 "}\n"
 "\n"
 "\n"
-"QScrollBar::up-arrow:vertical\n"
+"QScrollBar::up-arrow:ver"
+                        "tical\n"
 "{\n"
 "    image: url(://arrow-up.png);\n"
 "    width: 6px;\n"
@@ -1168,7 +1163,7 @@ class Ui_MainWindow(object):
 "{\n"
 "	background-color: #383838;\n"
 "	color: #ffffff;\n"
-"	border: 1px solid #D91E24;\n"
+"	border: 1px solid #607cff;\n"
 "	border-radius: 3px;\n"
 "	text-align: center;\n"
 "\n"
@@ -1176,7 +1171,7 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "QProgressBar::chunk {\n"
-"	background-color: #D91E24;\n"
+"	background-color: #607cff;\n"
 "	color: #fff;\n"
 "\n"
 "}\n"
@@ -1194,7 +1189,7 @@ class Ui_MainWindow(object):
 "{\n"
 "	background-color: #0a0a0a;\n"
 "	color: #ffffff;\n"
-"	border-color: #390805;\n"
+"	border-color: #051a39;\n"
 "\n"
 "}\n"
 "\n"
@@ -1212,15 +1207,29 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setSpacing(5)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.logout_btn = QPushButton(self.centralwidget)
+        self.logout_btn.setObjectName(u"logout_btn")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.logout_btn.sizePolicy().hasHeightForWidth())
+        self.logout_btn.setSizePolicy(sizePolicy1)
+        font1 = QFont()
+        font1.setFamily(u"arial")
+        font1.setBold(False)
+        font1.setWeight(50)
+        self.logout_btn.setFont(font1)
+        self.logout_btn.setStyleSheet(u"margin-right : 20px")
+
+        self.gridLayout_2.addWidget(self.logout_btn, 2, 1, 1, 2, Qt.AlignRight)
+
         self.commandLinkButton = QCommandLinkButton(self.centralwidget)
         self.commandLinkButton.setObjectName(u"commandLinkButton")
         self.commandLinkButton.setMaximumSize(QSize(16777215, 25))
-        font1 = QFont()
-        font1.setFamily(u"arial")
-        self.commandLinkButton.setFont(font1)
+        self.commandLinkButton.setFont(font)
         self.commandLinkButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.commandLinkButton.setStyleSheet(u"background: transparent;\n"
-"border:0;")
+"border:0")
         icon1 = QIcon()
         iconThemeName = u";"
         if QIcon.hasThemeIcon(iconThemeName):
@@ -1232,32 +1241,54 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.commandLinkButton, 1, 0, 1, 1)
 
-        self.horizontalLayout_8 = QHBoxLayout()
+        self.license_frame = QFrame(self.centralwidget)
+        self.license_frame.setObjectName(u"license_frame")
+        sizePolicy.setHeightForWidth(self.license_frame.sizePolicy().hasHeightForWidth())
+        self.license_frame.setSizePolicy(sizePolicy)
+        self.license_frame.setStyleSheet(u"QFrame{\n"
+"	background:transparent\n"
+"}")
+        self._2 = QVBoxLayout(self.license_frame)
+        self._2.setObjectName(u"_2")
+        self._2.setContentsMargins(100, 0, 100, 0)
+        self.horizontalLayout_25 = QHBoxLayout()
+        self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
+        self.horizontalLayout_25.setContentsMargins(-1, 0, -1, -1)
+        self.license_le = QLineEdit(self.license_frame)
+        self.license_le.setObjectName(u"license_le")
+
+        self.horizontalLayout_25.addWidget(self.license_le)
+
+        self.license_btn = QPushButton(self.license_frame)
+        self.license_btn.setObjectName(u"license_btn")
+
+        self.horizontalLayout_25.addWidget(self.license_btn)
+
+
+        self._2.addLayout(self.horizontalLayout_25)
+
+        self.license_status_label = QTextBrowser(self.license_frame)
+        self.license_status_label.setObjectName(u"license_status_label")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.license_status_label.sizePolicy().hasHeightForWidth())
+        self.license_status_label.setSizePolicy(sizePolicy2)
+        self.license_status_label.setStyleSheet(u"color:#e63c41;\n"
+"font-weight:bold")
+
+        self._2.addWidget(self.license_status_label)
+
+
+        self.gridLayout_2.addWidget(self.license_frame, 2, 0, 1, 1, Qt.AlignVCenter)
+
+        self.main_frame = QFrame(self.centralwidget)
+        self.main_frame.setObjectName(u"main_frame")
+        self.horizontalLayout_8 = QHBoxLayout(self.main_frame)
         self.horizontalLayout_8.setSpacing(0)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.verticalLayout_10 = QVBoxLayout()
-        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.verticalLayout_10.setContentsMargins(0, 10, -1, 0)
-        self.label_5 = QLabel(self.centralwidget)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setEnabled(True)
-        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.label_5.sizePolicy().hasHeightForWidth())
-        self.label_5.setSizePolicy(sizePolicy1)
-        self.label_5.setMaximumSize(QSize(250, 150))
-        self.label_5.setStyleSheet(u"background:rgba(255, 255, 255, 170);\n"
-"border-radius:20%;\n"
-"margin-bottom:10px;\n"
-"margin-left:10px;\n"
-"padding:10px;")
-        self.label_5.setPixmap(QPixmap(u"../../../Downloads/Tramigo-TrackingConnectivity-POS-RGB.png"))
-        self.label_5.setScaledContents(True)
-
-        self.verticalLayout_10.addWidget(self.label_5, 0, Qt.AlignHCenter|Qt.AlignVCenter)
-
-        self.listWidget = QListWidget(self.centralwidget)
+        self.horizontalLayout_8.setContentsMargins(0, 0, -1, -1)
+        self.listWidget = QListWidget(self.main_frame)
         icon2 = QIcon()
         icon2.addFile(u":/white-icons/Data/imgs/white icons/icons8-home-page-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qlistwidgetitem = QListWidgetItem(self.listWidget)
@@ -1275,11 +1306,17 @@ class Ui_MainWindow(object):
         icon4.addFile(u":/white-icons/Data/imgs/white icons/icons8-clock-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qlistwidgetitem2 = QListWidgetItem(self.listWidget)
         __qlistwidgetitem2.setIcon(icon4);
+        icon5 = QIcon()
+        icon5.addFile(u":/white-icons/Data/imgs/white icons/icons8-about-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qlistwidgetitem3 = QListWidgetItem(self.listWidget)
+        __qlistwidgetitem3.setIcon(icon5);
+        __qlistwidgetitem3.setFlags(Qt.ItemIsSelectable|Qt.ItemIsEnabled);
         self.listWidget.setObjectName(u"listWidget")
         self.listWidget.setMinimumSize(QSize(0, 0))
         self.listWidget.setMaximumSize(QSize(16777215, 16777215))
         font2 = QFont()
-        font2.setFamily(u"DIN Condensed")
+        font2.setFamily(u"arial")
+        font2.setPointSize(19)
         font2.setBold(True)
         font2.setWeight(75)
         self.listWidget.setFont(font2)
@@ -1287,26 +1324,13 @@ class Ui_MainWindow(object):
         self.listWidget.setLayoutDirection(Qt.LeftToRight)
         self.listWidget.setStyleSheet(u"QListView {\n"
 "    background:transparent;\n"
-"font-size:30px;\n"
-"font-family:\"DIN Condensed\"\n"
 "	\n"
 "\n"
 "}\n"
 "\n"
 "::item{\n"
 "width:100px;\n"
-"height:120px;\n"
-"color:white;\n"
-"\n"
-"}\n"
-"\n"
-"::item::selected{\n"
-"background: #D91E24;\n"
-"\n"
-"}\n"
-"\n"
-"::item::hover{\n"
-"background: #ff8383;\n"
+"height:130px;\n"
 "\n"
 "}\n"
 "\n"
@@ -1348,20 +1372,16 @@ class Ui_MainWindow(object):
         self.listWidget.setSelectionRectVisible(False)
         self.listWidget.setSortingEnabled(False)
 
-        self.verticalLayout_10.addWidget(self.listWidget)
+        self.horizontalLayout_8.addWidget(self.listWidget)
 
-
-        self.horizontalLayout_8.addLayout(self.verticalLayout_10)
-
-        self.tabWidget = QTabWidget(self.centralwidget)
+        self.tabWidget = QTabWidget(self.main_frame)
         self.tabWidget.setObjectName(u"tabWidget")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
-        self.tabWidget.setSizePolicy(sizePolicy2)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
+        self.tabWidget.setSizePolicy(sizePolicy3)
         self.tabWidget.setMaximumSize(QSize(16777215, 16777215))
-        self.tabWidget.setFont(font1)
         self.tabWidget.setStyleSheet(u"\n"
 "QTabWidget::tab-bar {\n"
 "   height:0;\n"
@@ -1384,16 +1404,16 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.setContentsMargins(-1, 0, -1, 0)
         self.frame = QFrame(self.main_tab)
         self.frame.setObjectName(u"frame")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
-        sizePolicy3.setHorizontalStretch(1)
-        sizePolicy3.setVerticalStretch(1)
-        sizePolicy3.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
-        self.frame.setSizePolicy(sizePolicy3)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy4.setHorizontalStretch(1)
+        sizePolicy4.setVerticalStretch(1)
+        sizePolicy4.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy4)
         self.frame.setMinimumSize(QSize(0, 0))
         self.frame.setMaximumSize(QSize(16777215, 16777215))
         self.frame.setSizeIncrement(QSize(0, 0))
         self.frame.setBaseSize(QSize(0, 0))
-        self.frame.setFont(font1)
+        self.frame.setFont(font)
         self.frame.setLayoutDirection(Qt.LeftToRight)
         self.frame.setStyleSheet(u"")
         self.frame.setFrameShape(QFrame.NoFrame)
@@ -1409,11 +1429,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
         self.groupBox.setSizePolicy(sizePolicy)
         self.groupBox.setMaximumSize(QSize(16777215, 16777215))
-        font3 = QFont()
-        font3.setFamily(u"arial")
-        font3.setBold(True)
-        font3.setWeight(75)
-        self.groupBox.setFont(font3)
+        self.groupBox.setFont(font)
         self.groupBox.setStyleSheet(u"QGroupBox{\n"
 "background:transparent;\n"
 "}")
@@ -1427,10 +1443,10 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName(u"gridLayout")
         self.textBrowser = QTextBrowser(self.groupBox)
         self.textBrowser.setObjectName(u"textBrowser")
-        sizePolicy2.setHeightForWidth(self.textBrowser.sizePolicy().hasHeightForWidth())
-        self.textBrowser.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.textBrowser.sizePolicy().hasHeightForWidth())
+        self.textBrowser.setSizePolicy(sizePolicy3)
         self.textBrowser.setMaximumSize(QSize(16777215, 80))
-        self.textBrowser.setFont(font1)
+        self.textBrowser.setFont(font)
         self.textBrowser.setStyleSheet(u"background:transparent;\n"
 "color:white")
         self.textBrowser.setFrameShape(QFrame.NoFrame)
@@ -1467,7 +1483,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.groupBox_2.sizePolicy().hasHeightForWidth())
         self.groupBox_2.setSizePolicy(sizePolicy)
         self.groupBox_2.setMaximumSize(QSize(16777215, 16777215))
-        self.groupBox_2.setFont(font3)
+        self.groupBox_2.setFont(font)
         self.verticalLayout_3 = QVBoxLayout(self.groupBox_2)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(50, 5, 50, 5)
@@ -1480,7 +1496,7 @@ class Ui_MainWindow(object):
         self.label = QLabel(self.groupBox_2)
         self.label.setObjectName(u"label")
         self.label.setMaximumSize(QSize(50, 16777215))
-        self.label.setFont(font1)
+        self.label.setFont(font)
 
         self.horizontalLayout_5.addWidget(self.label, 0, Qt.AlignHCenter)
 
@@ -1496,7 +1512,7 @@ class Ui_MainWindow(object):
         self.label_2 = QLabel(self.groupBox_2)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMaximumSize(QSize(120, 16777215))
-        self.label_2.setFont(font1)
+        self.label_2.setFont(font)
 
         self.horizontalLayout_5.addWidget(self.label_2, 0, Qt.AlignHCenter)
 
@@ -1512,7 +1528,7 @@ class Ui_MainWindow(object):
         self.label_4 = QLabel(self.groupBox_2)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setMaximumSize(QSize(100, 16777215))
-        self.label_4.setFont(font1)
+        self.label_4.setFont(font)
         self.label_4.setScaledContents(False)
         self.label_4.setWordWrap(False)
 
@@ -1573,8 +1589,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setContentsMargins(10, 10, 10, 5)
         self.contactCard_le = QLineEdit(self.contact_groupbox)
         self.contactCard_le.setObjectName(u"contactCard_le")
-        sizePolicy2.setHeightForWidth(self.contactCard_le.sizePolicy().hasHeightForWidth())
-        self.contactCard_le.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.contactCard_le.sizePolicy().hasHeightForWidth())
+        self.contactCard_le.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout.addWidget(self.contactCard_le)
 
@@ -1664,20 +1680,18 @@ class Ui_MainWindow(object):
         self.tableWidget = QTableWidget(self.report_tab)
         if (self.tableWidget.columnCount() < 3):
             self.tableWidget.setColumnCount(3)
-        icon5 = QIcon()
-        icon5.addFile(u":/white-icons/Data/imgs/white icons/icons8-contacts-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        __qtablewidgetitem = QTableWidgetItem()
-        __qtablewidgetitem.setIcon(icon5);
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         icon6 = QIcon()
-        icon6.addFile(u":/white-icons/Data/imgs/white icons/icons8-phone-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        __qtablewidgetitem1 = QTableWidgetItem()
-        __qtablewidgetitem1.setIcon(icon6);
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        icon6.addFile(u":/white-icons/Data/imgs/white icons/icons8-contacts-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qtablewidgetitem = QTableWidgetItem()
+        __qtablewidgetitem.setIcon(icon6);
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         icon7 = QIcon()
-        icon7.addFile(u":/white-icons/Data/imgs/white icons/icons8-about-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon7.addFile(u":/white-icons/Data/imgs/white icons/icons8-phone-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        __qtablewidgetitem1.setIcon(icon7);
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
-        __qtablewidgetitem2.setIcon(icon7);
+        __qtablewidgetitem2.setIcon(icon5);
         self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
@@ -1775,7 +1789,7 @@ class Ui_MainWindow(object):
 
         self.textBrowser_4 = QTextBrowser(self.about_tab)
         self.textBrowser_4.setObjectName(u"textBrowser_4")
-        self.textBrowser_4.setFont(font1)
+        self.textBrowser_4.setFont(font)
         self.textBrowser_4.setStyleSheet(u"background:transparent;\n"
 "color:white;\n"
 "border:transparent\n"
@@ -1791,12 +1805,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_8.setStretch(1, 1)
 
-        self.gridLayout_2.addLayout(self.horizontalLayout_8, 0, 0, 1, 3)
+        self.gridLayout_2.addWidget(self.main_frame, 0, 0, 1, 3)
 
-        self.horizontalLayout_7 = QHBoxLayout()
+        self.buttons_frame = QFrame(self.centralwidget)
+        self.buttons_frame.setObjectName(u"buttons_frame")
+        self.horizontalLayout_7 = QHBoxLayout(self.buttons_frame)
         self.horizontalLayout_7.setSpacing(15)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.start_btn = QPushButton(self.centralwidget)
+        self.start_btn = QPushButton(self.buttons_frame)
         self.start_btn.setObjectName(u"start_btn")
         self.start_btn.setMaximumSize(QSize(16777215, 45))
         icon10 = QIcon()
@@ -1806,7 +1822,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7.addWidget(self.start_btn)
 
-        self.stop_btn = QPushButton(self.centralwidget)
+        self.stop_btn = QPushButton(self.buttons_frame)
         self.stop_btn.setObjectName(u"stop_btn")
         self.stop_btn.setMaximumSize(QSize(16777215, 45))
         icon11 = QIcon()
@@ -1817,20 +1833,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.addWidget(self.stop_btn)
 
 
-        self.gridLayout_2.addLayout(self.horizontalLayout_7, 1, 1, 1, 1)
-
-        self.logout_btn = QPushButton(self.centralwidget)
-        self.logout_btn.setObjectName(u"logout_btn")
-        sizePolicy1.setHeightForWidth(self.logout_btn.sizePolicy().hasHeightForWidth())
-        self.logout_btn.setSizePolicy(sizePolicy1)
-        font4 = QFont()
-        font4.setFamily(u"arial")
-        font4.setBold(False)
-        font4.setWeight(50)
-        self.logout_btn.setFont(font4)
-        self.logout_btn.setStyleSheet(u"margin-right : 20px")
-
-        self.gridLayout_2.addWidget(self.logout_btn, 2, 1, 1, 2, Qt.AlignRight)
+        self.gridLayout_2.addWidget(self.buttons_frame, 1, 1, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
@@ -1840,7 +1843,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.listWidget.currentRowChanged.connect(self.tabWidget.setCurrentIndex)
 
-        self.listWidget.setCurrentRow(-1)
+        self.listWidget.setCurrentRow(0)
         self.tabWidget.setCurrentIndex(0)
 
 
@@ -1849,8 +1852,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"WhatsApp Bulk Sender 2.0", None))
-        self.commandLinkButton.setText(QCoreApplication.translate("MainWindow", u"\u00a9 Copyright 2020 TRAMIGO", None))
-        self.label_5.setText("")
+        self.logout_btn.setText(QCoreApplication.translate("MainWindow", u"Logout from current Whatsapp", None))
+        self.commandLinkButton.setText(QCoreApplication.translate("MainWindow", u"\u00a9 Copyright 2020 LorDAhmeD", None))
+        self.license_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type your License key", None))
+        self.license_btn.setText(QCoreApplication.translate("MainWindow", u"Activate", None))
 
         __sortingEnabled = self.listWidget.isSortingEnabled()
         self.listWidget.setSortingEnabled(False)
@@ -1860,13 +1865,15 @@ class Ui_MainWindow(object):
         ___qlistwidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Report", None));
         ___qlistwidgetitem2 = self.listWidget.item(2)
         ___qlistwidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Schedule", None));
+        ___qlistwidgetitem3 = self.listWidget.item(3)
+        ___qlistwidgetitem3.setText(QCoreApplication.translate("MainWindow", u"About", None));
         self.listWidget.setSortingEnabled(__sortingEnabled)
 
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Choose the contacts source", None))
         self.textBrowser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'arial'; font-size:12px; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffffff;\">*** IMPORTANT ***</span></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;\">Names</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> in Column A </span><span style=\" font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:600;\">("
                         "optional)</span></p>\n"
@@ -1908,7 +1915,7 @@ class Ui_MainWindow(object):
         self.textBrowser_2.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'arial'; font-size:12px; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8.25pt;\"><br /></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;\"><br /></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;\"><br /></p>\n"
@@ -1917,7 +1924,7 @@ class Ui_MainWindow(object):
         self.textBrowser_4.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'arial'; font-size:12px; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8.25pt;\"><br /></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;\"><br /></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;\"><br /></p>\n"
@@ -1934,6 +1941,5 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.about_tab), QCoreApplication.translate("MainWindow", u"Page", None))
         self.start_btn.setText("")
         self.stop_btn.setText("")
-        self.logout_btn.setText(QCoreApplication.translate("MainWindow", u"Logout from current Whatsapp", None))
     # retranslateUi
 

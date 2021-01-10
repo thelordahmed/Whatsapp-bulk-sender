@@ -7,7 +7,7 @@ packages = ["normal", "standard", "premium"]
 ##########################################################
 package = packages[2]   # CHOOSE WHICH PACKAGE TO COMPILE
 demo = False
-copyright_url = "https://tramigo.com/"    # "https://www.fiverr.com/lordahmed"
+copyright_url = "https://www.fiverr.com/lordahmed"   # "https://www.fiverr.com/lordahmed"
 ##########################################################
 if package == "normal":
     attachments_enabled = False
