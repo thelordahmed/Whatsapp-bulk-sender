@@ -34,6 +34,7 @@ class Main:
             os.system("mkdir Data")
         self.model = Model()
         self.view = View(self.api_url)
+        self.view.adjustSize()
         self.license = License(self.api_url, self.view)
         # Sending Key Request if pre-saved key found
         try:
@@ -90,6 +91,7 @@ class Main:
         if extra_var is not None:
             self.view.extra_var_btn.clicked.connect(self.view.appendToPlainTextBox_extraVar)
         self.view.logout_btn.clicked.connect(self.logout_btn_func)
+        self.view.contact_groupbox.toggled.connect(lambda: self.view.contactCard_le.setStyleSheet("color:white"))
         ###############################################
 
     def newSessionFunc(self):
@@ -243,7 +245,7 @@ class Main:
         messages_sent = 0
 
         if demo is True:
-            data_list = data_list[:3]
+            data_list = data_list[:5]
         for contact in data_list:
             if self.view.time_groupBox.isChecked() is True:
                 # start and end time check ------------

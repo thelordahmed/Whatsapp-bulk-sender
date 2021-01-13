@@ -57,6 +57,7 @@ class License:
                     self.show()
                     current_title = self.view.windowTitle()
                     self.view.setWindowTitle(f"{current_title} ---- Expire Date: {res['date']}")
+                    self.view.adjustSize()
         except ConnectionError:
             self.view.license_status_label.setText("Connection Error!")
             self.view.license_btn.setEnabled(True)
