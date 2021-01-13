@@ -1,5 +1,7 @@
 import os
 import platform
+from json.decoder import JSONDecodeError
+
 import requests
 from requests.exceptions import ConnectionError
 from getmac import get_mac_address as gma
@@ -32,7 +34,13 @@ class License:
             if key != "":
                 self.view.license_btn.setDisabled(True)
                 mac = gma()
-                res = requests.put(f"{self.api_url}/key/{key}/{mac}").json()
+                try:
+                    res = requests.put(f"{self.api_url}/key/{key}/{mac}").json()
+                except JSONDecodeError:
+                    self.view.license_status_label.setText(
+                        "Invalid key. \nplease visit link below to order a valid key\n\nhttps://www.fiverr.com/share/5ADL24 ")
+                    self.view.license_btn.setEnabled(True)
+                    return False
                 self.license_input.setText(key)
                 if res["response"] == "expired":
                     self.view.license_status_label.setText("Sorry, this license has expired. \nplease visit link below to renew your key\n\nhttps://www.fiverr.com/share/5ADL24")

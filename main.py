@@ -2,6 +2,7 @@ import csv
 import os
 import platform
 import random
+import subprocess
 from time import sleep
 from model import Model
 from PySide2 import QtWidgets, QtCore
@@ -11,6 +12,8 @@ from threading import Thread
 from ast import literal_eval
 from features_controller import country_code, extra_var, copyright_link, language, demo
 from license_validation import License
+import sys
+
 
 if platform.system() == "Darwin":
     data_folder = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data"
@@ -188,6 +191,18 @@ class Main:
             for i in messages:
                 self.wa.sending_sameFormat(i.strip())
 
+    @staticmethod
+    def process_exists(process_name):
+        """
+        usefull method to check on current running task
+        """
+        call = 'TASKLIST', '/FI', 'imagename eq %s' % process_name
+        # use buildin check_output right away
+        output = subprocess.check_output(call).decode()
+        # check in last line for process name
+        last_line = output.strip().split('\r\n')[-1]
+        # because Fail message could be translated
+        return last_line.lower().startswith(process_name.lower())
 
     def process(self):
         model2 = Model()
@@ -397,6 +412,7 @@ class Main:
 
 
 if __name__ == '__main__':
+
     app = QtWidgets.QApplication()
     main = Main()
     app.exec_()
