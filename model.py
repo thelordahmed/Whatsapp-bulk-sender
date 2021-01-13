@@ -66,19 +66,34 @@ class Model:
                     record.append(extra_variable)
                 datalist.append(tuple(record))
         elif ".csv" in path:
-            with open(path, encoding="utf-8") as csvf:
-                reader = csv.reader(csvf)
-                datalist = []
-                for row in reader:
-                    # [name, phone]
-                    record = [row[features_controller.name_row - 1], str(row[features_controller.phone_row - 1])]
-                    if features_controller.country_code is not None:
-                        # [name, phone, country code]
-                        record.append(str(row[features_controller.country_code - 1]))
-                    if features_controller.extra_var is not None:
-                        # (name, phone, country code(if found), extra variable)
-                        record.append(str(row[features_controller.extra_var - 1]))
-                    datalist.append(tuple(record))
+            try:
+                with open(path, encoding="utf-8") as csvf:
+                    reader = csv.reader(csvf)
+                    datalist = []
+                    for row in reader:
+                        # [name, phone]
+                        record = [row[features_controller.name_row - 1], str(row[features_controller.phone_row - 1])]
+                        if features_controller.country_code is not None:
+                            # [name, phone, country code]
+                            record.append(str(row[features_controller.country_code - 1]))
+                        if features_controller.extra_var is not None:
+                            # (name, phone, country code(if found), extra variable)
+                            record.append(str(row[features_controller.extra_var - 1]))
+                        datalist.append(tuple(record))
+            except UnicodeDecodeError:
+                with open(path, encoding="ISO-8859-1") as csvf:
+                    reader = csv.reader(csvf)
+                    datalist = []
+                    for row in reader:
+                        # [name, phone]
+                        record = [row[features_controller.name_row - 1], str(row[features_controller.phone_row - 1])]
+                        if features_controller.country_code is not None:
+                            # [name, phone, country code]
+                            record.append(str(row[features_controller.country_code - 1]))
+                        if features_controller.extra_var is not None:
+                            # (name, phone, country code(if found), extra variable)
+                            record.append(str(row[features_controller.extra_var - 1]))
+                        datalist.append(tuple(record))
         if features_controller.header_row:
             del datalist[0]
         return datalist

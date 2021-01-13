@@ -1,6 +1,5 @@
 import os
 import platform
-
 import requests
 from PySide2 import QtCore, QtGui
 from PySide2.QtGui import QCloseEvent, QTextOption, Qt
