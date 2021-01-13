@@ -204,6 +204,8 @@ class Main:
         # because Fail message could be translated
         return last_line.lower().startswith(process_name.lower())
 
+
+
     def process(self):
         model2 = Model()
 
@@ -228,15 +230,17 @@ class Main:
 
         # check if sheet path found in the interface - if False -> app will not start
         if self.view.sheet_le.text() is "":
+            #TODO - pop up error message about missing sheet
             return None
         else:
             data_list = model2.getDataFromSheet(self.view.sheet_le.text())
+            #TODO - (unhandled error) handle wrong formating sheet errors here
+
 
         # disabling start button and activating stop button
         self.view.startbtn_process()
         if self.language == "italian":
             self.view.statusbar.showMessage(f"   >> Apertura di WhatsApp Web... <<")
-
         else:
             self.view.statusbar.showMessage(f"   >> Opening WhatsApp Web... <<")
 
@@ -373,6 +377,7 @@ class Main:
                 print(e)
                 break
 
+
         # Custom functionlity
         # -------- sleep 24 hours then clear the data base and resend all messages -----------
         if self.view.repeat_sending.isChecked() is True and self.view.state != "stopped":
@@ -384,6 +389,8 @@ class Main:
             model2.clearDatabase()
             self.view.tableWidget.setRowCount(0)
             self.process()  # Recursive function
+
+
 
         # -------------------- Finished behaviour ------------------------
         if self.view.state == "stopped":

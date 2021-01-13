@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(776, 955)
+        MainWindow.resize(745, 806)
         MainWindow.setMinimumSize(QSize(745, 0))
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
         font = QFont()
@@ -1204,89 +1204,6 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setSpacing(5)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.logout_btn = QPushButton(self.centralwidget)
-        self.logout_btn.setObjectName(u"logout_btn")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.logout_btn.sizePolicy().hasHeightForWidth())
-        self.logout_btn.setSizePolicy(sizePolicy1)
-        font1 = QFont()
-        font1.setFamily(u"arial")
-        font1.setBold(False)
-        font1.setWeight(50)
-        self.logout_btn.setFont(font1)
-        self.logout_btn.setStyleSheet(u"margin-right : 20px")
-
-        self.gridLayout_2.addWidget(self.logout_btn, 2, 1, 1, 2, Qt.AlignRight)
-
-        self.commandLinkButton = QCommandLinkButton(self.centralwidget)
-        self.commandLinkButton.setObjectName(u"commandLinkButton")
-        self.commandLinkButton.setMaximumSize(QSize(16777215, 25))
-        self.commandLinkButton.setFont(font)
-        self.commandLinkButton.setCursor(QCursor(Qt.PointingHandCursor))
-        self.commandLinkButton.setStyleSheet(u"background: transparent;\n"
-"border:0")
-        icon1 = QIcon()
-        iconThemeName = u";"
-        if QIcon.hasThemeIcon(iconThemeName):
-            icon1 = QIcon.fromTheme(iconThemeName)
-        else:
-            icon1.addFile(u"../Yellow Pages sg", QSize(), QIcon.Normal, QIcon.Off)
-        
-        self.commandLinkButton.setIcon(icon1)
-
-        self.gridLayout_2.addWidget(self.commandLinkButton, 1, 0, 1, 1)
-
-        self.license_frame = QFrame(self.centralwidget)
-        self.license_frame.setObjectName(u"license_frame")
-        sizePolicy.setHeightForWidth(self.license_frame.sizePolicy().hasHeightForWidth())
-        self.license_frame.setSizePolicy(sizePolicy)
-        self.license_frame.setStyleSheet(u"QFrame{\n"
-"	background:transparent\n"
-"}")
-        self._2 = QVBoxLayout(self.license_frame)
-        self._2.setObjectName(u"_2")
-        self._2.setContentsMargins(100, 100, 100, 0)
-        self.horizontalLayout_25 = QHBoxLayout()
-        self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
-        self.horizontalLayout_25.setContentsMargins(-1, 0, -1, -1)
-        self.license_le = QLineEdit(self.license_frame)
-        self.license_le.setObjectName(u"license_le")
-        self.license_le.setStyleSheet(u"padding:7px;\n"
-"font-size:14px")
-
-        self.horizontalLayout_25.addWidget(self.license_le)
-
-        self.license_btn = QPushButton(self.license_frame)
-        self.license_btn.setObjectName(u"license_btn")
-        self.license_btn.setStyleSheet(u"padding:8px;\n"
-"font-weight:bold")
-
-        self.horizontalLayout_25.addWidget(self.license_btn)
-
-
-        self._2.addLayout(self.horizontalLayout_25)
-
-        self.license_status_label = QTextBrowser(self.license_frame)
-        self.license_status_label.setObjectName(u"license_status_label")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.license_status_label.sizePolicy().hasHeightForWidth())
-        self.license_status_label.setSizePolicy(sizePolicy2)
-        self.license_status_label.setMinimumSize(QSize(0, 100))
-        self.license_status_label.setMaximumSize(QSize(16777215, 100))
-        self.license_status_label.setStyleSheet(u"color:#e63c41;\n"
-"font-weight:bold;\n"
-"border:none;\n"
-"")
-
-        self._2.addWidget(self.license_status_label)
-
-
-        self.gridLayout_2.addWidget(self.license_frame, 2, 0, 1, 1, Qt.AlignVCenter)
-
         self.main_frame = QFrame(self.centralwidget)
         self.main_frame.setObjectName(u"main_frame")
         self.horizontalLayout_8 = QHBoxLayout(self.main_frame)
@@ -1294,37 +1211,37 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.horizontalLayout_8.setContentsMargins(0, 0, -1, -1)
         self.listWidget = QListWidget(self.main_frame)
-        icon2 = QIcon()
-        icon2.addFile(u":/white-icons/Data/imgs/white icons/icons8-home-page-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1 = QIcon()
+        icon1.addFile(u":/white-icons/Data/imgs/white icons/icons8-home-page-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qlistwidgetitem = QListWidgetItem(self.listWidget)
         __qlistwidgetitem.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
-        __qlistwidgetitem.setIcon(icon2);
-        icon3 = QIcon()
-        icon3.addFile(u":/white-icons/Data/imgs/white icons/icons8-combo-chart-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qlistwidgetitem.setIcon(icon1);
+        icon2 = QIcon()
+        icon2.addFile(u":/white-icons/Data/imgs/white icons/icons8-combo-chart-500.png", QSize(), QIcon.Normal, QIcon.Off)
         brush = QBrush(QColor(0, 0, 0, 255))
         brush.setStyle(Qt.NoBrush)
         __qlistwidgetitem1 = QListWidgetItem(self.listWidget)
         __qlistwidgetitem1.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
         __qlistwidgetitem1.setBackground(brush);
-        __qlistwidgetitem1.setIcon(icon3);
-        icon4 = QIcon()
-        icon4.addFile(u":/white-icons/Data/imgs/white icons/icons8-clock-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qlistwidgetitem1.setIcon(icon2);
+        icon3 = QIcon()
+        icon3.addFile(u":/white-icons/Data/imgs/white icons/icons8-clock-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qlistwidgetitem2 = QListWidgetItem(self.listWidget)
-        __qlistwidgetitem2.setIcon(icon4);
-        icon5 = QIcon()
-        icon5.addFile(u":/white-icons/Data/imgs/white icons/icons8-about-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qlistwidgetitem2.setIcon(icon3);
+        icon4 = QIcon()
+        icon4.addFile(u":/white-icons/Data/imgs/white icons/icons8-about-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qlistwidgetitem3 = QListWidgetItem(self.listWidget)
-        __qlistwidgetitem3.setIcon(icon5);
+        __qlistwidgetitem3.setIcon(icon4);
         __qlistwidgetitem3.setFlags(Qt.ItemIsSelectable|Qt.ItemIsEnabled);
         self.listWidget.setObjectName(u"listWidget")
         self.listWidget.setMinimumSize(QSize(0, 0))
         self.listWidget.setMaximumSize(QSize(16777215, 16777215))
-        font2 = QFont()
-        font2.setFamily(u"arial")
-        font2.setPointSize(19)
-        font2.setBold(True)
-        font2.setWeight(75)
-        self.listWidget.setFont(font2)
+        font1 = QFont()
+        font1.setFamily(u"arial")
+        font1.setPointSize(19)
+        font1.setBold(True)
+        font1.setWeight(75)
+        self.listWidget.setFont(font1)
         self.listWidget.setMouseTracking(False)
         self.listWidget.setLayoutDirection(Qt.LeftToRight)
         self.listWidget.setStyleSheet(u"QListView {\n"
@@ -1381,11 +1298,11 @@ class Ui_MainWindow(object):
 
         self.tabWidget = QTabWidget(self.main_frame)
         self.tabWidget.setObjectName(u"tabWidget")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
-        self.tabWidget.setSizePolicy(sizePolicy3)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
+        self.tabWidget.setSizePolicy(sizePolicy1)
         self.tabWidget.setMaximumSize(QSize(16777215, 16777215))
         self.tabWidget.setStyleSheet(u"\n"
 "QTabWidget::tab-bar {\n"
@@ -1409,11 +1326,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.setContentsMargins(-1, 0, -1, 0)
         self.frame = QFrame(self.main_tab)
         self.frame.setObjectName(u"frame")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
-        sizePolicy4.setHorizontalStretch(1)
-        sizePolicy4.setVerticalStretch(1)
-        sizePolicy4.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
-        self.frame.setSizePolicy(sizePolicy4)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy2.setHorizontalStretch(1)
+        sizePolicy2.setVerticalStretch(1)
+        sizePolicy2.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy2)
         self.frame.setMinimumSize(QSize(0, 0))
         self.frame.setMaximumSize(QSize(16777215, 16777215))
         self.frame.setSizeIncrement(QSize(0, 0))
@@ -1448,8 +1365,8 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName(u"gridLayout")
         self.textBrowser = QTextBrowser(self.groupBox)
         self.textBrowser.setObjectName(u"textBrowser")
-        sizePolicy3.setHeightForWidth(self.textBrowser.sizePolicy().hasHeightForWidth())
-        self.textBrowser.setSizePolicy(sizePolicy3)
+        sizePolicy1.setHeightForWidth(self.textBrowser.sizePolicy().hasHeightForWidth())
+        self.textBrowser.setSizePolicy(sizePolicy1)
         self.textBrowser.setMaximumSize(QSize(16777215, 80))
         self.textBrowser.setFont(font)
         self.textBrowser.setStyleSheet(u"background:transparent;\n"
@@ -1594,8 +1511,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setContentsMargins(10, 10, 10, 5)
         self.contactCard_le = QLineEdit(self.contact_groupbox)
         self.contactCard_le.setObjectName(u"contactCard_le")
-        sizePolicy3.setHeightForWidth(self.contactCard_le.sizePolicy().hasHeightForWidth())
-        self.contactCard_le.setSizePolicy(sizePolicy3)
+        sizePolicy1.setHeightForWidth(self.contactCard_le.sizePolicy().hasHeightForWidth())
+        self.contactCard_le.setSizePolicy(sizePolicy1)
 
         self.horizontalLayout.addWidget(self.contactCard_le)
 
@@ -1685,18 +1602,18 @@ class Ui_MainWindow(object):
         self.tableWidget = QTableWidget(self.report_tab)
         if (self.tableWidget.columnCount() < 3):
             self.tableWidget.setColumnCount(3)
-        icon6 = QIcon()
-        icon6.addFile(u":/white-icons/Data/imgs/white icons/icons8-contacts-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5 = QIcon()
+        icon5.addFile(u":/white-icons/Data/imgs/white icons/icons8-contacts-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qtablewidgetitem = QTableWidgetItem()
-        __qtablewidgetitem.setIcon(icon6);
+        __qtablewidgetitem.setIcon(icon5);
         self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
-        icon7 = QIcon()
-        icon7.addFile(u":/white-icons/Data/imgs/white icons/icons8-phone-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6 = QIcon()
+        icon6.addFile(u":/white-icons/Data/imgs/white icons/icons8-phone-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qtablewidgetitem1 = QTableWidgetItem()
-        __qtablewidgetitem1.setIcon(icon7);
+        __qtablewidgetitem1.setIcon(icon6);
         self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
-        __qtablewidgetitem2.setIcon(icon5);
+        __qtablewidgetitem2.setIcon(icon4);
         self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
@@ -1715,9 +1632,9 @@ class Ui_MainWindow(object):
         self.csv_btn = QPushButton(self.report_tab)
         self.csv_btn.setObjectName(u"csv_btn")
         self.csv_btn.setMaximumSize(QSize(150, 16777215))
-        icon8 = QIcon()
-        icon8.addFile(u":/white-icons/Data/imgs/white icons/icons8-save-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.csv_btn.setIcon(icon8)
+        icon7 = QIcon()
+        icon7.addFile(u":/white-icons/Data/imgs/white icons/icons8-save-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.csv_btn.setIcon(icon7)
         self.csv_btn.setIconSize(QSize(22, 22))
 
         self.horizontalLayout_9.addWidget(self.csv_btn)
@@ -1725,9 +1642,9 @@ class Ui_MainWindow(object):
         self.newsession_btn = QPushButton(self.report_tab)
         self.newsession_btn.setObjectName(u"newsession_btn")
         self.newsession_btn.setMaximumSize(QSize(150, 16777215))
-        icon9 = QIcon()
-        icon9.addFile(u":/white-icons/Data/imgs/white icons/icons8-trash-can-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.newsession_btn.setIcon(icon9)
+        icon8 = QIcon()
+        icon8.addFile(u":/white-icons/Data/imgs/white icons/icons8-trash-can-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.newsession_btn.setIcon(icon8)
         self.newsession_btn.setIconSize(QSize(19, 18))
 
         self.horizontalLayout_9.addWidget(self.newsession_btn)
@@ -1820,9 +1737,9 @@ class Ui_MainWindow(object):
         self.start_btn = QPushButton(self.buttons_frame)
         self.start_btn.setObjectName(u"start_btn")
         self.start_btn.setMaximumSize(QSize(16777215, 45))
-        icon10 = QIcon()
-        icon10.addFile(u":/black-icons/Data/imgs/black icons/icons8-play-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.start_btn.setIcon(icon10)
+        icon9 = QIcon()
+        icon9.addFile(u":/black-icons/Data/imgs/black icons/icons8-play-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.start_btn.setIcon(icon9)
         self.start_btn.setIconSize(QSize(34, 48))
 
         self.horizontalLayout_7.addWidget(self.start_btn)
@@ -1830,15 +1747,109 @@ class Ui_MainWindow(object):
         self.stop_btn = QPushButton(self.buttons_frame)
         self.stop_btn.setObjectName(u"stop_btn")
         self.stop_btn.setMaximumSize(QSize(16777215, 45))
-        icon11 = QIcon()
-        icon11.addFile(u":/black-icons/Data/imgs/black icons/icons8-stop-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.stop_btn.setIcon(icon11)
+        icon10 = QIcon()
+        icon10.addFile(u":/black-icons/Data/imgs/black icons/icons8-stop-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.stop_btn.setIcon(icon10)
         self.stop_btn.setIconSize(QSize(38, 37))
 
         self.horizontalLayout_7.addWidget(self.stop_btn)
 
 
         self.gridLayout_2.addWidget(self.buttons_frame, 1, 1, 1, 1)
+
+        self.horizontalFrame = QFrame(self.centralwidget)
+        self.horizontalFrame.setObjectName(u"horizontalFrame")
+        self.horizontalFrame.setStyleSheet(u"QFrame{\n"
+"	background:transparent\n"
+"}")
+        self.horizontalLayout_13 = QHBoxLayout(self.horizontalFrame)
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.horizontalLayout_13.setContentsMargins(-1, 1, -1, -1)
+        self.commandLinkButton = QCommandLinkButton(self.horizontalFrame)
+        self.commandLinkButton.setObjectName(u"commandLinkButton")
+        self.commandLinkButton.setMaximumSize(QSize(16777215, 25))
+        self.commandLinkButton.setFont(font)
+        self.commandLinkButton.setCursor(QCursor(Qt.PointingHandCursor))
+        self.commandLinkButton.setStyleSheet(u"background: transparent;\n"
+"border:0")
+        icon11 = QIcon()
+        iconThemeName = u";"
+        if QIcon.hasThemeIcon(iconThemeName):
+            icon11 = QIcon.fromTheme(iconThemeName)
+        else:
+            icon11.addFile(u"../Yellow Pages sg", QSize(), QIcon.Normal, QIcon.Off)
+        
+        self.commandLinkButton.setIcon(icon11)
+
+        self.horizontalLayout_13.addWidget(self.commandLinkButton, 0, Qt.AlignLeft)
+
+        self.logout_btn = QPushButton(self.horizontalFrame)
+        self.logout_btn.setObjectName(u"logout_btn")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.logout_btn.sizePolicy().hasHeightForWidth())
+        self.logout_btn.setSizePolicy(sizePolicy3)
+        font2 = QFont()
+        font2.setFamily(u"arial")
+        font2.setBold(False)
+        font2.setWeight(50)
+        self.logout_btn.setFont(font2)
+        self.logout_btn.setStyleSheet(u"margin-right : 20px")
+
+        self.horizontalLayout_13.addWidget(self.logout_btn, 0, Qt.AlignRight)
+
+
+        self.gridLayout_2.addWidget(self.horizontalFrame, 3, 0, 1, 3)
+
+        self.license_frame = QFrame(self.centralwidget)
+        self.license_frame.setObjectName(u"license_frame")
+        sizePolicy.setHeightForWidth(self.license_frame.sizePolicy().hasHeightForWidth())
+        self.license_frame.setSizePolicy(sizePolicy)
+        self.license_frame.setStyleSheet(u"QFrame{\n"
+"	background:transparent\n"
+"}")
+        self._2 = QVBoxLayout(self.license_frame)
+        self._2.setObjectName(u"_2")
+        self._2.setContentsMargins(100, 100, 100, 0)
+        self.horizontalLayout_25 = QHBoxLayout()
+        self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
+        self.horizontalLayout_25.setContentsMargins(-1, 0, -1, -1)
+        self.license_le = QLineEdit(self.license_frame)
+        self.license_le.setObjectName(u"license_le")
+        self.license_le.setStyleSheet(u"padding:7px;\n"
+"font-size:14px")
+
+        self.horizontalLayout_25.addWidget(self.license_le)
+
+        self.license_btn = QPushButton(self.license_frame)
+        self.license_btn.setObjectName(u"license_btn")
+        self.license_btn.setStyleSheet(u"padding:8px;\n"
+"font-weight:bold")
+
+        self.horizontalLayout_25.addWidget(self.license_btn)
+
+
+        self._2.addLayout(self.horizontalLayout_25)
+
+        self.license_status_label = QTextBrowser(self.license_frame)
+        self.license_status_label.setObjectName(u"license_status_label")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.license_status_label.sizePolicy().hasHeightForWidth())
+        self.license_status_label.setSizePolicy(sizePolicy4)
+        self.license_status_label.setMinimumSize(QSize(0, 100))
+        self.license_status_label.setMaximumSize(QSize(16777215, 100))
+        self.license_status_label.setStyleSheet(u"color:#e63c41;\n"
+"font-weight:bold;\n"
+"border:none;\n"
+"")
+
+        self._2.addWidget(self.license_status_label)
+
+
+        self.gridLayout_2.addWidget(self.license_frame, 2, 1, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
@@ -1857,10 +1868,6 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"WhatsApp Bulk Sender 2.0", None))
-        self.logout_btn.setText(QCoreApplication.translate("MainWindow", u"Logout from current Whatsapp", None))
-        self.commandLinkButton.setText(QCoreApplication.translate("MainWindow", u"\u00a9 Copyright 2020 LorDAhmeD", None))
-        self.license_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type your License key", None))
-        self.license_btn.setText(QCoreApplication.translate("MainWindow", u"Activate", None))
 
         __sortingEnabled = self.listWidget.isSortingEnabled()
         self.listWidget.setSortingEnabled(False)
@@ -1946,5 +1953,9 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.about_tab), QCoreApplication.translate("MainWindow", u"Page", None))
         self.start_btn.setText("")
         self.stop_btn.setText("")
+        self.commandLinkButton.setText(QCoreApplication.translate("MainWindow", u"\u00a9 Copyright 2020 LorDAhmeD", None))
+        self.logout_btn.setText(QCoreApplication.translate("MainWindow", u"Logout from current Whatsapp", None))
+        self.license_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type your License key", None))
+        self.license_btn.setText(QCoreApplication.translate("MainWindow", u"Activate", None))
     # retranslateUi
 

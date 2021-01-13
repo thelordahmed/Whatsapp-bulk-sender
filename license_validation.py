@@ -1,7 +1,7 @@
 import os
 import platform
 from json.decoder import JSONDecodeError
-
+from features_controller import copyright_text
 import requests
 from requests.exceptions import ConnectionError
 from getmac import get_mac_address as gma
@@ -27,7 +27,7 @@ class License:
         self.view.logout_btn.show()
 
     def validate(self, key=None):
-        # if key is None, that means this method was called on app start with pre-saved key
+        # if key is None, that means this method was called on app-start with pre-saved key
         if key is None:
             key = self.license_input.text().strip()
         try:
@@ -37,16 +37,27 @@ class License:
                 try:
                     res = requests.put(f"{self.api_url}/key/{key}/{mac}").json()
                 except JSONDecodeError:
-                    self.view.license_status_label.setText(
-                        "Invalid key. \nplease visit link below to order a valid key\n\nhttps://www.fiverr.com/share/5ADL24 ")
+                    if copyright_text == "AhmeDSaeeD | (lordahmed on Fiverr)":
+                        self.view.license_status_label.setText(
+                            "Invalid key. \nplease visit link below to order a valid key\n\nhttps://www.fiverr.com/share/5ADL24 ")
+                    else:
+                        self.view.license_status_label.setText("Invalid key! ")
                     self.view.license_btn.setEnabled(True)
                     return False
                 self.license_input.setText(key)
                 if res["response"] == "expired":
-                    self.view.license_status_label.setText("Sorry, this license has expired. \nplease visit link below to renew your key\n\nhttps://www.fiverr.com/share/5ADL24")
+                    if copyright_text == "AhmeDSaeeD | (lordahmed on Fiverr)":
+                        self.view.license_status_label.setText("Sorry, this license has expired. \nplease visit link below to renew your key\n\nhttps://www.fiverr.com/share/5ADL24")
+                    else:
+                        self.view.license_status_label.setText("Sorry, Expired License")
+
                     self.view.license_btn.setEnabled(True)
                 elif res["response"] == "invalid":
-                    self.view.license_status_label.setText("Invalid key. \nplease visit link below to order a valid key\n\nhttps://www.fiverr.com/share/5ADL24 ")
+                    if copyright_text == "AhmeDSaeeD | (lordahmed on Fiverr)":
+                        self.view.license_status_label.setText("Invalid key. \nplease visit link below to order a valid key\n\nhttps://www.fiverr.com/share/5ADL24 ")
+                    else:
+                        self.view.license_status_label.setText("Invalid key!")
+
                     self.view.license_btn.setEnabled(True)
                 elif res["response"] == "different device":
                     self.view.license_status_label.setText("Sorry, this key is registed to another device. \nplease contact the seller.")
