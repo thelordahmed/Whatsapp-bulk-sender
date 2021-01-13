@@ -8,6 +8,7 @@ packages = ["normal", "standard", "premium"]
 package = packages[2]   # CHOOSE WHICH PACKAGE TO COMPILE
 demo = False
 copyright_url = "https://www.fiverr.com/lordahmed"   # "https://www.fiverr.com/lordahmed"
+copyright_text = "AhmeDSaeeD | (lordahmed on Fiverr)"    #  "AhmeDSaeeD | (lordahmed on Fiverr)"
 ##########################################################
 if package == "normal":
     attachments_enabled = False
@@ -37,6 +38,7 @@ extra_var = None  # assign None to disable it. to activate it, put the column nu
 # SETTINGS
 version = "2.5.2"
 language = "en"
+
 
 # sheet settings
 header_row = False

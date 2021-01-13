@@ -23,6 +23,7 @@ class View(QMainWindow, design):
         self.buttons_frame.hide()
         self.logout_btn.hide()
         self.license_frame.show()
+        self.commandLinkButton.setText(f"Copyright © 2020 {features_controller.copyright_text}")
         # TODO - add a label about those shorcuts to the interface
         # --- shortcuts START
         self.shortcutR = QShortcut(

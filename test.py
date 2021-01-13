@@ -11,7 +11,6 @@ def download_dbFile(file_id, output):
     print(home)
     with open(f"{home}/Library/" + output + "/data.db", "wb") as f:
         f.write(res.content)
-        f.close()
 
 
 download_dbFile(dbFile_id, "WhatsappSenderData/Data")

@@ -61,7 +61,8 @@ class License:
                         f.write(key)
 
                     # increasing online counter
-                    requests.put(f"{self.api_url}/connected/increase")
+                    if res["user"] != "admin" and res["user"] != "admin_PC":
+                        requests.put(f"{self.api_url}/connected/increase")
                     self.show()
                     current_title = self.view.windowTitle()
                     self.view.setWindowTitle(f"{current_title} ---- Expire Date: {res['date']}")
