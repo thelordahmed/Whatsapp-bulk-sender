@@ -72,7 +72,11 @@ class Model:
                     datalist = []
                     for row in reader:
                         # [name, phone]
-                        record = [row[features_controller.name_row - 1], str(row[features_controller.phone_row - 1])]
+                        try:
+                            record = [row[features_controller.name_row - 1], str(row[features_controller.phone_row - 1])]
+                        # fixing a bug when column A is empty
+                        except IndexError:
+                            record = ["", str(row[features_controller.name_row - 1])]
                         if features_controller.country_code is not None:
                             # [name, phone, country code]
                             record.append(str(row[features_controller.country_code - 1]))
@@ -86,7 +90,12 @@ class Model:
                     datalist = []
                     for row in reader:
                         # [name, phone]
-                        record = [row[features_controller.name_row - 1], str(row[features_controller.phone_row - 1])]
+                        try:
+                            record = [row[features_controller.name_row - 1],
+                                      str(row[features_controller.phone_row - 1])]
+                        # fixing a bug when column A is empty
+                        except IndexError:
+                            record = ["", str(row[features_controller.name_row - 1])]
                         if features_controller.country_code is not None:
                             # [name, phone, country code]
                             record.append(str(row[features_controller.country_code - 1]))
