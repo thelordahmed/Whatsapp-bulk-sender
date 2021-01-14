@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>745</width>
-    <height>997</height>
+    <width>776</width>
+    <height>999</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -1209,6 +1209,11 @@ QStatusBar
     </property>
     <item row="0" column="0" colspan="3">
      <widget class="QFrame" name="main_frame">
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	background:transparent;
+}</string>
+      </property>
       <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,1">
        <property name="spacing">
         <number>0</number>
@@ -1256,7 +1261,8 @@ QStatusBar
 
 ::item{
 width:100px;
-height:130px;
+height:110px;
+
 
 }
 
@@ -1359,7 +1365,7 @@ background:rgb(71, 71, 71)
           <bool>false</bool>
          </property>
          <property name="currentRow">
-          <number>0</number>
+          <number>-1</number>
          </property>
          <property name="sortingEnabled">
           <bool>false</bool>
@@ -1404,6 +1410,15 @@ background:rgb(71, 71, 71)
           <property name="icon">
            <iconset resource="images.qrc">
             <normaloff>:/white-icons/Data/imgs/white icons/icons8-clock-500.png</normaloff>:/white-icons/Data/imgs/white icons/icons8-clock-500.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Instructions</string>
+          </property>
+          <property name="icon">
+           <iconset resource="images.qrc">
+            <normaloff>:/white-icons/Data/imgs/white icons/icons8-idea-500.png</normaloff>:/white-icons/Data/imgs/white icons/icons8-idea-500.png</iconset>
           </property>
          </item>
          <item>
@@ -1551,7 +1566,7 @@ QTabWidget::tab-bar {
                <enum>QLayout::SetDefaultConstraint</enum>
               </property>
               <property name="topMargin">
-               <number>3</number>
+               <number>20</number>
               </property>
               <property name="bottomMargin">
                <number>0</number>
@@ -1591,62 +1606,16 @@ background:transparent;
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout">
                  <property name="topMargin">
-                  <number>5</number>
+                  <number>20</number>
                  </property>
                  <property name="bottomMargin">
-                  <number>5</number>
+                  <number>20</number>
                  </property>
                  <item>
                   <layout class="QGridLayout" name="gridLayout">
                    <property name="spacing">
                     <number>5</number>
                    </property>
-                   <item row="1" column="0">
-                    <widget class="QTextBrowser" name="textBrowser">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>80</height>
-                      </size>
-                     </property>
-                     <property name="font">
-                      <font>
-                       <family>arial</family>
-                      </font>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">background:transparent;
-color:white</string>
-                     </property>
-                     <property name="frameShape">
-                      <enum>QFrame::NoFrame</enum>
-                     </property>
-                     <property name="lineWidth">
-                      <number>0</number>
-                     </property>
-                     <property name="verticalScrollBarPolicy">
-                      <enum>Qt::ScrollBarAlwaysOff</enum>
-                     </property>
-                     <property name="horizontalScrollBarPolicy">
-                      <enum>Qt::ScrollBarAlwaysOff</enum>
-                     </property>
-                     <property name="html">
-                      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffffff;&quot;&gt;*** IMPORTANT ***&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;&quot;&gt;Names&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt; in Column A &lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:600;&quot;&gt;(optional)&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;&quot;&gt;Phone numbers&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt; in Column B&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                     </property>
-                    </widget>
-                   </item>
                    <item row="0" column="0">
                     <layout class="QHBoxLayout" name="horizontalLayout_4">
                      <item>
@@ -1669,6 +1638,23 @@ p, li { white-space: pre-wrap; }
                     </layout>
                    </item>
                   </layout>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_5">
+                   <property name="font">
+                    <font>
+                     <family>arial</family>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color:yellow</string>
+                   </property>
+                   <property name="text">
+                    <string>* phone numbers must be in column B</string>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </widget>
@@ -2076,11 +2062,11 @@ p, li { white-space: pre-wrap; }
              <attribute name="horizontalHeaderCascadingSectionResizes">
               <bool>false</bool>
              </attribute>
-             <attribute name="horizontalHeaderDefaultSectionSize">
-              <number>125</number>
-             </attribute>
              <attribute name="horizontalHeaderMinimumSectionSize">
               <number>39</number>
+             </attribute>
+             <attribute name="horizontalHeaderDefaultSectionSize">
+              <number>125</number>
              </attribute>
              <attribute name="horizontalHeaderStretchLastSection">
               <bool>true</bool>
@@ -2223,77 +2209,110 @@ p, li { white-space: pre-wrap; }
            </layout>
           </widget>
          </widget>
+         <widget class="QWidget" name="instructions_tab">
+          <attribute name="title">
+           <string>Page</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_12">
+             <property name="topMargin">
+              <number>50</number>
+             </property>
+             <item>
+              <widget class="QTextBrowser" name="textBrowser_2">
+               <property name="html">
+                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:18pt; font-weight:600; color:#ffffff;&quot;&gt;In the excel sheet ... numbers must be in column B and names (if available) in column A&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:18pt; font-weight:600; color:#ffffff;&quot;&gt;---------------------------------------------------&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:18pt; font-weight:600; color:#ffffff;&quot;&gt;Sending to numbers that are not saved on phone book requires country code with the number, like this (+491721xxxxx) or (491721xxxxx)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:18pt; font-weight:600; color:#ffffff;&quot;&gt;---------------------------------------------------&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:18pt; font-weight:600; color:#ffffff;&quot;&gt;Make sure that you're not opening the software twice on the Task bar&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:18pt; font-weight:600; color:#ffffff;&quot;&gt;---------------------------------------------------&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:18pt; font-weight:600; color:#ffffff;&quot;&gt;If you want to open the software twice to send from two numbers, just copy the software folder into another folder and logout by clicking on &amp;quot;Logout from current whatsapp&amp;quot; then sign in with the other number&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
          <widget class="QWidget" name="about_tab">
           <attribute name="title">
            <string>Page</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_9">
            <item>
-            <widget class="QTextBrowser" name="textBrowser_2">
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>140</height>
-              </size>
+            <layout class="QVBoxLayout" name="verticalLayout_10">
+             <property name="topMargin">
+              <number>50</number>
              </property>
-             <property name="styleSheet">
-              <string notr="true">background:transparent;
-color:white
+             <item>
+              <widget class="QTextEdit" name="textEdit_2">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>140</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background:transparent;
+color:white;
 
 </string>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
-             </property>
-             <property name="html">
-              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+               </property>
+               <property name="html">
+                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;&quot;&gt;Thanks for using my software :)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="openExternalLinks">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QTextBrowser" name="textBrowser_4">
-             <property name="font">
-              <font>
-               <family>arial</family>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background:transparent;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:22pt; font-weight:600;&quot;&gt;If you face any problem or requiring a custom functionality, just contact me anytime&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:22pt; font-weight:600;&quot;&gt;&lt;br /&gt;Thank You &amp;lt;3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTextBrowser" name="textBrowser_4">
+               <property name="font">
+                <font>
+                 <family>arial</family>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background:transparent;
 color:white;
 border:transparent
 
 </string>
-             </property>
-             <property name="html">
-              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+               </property>
+               <property name="html">
+                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;&quot;&gt;- Contact Me -&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:16pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#00ff7f;&quot;&gt;Whatsapp&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt; : &lt;/span&gt;&lt;a href=&quot;https://web.whatsapp.com/send?phone=201120641378&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;&quot;&gt;+201120641378&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#5e81ff;&quot;&gt;Facebook&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt; : &lt;/span&gt;&lt;a href=&quot;https://www.facebook.com/lord.ahmed110&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;&quot;&gt;fb.com/lord.ahmed110&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffaa00;&quot;&gt;Fiverr&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;&quot;&gt; : &lt;/span&gt;&lt;a href=&quot;https://www.fiverr.com/lordahmed&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;&quot;&gt;Fiverr.com/lordahmed&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="openExternalLinks">
-              <bool>true</bool>
-             </property>
-            </widget>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Helvetica'; font-size:18pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Helvetica'; font-size:18pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:18pt; font-weight:600;&quot;&gt;- Contact Me -&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Helvetica'; font-size:16pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:12pt; font-weight:600; color:#00ff7f;&quot;&gt;Whatsapp&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:12pt; font-weight:600;&quot;&gt; : &lt;/span&gt;&lt;a href=&quot;https://web.whatsapp.com/send?phone=201120641378&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:12pt; text-decoration: underline; color:#0000ff;&quot;&gt;+201120641378&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Helvetica'; font-size:12pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:12pt; font-weight:600; color:#5e81ff;&quot;&gt;Facebook&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:12pt; font-weight:600;&quot;&gt; : &lt;/span&gt;&lt;a href=&quot;https://www.facebook.com/lord.ahmed110&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:12pt; text-decoration: underline; color:#0000ff;&quot;&gt;fb.com/lord.ahmed110&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Helvetica'; font-size:12pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:12pt; font-weight:600; color:#ffaa00;&quot;&gt;Fiverr&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:12pt; font-weight:600;&quot;&gt; : &lt;/span&gt;&lt;a href=&quot;https://www.fiverr.com/lordahmed&quot;&gt;&lt;span style=&quot; font-family:'Helvetica'; font-size:12pt; text-decoration: underline; color:#0000ff;&quot;&gt;Fiverr.com/lordahmed&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
           </layout>
          </widget>
@@ -2304,6 +2323,11 @@ p, li { white-space: pre-wrap; }
     </item>
     <item row="1" column="1">
      <widget class="QFrame" name="buttons_frame">
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	background:transparent
+}</string>
+      </property>
       <layout class="QHBoxLayout" name="horizontalLayout_7">
        <property name="spacing">
         <number>15</number>
@@ -2358,70 +2382,69 @@ p, li { white-space: pre-wrap; }
      </widget>
     </item>
     <item row="3" column="0" colspan="3">
-     <widget class="QFrame" name="horizontalFrame">
-      <property name="styleSheet">
-       <string notr="true">QFrame{
-	background:transparent
-}</string>
+     <layout class="QHBoxLayout" name="horizontalLayout_13">
+      <property name="topMargin">
+       <number>0</number>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_13">
-       <property name="topMargin">
-        <number>1</number>
-       </property>
-       <item alignment="Qt::AlignLeft">
-        <widget class="QCommandLinkButton" name="commandLinkButton">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>25</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>arial</family>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background: transparent;
+      <item alignment="Qt::AlignLeft">
+       <widget class="QCommandLinkButton" name="commandLinkButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>arial</family>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: transparent;
 border:0</string>
-         </property>
-         <property name="text">
-          <string>© Copyright 2020 LorDAhmeD</string>
-         </property>
-         <property name="icon">
-          <iconset theme=";">
-           <normaloff>../Yellow Pages sg</normaloff>../Yellow Pages sg</iconset>
-         </property>
-        </widget>
-       </item>
-       <item alignment="Qt::AlignRight">
-        <widget class="QPushButton" name="logout_btn">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <family>arial</family>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">margin-right : 20px</string>
-         </property>
-         <property name="text">
-          <string>Logout from current Whatsapp</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
+        </property>
+        <property name="text">
+         <string>© Copyright 2020 LorDAhmeD</string>
+        </property>
+        <property name="icon">
+         <iconset theme=";">
+          <normaloff>../Yellow Pages sg</normaloff>../Yellow Pages sg</iconset>
+        </property>
+       </widget>
+      </item>
+      <item alignment="Qt::AlignRight">
+       <widget class="QPushButton" name="logout_btn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>arial</family>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-right : 20px</string>
+        </property>
+        <property name="text">
+         <string>Logout from current Whatsapp</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item row="2" column="1">
      <widget class="QFrame" name="license_frame">

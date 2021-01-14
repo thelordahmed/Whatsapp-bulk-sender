@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(745, 806)
+        MainWindow.resize(776, 999)
         MainWindow.setMinimumSize(QSize(745, 0))
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
         font = QFont()
@@ -1206,6 +1206,9 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
         self.main_frame = QFrame(self.centralwidget)
         self.main_frame.setObjectName(u"main_frame")
+        self.main_frame.setStyleSheet(u"QFrame{\n"
+"	background:transparent;\n"
+"}")
         self.horizontalLayout_8 = QHBoxLayout(self.main_frame)
         self.horizontalLayout_8.setSpacing(0)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
@@ -1229,10 +1232,14 @@ class Ui_MainWindow(object):
         __qlistwidgetitem2 = QListWidgetItem(self.listWidget)
         __qlistwidgetitem2.setIcon(icon3);
         icon4 = QIcon()
-        icon4.addFile(u":/white-icons/Data/imgs/white icons/icons8-about-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u":/white-icons/Data/imgs/white icons/icons8-idea-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qlistwidgetitem3 = QListWidgetItem(self.listWidget)
         __qlistwidgetitem3.setIcon(icon4);
-        __qlistwidgetitem3.setFlags(Qt.ItemIsSelectable|Qt.ItemIsEnabled);
+        icon5 = QIcon()
+        icon5.addFile(u":/white-icons/Data/imgs/white icons/icons8-about-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qlistwidgetitem4 = QListWidgetItem(self.listWidget)
+        __qlistwidgetitem4.setIcon(icon5);
+        __qlistwidgetitem4.setFlags(Qt.ItemIsSelectable|Qt.ItemIsEnabled);
         self.listWidget.setObjectName(u"listWidget")
         self.listWidget.setMinimumSize(QSize(0, 0))
         self.listWidget.setMaximumSize(QSize(16777215, 16777215))
@@ -1252,7 +1259,8 @@ class Ui_MainWindow(object):
 "\n"
 "::item{\n"
 "width:100px;\n"
-"height:130px;\n"
+"height:110px;\n"
+"\n"
 "\n"
 "}\n"
 "\n"
@@ -1345,7 +1353,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.setSpacing(10)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.verticalLayout_5.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.verticalLayout_5.setContentsMargins(-1, 3, -1, 0)
+        self.verticalLayout_5.setContentsMargins(-1, 20, -1, 0)
         self.groupBox = QGroupBox(self.frame)
         self.groupBox.setObjectName(u"groupBox")
         sizePolicy.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
@@ -1359,25 +1367,10 @@ class Ui_MainWindow(object):
         self.groupBox.setFlat(False)
         self.verticalLayout = QVBoxLayout(self.groupBox)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(-1, 5, -1, 5)
+        self.verticalLayout.setContentsMargins(-1, 20, -1, 20)
         self.gridLayout = QGridLayout()
         self.gridLayout.setSpacing(5)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.textBrowser = QTextBrowser(self.groupBox)
-        self.textBrowser.setObjectName(u"textBrowser")
-        sizePolicy1.setHeightForWidth(self.textBrowser.sizePolicy().hasHeightForWidth())
-        self.textBrowser.setSizePolicy(sizePolicy1)
-        self.textBrowser.setMaximumSize(QSize(16777215, 80))
-        self.textBrowser.setFont(font)
-        self.textBrowser.setStyleSheet(u"background:transparent;\n"
-"color:white")
-        self.textBrowser.setFrameShape(QFrame.NoFrame)
-        self.textBrowser.setLineWidth(0)
-        self.textBrowser.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.textBrowser.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-
-        self.gridLayout.addWidget(self.textBrowser, 1, 0, 1, 1)
-
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.sheet_le = QLineEdit(self.groupBox)
@@ -1396,6 +1389,17 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout.addLayout(self.gridLayout)
+
+        self.label_5 = QLabel(self.groupBox)
+        self.label_5.setObjectName(u"label_5")
+        font2 = QFont()
+        font2.setFamily(u"arial")
+        font2.setBold(True)
+        font2.setWeight(75)
+        self.label_5.setFont(font2)
+        self.label_5.setStyleSheet(u"color:yellow")
+
+        self.verticalLayout.addWidget(self.label_5)
 
 
         self.verticalLayout_5.addWidget(self.groupBox)
@@ -1602,18 +1606,18 @@ class Ui_MainWindow(object):
         self.tableWidget = QTableWidget(self.report_tab)
         if (self.tableWidget.columnCount() < 3):
             self.tableWidget.setColumnCount(3)
-        icon5 = QIcon()
-        icon5.addFile(u":/white-icons/Data/imgs/white icons/icons8-contacts-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        __qtablewidgetitem = QTableWidgetItem()
-        __qtablewidgetitem.setIcon(icon5);
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         icon6 = QIcon()
-        icon6.addFile(u":/white-icons/Data/imgs/white icons/icons8-phone-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u":/white-icons/Data/imgs/white icons/icons8-contacts-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        __qtablewidgetitem = QTableWidgetItem()
+        __qtablewidgetitem.setIcon(icon6);
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        icon7 = QIcon()
+        icon7.addFile(u":/white-icons/Data/imgs/white icons/icons8-phone-500.png", QSize(), QIcon.Normal, QIcon.Off)
         __qtablewidgetitem1 = QTableWidgetItem()
-        __qtablewidgetitem1.setIcon(icon6);
+        __qtablewidgetitem1.setIcon(icon7);
         self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
-        __qtablewidgetitem2.setIcon(icon4);
+        __qtablewidgetitem2.setIcon(icon5);
         self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
@@ -1632,9 +1636,9 @@ class Ui_MainWindow(object):
         self.csv_btn = QPushButton(self.report_tab)
         self.csv_btn.setObjectName(u"csv_btn")
         self.csv_btn.setMaximumSize(QSize(150, 16777215))
-        icon7 = QIcon()
-        icon7.addFile(u":/white-icons/Data/imgs/white icons/icons8-save-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.csv_btn.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u":/white-icons/Data/imgs/white icons/icons8-save-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.csv_btn.setIcon(icon8)
         self.csv_btn.setIconSize(QSize(22, 22))
 
         self.horizontalLayout_9.addWidget(self.csv_btn)
@@ -1642,9 +1646,9 @@ class Ui_MainWindow(object):
         self.newsession_btn = QPushButton(self.report_tab)
         self.newsession_btn.setObjectName(u"newsession_btn")
         self.newsession_btn.setMaximumSize(QSize(150, 16777215))
-        icon8 = QIcon()
-        icon8.addFile(u":/white-icons/Data/imgs/white icons/icons8-trash-can-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.newsession_btn.setIcon(icon8)
+        icon9 = QIcon()
+        icon9.addFile(u":/white-icons/Data/imgs/white icons/icons8-trash-can-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.newsession_btn.setIcon(icon9)
         self.newsession_btn.setIconSize(QSize(19, 18))
 
         self.horizontalLayout_9.addWidget(self.newsession_btn)
@@ -1693,21 +1697,39 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.addLayout(self.horizontalLayout_11)
 
         self.tabWidget.addTab(self.schedule_tab, "")
+        self.instructions_tab = QWidget()
+        self.instructions_tab.setObjectName(u"instructions_tab")
+        self.verticalLayout_11 = QVBoxLayout(self.instructions_tab)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.verticalLayout_12 = QVBoxLayout()
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.verticalLayout_12.setContentsMargins(-1, 50, -1, -1)
+        self.textBrowser_2 = QTextBrowser(self.instructions_tab)
+        self.textBrowser_2.setObjectName(u"textBrowser_2")
+
+        self.verticalLayout_12.addWidget(self.textBrowser_2)
+
+
+        self.verticalLayout_11.addLayout(self.verticalLayout_12)
+
+        self.tabWidget.addTab(self.instructions_tab, "")
         self.about_tab = QWidget()
         self.about_tab.setObjectName(u"about_tab")
         self.verticalLayout_9 = QVBoxLayout(self.about_tab)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.textBrowser_2 = QTextBrowser(self.about_tab)
-        self.textBrowser_2.setObjectName(u"textBrowser_2")
-        self.textBrowser_2.setMaximumSize(QSize(16777215, 140))
-        self.textBrowser_2.setStyleSheet(u"background:transparent;\n"
-"color:white\n"
+        self.verticalLayout_10 = QVBoxLayout()
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.verticalLayout_10.setContentsMargins(-1, 50, -1, -1)
+        self.textEdit_2 = QTextEdit(self.about_tab)
+        self.textEdit_2.setObjectName(u"textEdit_2")
+        self.textEdit_2.setMaximumSize(QSize(16777215, 140))
+        self.textEdit_2.setStyleSheet(u"background:transparent;\n"
+"color:white;\n"
 "\n"
 "")
-        self.textBrowser_2.setFrameShape(QFrame.NoFrame)
-        self.textBrowser_2.setOpenExternalLinks(False)
+        self.textEdit_2.setFrameShape(QFrame.NoFrame)
 
-        self.verticalLayout_9.addWidget(self.textBrowser_2)
+        self.verticalLayout_10.addWidget(self.textEdit_2)
 
         self.textBrowser_4 = QTextBrowser(self.about_tab)
         self.textBrowser_4.setObjectName(u"textBrowser_4")
@@ -1719,7 +1741,10 @@ class Ui_MainWindow(object):
 "")
         self.textBrowser_4.setOpenExternalLinks(True)
 
-        self.verticalLayout_9.addWidget(self.textBrowser_4)
+        self.verticalLayout_10.addWidget(self.textBrowser_4)
+
+
+        self.verticalLayout_9.addLayout(self.verticalLayout_10)
 
         self.tabWidget.addTab(self.about_tab, "")
 
@@ -1731,15 +1756,18 @@ class Ui_MainWindow(object):
 
         self.buttons_frame = QFrame(self.centralwidget)
         self.buttons_frame.setObjectName(u"buttons_frame")
+        self.buttons_frame.setStyleSheet(u"QFrame{\n"
+"	background:transparent\n"
+"}")
         self.horizontalLayout_7 = QHBoxLayout(self.buttons_frame)
         self.horizontalLayout_7.setSpacing(15)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.start_btn = QPushButton(self.buttons_frame)
         self.start_btn.setObjectName(u"start_btn")
         self.start_btn.setMaximumSize(QSize(16777215, 45))
-        icon9 = QIcon()
-        icon9.addFile(u":/black-icons/Data/imgs/black icons/icons8-play-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.start_btn.setIcon(icon9)
+        icon10 = QIcon()
+        icon10.addFile(u":/black-icons/Data/imgs/black icons/icons8-play-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.start_btn.setIcon(icon10)
         self.start_btn.setIconSize(QSize(34, 48))
 
         self.horizontalLayout_7.addWidget(self.start_btn)
@@ -1747,9 +1775,9 @@ class Ui_MainWindow(object):
         self.stop_btn = QPushButton(self.buttons_frame)
         self.stop_btn.setObjectName(u"stop_btn")
         self.stop_btn.setMaximumSize(QSize(16777215, 45))
-        icon10 = QIcon()
-        icon10.addFile(u":/black-icons/Data/imgs/black icons/icons8-stop-500.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.stop_btn.setIcon(icon10)
+        icon11 = QIcon()
+        icon11.addFile(u":/black-icons/Data/imgs/black icons/icons8-stop-500.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.stop_btn.setIcon(icon11)
         self.stop_btn.setIconSize(QSize(38, 37))
 
         self.horizontalLayout_7.addWidget(self.stop_btn)
@@ -1757,50 +1785,50 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.buttons_frame, 1, 1, 1, 1)
 
-        self.horizontalFrame = QFrame(self.centralwidget)
-        self.horizontalFrame.setObjectName(u"horizontalFrame")
-        self.horizontalFrame.setStyleSheet(u"QFrame{\n"
-"	background:transparent\n"
-"}")
-        self.horizontalLayout_13 = QHBoxLayout(self.horizontalFrame)
+        self.horizontalLayout_13 = QHBoxLayout()
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
-        self.horizontalLayout_13.setContentsMargins(-1, 1, -1, -1)
-        self.commandLinkButton = QCommandLinkButton(self.horizontalFrame)
+        self.horizontalLayout_13.setContentsMargins(-1, 0, -1, -1)
+        self.commandLinkButton = QCommandLinkButton(self.centralwidget)
         self.commandLinkButton.setObjectName(u"commandLinkButton")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.commandLinkButton.sizePolicy().hasHeightForWidth())
+        self.commandLinkButton.setSizePolicy(sizePolicy3)
         self.commandLinkButton.setMaximumSize(QSize(16777215, 25))
         self.commandLinkButton.setFont(font)
         self.commandLinkButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.commandLinkButton.setStyleSheet(u"background: transparent;\n"
 "border:0")
-        icon11 = QIcon()
+        icon12 = QIcon()
         iconThemeName = u";"
         if QIcon.hasThemeIcon(iconThemeName):
-            icon11 = QIcon.fromTheme(iconThemeName)
+            icon12 = QIcon.fromTheme(iconThemeName)
         else:
-            icon11.addFile(u"../Yellow Pages sg", QSize(), QIcon.Normal, QIcon.Off)
+            icon12.addFile(u"../Yellow Pages sg", QSize(), QIcon.Normal, QIcon.Off)
         
-        self.commandLinkButton.setIcon(icon11)
+        self.commandLinkButton.setIcon(icon12)
 
         self.horizontalLayout_13.addWidget(self.commandLinkButton, 0, Qt.AlignLeft)
 
-        self.logout_btn = QPushButton(self.horizontalFrame)
+        self.logout_btn = QPushButton(self.centralwidget)
         self.logout_btn.setObjectName(u"logout_btn")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.logout_btn.sizePolicy().hasHeightForWidth())
-        self.logout_btn.setSizePolicy(sizePolicy3)
-        font2 = QFont()
-        font2.setFamily(u"arial")
-        font2.setBold(False)
-        font2.setWeight(50)
-        self.logout_btn.setFont(font2)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.logout_btn.sizePolicy().hasHeightForWidth())
+        self.logout_btn.setSizePolicy(sizePolicy4)
+        font3 = QFont()
+        font3.setFamily(u"arial")
+        font3.setBold(False)
+        font3.setWeight(50)
+        self.logout_btn.setFont(font3)
         self.logout_btn.setStyleSheet(u"margin-right : 20px")
 
         self.horizontalLayout_13.addWidget(self.logout_btn, 0, Qt.AlignRight)
 
 
-        self.gridLayout_2.addWidget(self.horizontalFrame, 3, 0, 1, 3)
+        self.gridLayout_2.addLayout(self.horizontalLayout_13, 3, 0, 1, 3)
 
         self.license_frame = QFrame(self.centralwidget)
         self.license_frame.setObjectName(u"license_frame")
@@ -1834,11 +1862,11 @@ class Ui_MainWindow(object):
 
         self.license_status_label = QTextBrowser(self.license_frame)
         self.license_status_label.setObjectName(u"license_status_label")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.license_status_label.sizePolicy().hasHeightForWidth())
-        self.license_status_label.setSizePolicy(sizePolicy4)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.license_status_label.sizePolicy().hasHeightForWidth())
+        self.license_status_label.setSizePolicy(sizePolicy5)
         self.license_status_label.setMinimumSize(QSize(0, 100))
         self.license_status_label.setMaximumSize(QSize(16777215, 100))
         self.license_status_label.setStyleSheet(u"color:#e63c41;\n"
@@ -1859,7 +1887,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.listWidget.currentRowChanged.connect(self.tabWidget.setCurrentIndex)
 
-        self.listWidget.setCurrentRow(0)
+        self.listWidget.setCurrentRow(-1)
         self.tabWidget.setCurrentIndex(0)
 
 
@@ -1878,20 +1906,15 @@ class Ui_MainWindow(object):
         ___qlistwidgetitem2 = self.listWidget.item(2)
         ___qlistwidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Schedule", None));
         ___qlistwidgetitem3 = self.listWidget.item(3)
-        ___qlistwidgetitem3.setText(QCoreApplication.translate("MainWindow", u"About", None));
+        ___qlistwidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Instructions", None));
+        ___qlistwidgetitem4 = self.listWidget.item(4)
+        ___qlistwidgetitem4.setText(QCoreApplication.translate("MainWindow", u"About", None));
         self.listWidget.setSortingEnabled(__sortingEnabled)
 
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Choose the contacts source", None))
-        self.textBrowser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'arial'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffffff;\">*** IMPORTANT ***</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;\">Names</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> in Column A </span><span style=\" font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:600;\""
-                        ">(optional)</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffff00;\">Phone numbers</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> in Column B</span></p></body></html>", None))
         self.sheet_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"xlsx or CSV (comma seperated)", None))
         self.sheet_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"* phone numbers must be in column B", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Send ", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Messages Every", None))
@@ -1927,29 +1950,40 @@ class Ui_MainWindow(object):
         self.textBrowser_2.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'arial'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\" m"
-                        "argin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600;\">Thanks for using my software :)</span></p></body></html>", None))
+"</style></head><body style=\" font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Helvetica'; font-size:18pt; font-weight:600; color:#ffffff;\">In the excel sheet ... numbers must be in column B and names (if available) in column A</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Helvetica'; font-size:18pt; font-weight:600; color:#ffffff;\">---------------------------------------------------</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; ma"
+                        "rgin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Helvetica'; font-size:18pt; font-weight:600; color:#ffffff;\">Sending to numbers that are not saved on phone book requires country code with the number, like this (+491721xxxxx) or (491721xxxxx)</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Helvetica'; font-size:18pt; font-weight:600; color:#ffffff;\">---------------------------------------------------</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Helvetica'; font-size:18pt; font-weight:600; color:#ffffff;\">Make sure that you're not opening the software twice on the Task bar</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block"
+                        "-indent:0; text-indent:0px;\"><span style=\" font-family:'Helvetica'; font-size:18pt; font-weight:600; color:#ffffff;\">---------------------------------------------------</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Helvetica'; font-size:18pt; font-weight:600; color:#ffffff;\">If you want to open the software twice to send from two numbers, just copy the software folder into another folder and logout by clicking on &quot;Logout from current whatsapp&quot; then sign in with the other number</span></p></body></html>", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.instructions_tab), QCoreApplication.translate("MainWindow", u"Page", None))
+        self.textEdit_2.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Helvetica'; font-size:22pt; font-weight:600;\">If you face any problem or requiring a custom functionality, just contact me anytime</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Helvetica'; font-size:22pt; font-weight:600;\"><br />Thank You &lt;3</span></p></body></html>", None))
         self.textBrowser_4.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'arial'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\" m"
-                        "argin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600;\">- Contact Me -</span></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:16pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#00ff7f;\">Whatsapp</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> : </span><a href=\"https://web.whatsapp.com/send?phone=201120641378\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;\">+201120641378</span></a></p>\n"
-"<p align=\"center\" style=\""
-                        "-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#5e81ff;\">Facebook</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> : </span><a href=\"https://www.facebook.com/lord.ahmed110\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;\">fb.com/lord.ahmed110</span></a></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-"
-                        "top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#ffaa00;\">Fiverr</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600;\"> : </span><a href=\"https://www.fiverr.com/lordahmed\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; text-decoration: underline; color:#0000ff;\">Fiverr.com/lordahmed</span></a></p></body></html>", None))
+"</style></head><body style=\" font-family:'arial'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8.25pt;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Helvetica'; font-size:18pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Helvetica'; font-size:18pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" styl"
+                        "e=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Helvetica'; font-size:18pt; font-weight:600;\">- Contact Me -</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Helvetica'; font-size:16pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Helvetica'; font-size:12pt; font-weight:600; color:#00ff7f;\">Whatsapp</span><span style=\" font-family:'Helvetica'; font-size:12pt; font-weight:600;\"> : </span><a href=\"https://web.whatsapp.com/send?phone=201120641378\"><span style=\" font-family:'Helvetica'; font-size:12pt; text-decoration: underline; color:#0000ff;\">+201120641378</span></a></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:"
+                        "empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Helvetica'; font-size:12pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Helvetica'; font-size:12pt; font-weight:600; color:#5e81ff;\">Facebook</span><span style=\" font-family:'Helvetica'; font-size:12pt; font-weight:600;\"> : </span><a href=\"https://www.facebook.com/lord.ahmed110\"><span style=\" font-family:'Helvetica'; font-size:12pt; text-decoration: underline; color:#0000ff;\">fb.com/lord.ahmed110</span></a></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Helvetica'; font-size:12pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px;"
+                        " margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Helvetica'; font-size:12pt; font-weight:600; color:#ffaa00;\">Fiverr</span><span style=\" font-family:'Helvetica'; font-size:12pt; font-weight:600;\"> : </span><a href=\"https://www.fiverr.com/lordahmed\"><span style=\" font-family:'Helvetica'; font-size:12pt; text-decoration: underline; color:#0000ff;\">Fiverr.com/lordahmed</span></a></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.about_tab), QCoreApplication.translate("MainWindow", u"Page", None))
         self.start_btn.setText("")
         self.stop_btn.setText("")
