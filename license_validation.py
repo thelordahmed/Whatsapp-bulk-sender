@@ -12,7 +12,7 @@ class License:
     def __init__(self, api_url, view_object):
         self.api_url = api_url
         self.view = view_object
-        self.download_page = "https://google.com"
+        self.download_page = "https://softwarekeys.herokuapp.com/download"
         self.license_frame = self.view.license_frame
         self.license_input = self.view.license_le
         self.license_button = self.view.license_btn
