@@ -1,7 +1,8 @@
 import os
 import platform
+import webbrowser
 from json.decoder import JSONDecodeError
-
+from features_controller import version
 import requests
 from requests.exceptions import ConnectionError
 from getmac import get_mac_address as gma
@@ -11,6 +12,7 @@ class License:
     def __init__(self, api_url, view_object):
         self.api_url = api_url
         self.view = view_object
+        self.download_page = "https://google.com"
         self.license_frame = self.view.license_frame
         self.license_input = self.view.license_le
         self.license_button = self.view.license_btn
@@ -63,10 +65,13 @@ class License:
                     # increasing online counter
                     if res["user"] != "admin" and res["user"] != "admin_PC":
                         requests.put(f"{self.api_url}/connected/increase")
+                    self.view.setWindowTitle(f"WhatsApp Bulk Sender {version} ---- Expire Date: {res['date']}")
                     self.show()
-                    current_title = self.view.windowTitle()
-                    self.view.setWindowTitle(f"{current_title} ---- Expire Date: {res['date']}")
                     self.view.adjustSize()
+                    if version != res["version"]:
+                        confim = self.view.confirmMessage("New Update Available!", "New Update is availabe for the software!\nDo you want to download it?")
+                        if confim is True:
+                            webbrowser.open(self.download_page)
         except ConnectionError:
             self.view.license_status_label.setText("Connection Error!")
             self.view.license_btn.setEnabled(True)

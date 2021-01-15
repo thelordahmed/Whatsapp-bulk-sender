@@ -10,7 +10,7 @@ from view import View
 from whatsapp import WhatsApp
 from threading import Thread
 from ast import literal_eval
-from features_controller import country_code, extra_var, copyright_link, language, demo
+from features_controller import country_code, extra_var, copyright_link, language
 from license_validation import License
 import sys
 
@@ -133,7 +133,6 @@ class Main:
     @staticmethod
     def getMultiMessages(paths):
         """
-
         :param paths: list of paths string
         :return: list of messages
         """
@@ -263,8 +262,6 @@ class Main:
 
         messages_sent = 0
 
-        if demo is True:
-            data_list = data_list[:5]
         for contact in data_list:
             if self.view.time_groupBox.isChecked() is True:
                 # start and end time check ------------

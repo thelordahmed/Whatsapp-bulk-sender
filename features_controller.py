@@ -3,42 +3,25 @@
 #####################################
 
 
-packages = ["normal", "standard", "premium"]
-##########################################################
-package = packages[2]   # CHOOSE WHICH PACKAGE TO COMPILE
-demo = False
 copyright_url = "https://www.fiverr.com/lordahmed"   # "https://www.fiverr.com/lordahmed"
-copyright_text = "AhmeDSaeeD | (lordahmed on Fiverr)"    #  "AhmeDSaeeD | (lordahmed on Fiverr)"
+copyright_text = "AhmeDSaeeD | (lordahmed on Fiverr)"   # "AhmeDSaeeD | (lordahmed on Fiverr)"
 ##########################################################
-if package == "normal":
-    attachments_enabled = False
-    scheduled_sending = False
-    contact_card_enabled = False
-elif package == "standard":
-    attachments_enabled = True
-    scheduled_sending = False
-    contact_card_enabled = True
-elif package == "premium":
-    attachments_enabled = True
-    scheduled_sending = True
-    contact_card_enabled = True
+
+attachments_enabled = True
+scheduled_sending = True
+contact_card_enabled = True
 # extras
 multi_messages_enabled = False
 repeat_every_24h = False
 extra_var = None  # assign None to disable it. to activate it, put the column number
 
-
-
 ######################################
 ########### Functionilty #############
 ######################################
 
-
-
 # SETTINGS
 version = "2.5.2"
 language = "en"
-
 
 # sheet settings
 header_row = False

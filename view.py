@@ -36,10 +36,7 @@ class View(QMainWindow, design):
         if features_controller.repeat_every_24h is False:
             self.repeat_sending.setDisabled(True)
             self.repeat_sending.setStyleSheet("color:grey")
-        if features_controller.demo is True:
-            self.setWindowTitle(f"WhatsApp Bulk Sender {features_controller.version} ******** (((( DEMO VERSION - 5 messages maximum ))))")
-        else:
-            self.setWindowTitle(f"WhatsApp Bulk Sender {features_controller.version}")
+
 
 
         if features_controller.contact_card_enabled is False:
@@ -111,6 +108,10 @@ class View(QMainWindow, design):
             return True
         else:
             return False
+
+    def ok_message(self, title, text):
+        QMessageBox.information(self, title, text, QMessageBox.Ok)
+
 
     def saveDialog(self):
         """:return saving path"""
