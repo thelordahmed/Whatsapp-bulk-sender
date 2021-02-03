@@ -1,0 +1,29 @@
+1612366006326	geckodriver	INFO	Listening on 127.0.0.1:53443
+1612366007344	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8k/jp15_fkj3750srwnkp9wgqh00000gn/T/rust_mozprofilehOckzU"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612366010494	Marionette	INFO	Listening on port 53455
+1612366010625	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612366010665	Marionette	ERROR	[19] No reply from Marionette:Register
+JavaScript warning: https://web.whatsapp.com/app.11f3f20018994f92d6d9.js, line 1: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/app.11f3f20018994f92d6d9.js, line 1: unreachable code after return statement
+_RegisterApplication(), FAILED TO establish the default connection to the WindowServer, _CGSDefaultConnection() is NULL.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1612366086324	geckodriver	INFO	Listening on 127.0.0.1:53536
+1612366087345	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8k/jp15_fkj3750srwnkp9wgqh00000gn/T/rust_mozprofileUoWVmJ"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612366089760	Marionette	INFO	Listening on port 53547
+1612366089855	Marionette	WARN	TLS certificate errors will be ignored for this session
+1612366089875	Marionette	ERROR	[19] No reply from Marionette:Register
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 775))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 422))
+JavaScript warning: https://web.whatsapp.com/app.11f3f20018994f92d6d9.js, line 1: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/app.11f3f20018994f92d6d9.js, line 1: unreachable code after return statement
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.

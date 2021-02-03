@@ -2,7 +2,7 @@ import os
 import platform
 import requests
 from PySide2 import QtCore, QtGui
-from PySide2.QtGui import QCloseEvent, QTextOption, Qt, QFont
+from PySide2.QtGui import QCloseEvent, QTextOption, Qt
 from PySide2.QtWidgets import *
 from webbrowser import open
 # Import your design class
@@ -11,12 +11,13 @@ import features_controller
 
 
 class View(QMainWindow, design):
-    def __init__(self, api_url,parent=None):
+    def __init__(self, api_url, parent=None):
         super(View, self).__init__(parent)
         self.setAttribute(QtCore.Qt.WA_DeleteOnClose)
         self.setupUi(self)
         self.show()
         self.api_url = api_url
+        self.setWindowTitle(f"WhatsApp Bulk Sender {features_controller.version}")
         # hidding all to validate license first
         self.main_frame.hide()
         self.buttons_frame.hide()

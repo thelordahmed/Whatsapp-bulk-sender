@@ -119,6 +119,9 @@
     <file>Data/imgs/white icons/icons8-zoom-out-500-2.png</file>
   </qresource>
   <qresource prefix="black-icons">
+    <file>Data/imgs/black icons/icons8-add-administrator-100.png</file>
+    <file>Data/imgs/black icons/icons8-decision-52.png</file>
+    <file>Data/imgs/black icons/icons8-remove-administrator-100.png</file>
     <file>Data/imgs/black icons/icons8-about-500.png</file>
     <file>Data/imgs/black icons/icons8-airport-500.png</file>
     <file>Data/imgs/black icons/icons8-arrow-500.png</file>

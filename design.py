@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(776, 999)
+        MainWindow.resize(776, 1020)
         MainWindow.setMinimumSize(QSize(745, 0))
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
         font = QFont()
@@ -1476,6 +1476,24 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_3.addLayout(self.verticalLayout_2)
 
+        self.groupBox_5 = QGroupBox(self.groupBox_2)
+        self.groupBox_5.setObjectName(u"groupBox_5")
+        self.horizontalLayout_14 = QHBoxLayout(self.groupBox_5)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.chrome_rb = QRadioButton(self.groupBox_5)
+        self.chrome_rb.setObjectName(u"chrome_rb")
+        self.chrome_rb.setChecked(True)
+
+        self.horizontalLayout_14.addWidget(self.chrome_rb)
+
+        self.firefox_rb = QRadioButton(self.groupBox_5)
+        self.firefox_rb.setObjectName(u"firefox_rb")
+
+        self.horizontalLayout_14.addWidget(self.firefox_rb)
+
+
+        self.verticalLayout_3.addWidget(self.groupBox_5)
+
 
         self.verticalLayout_5.addWidget(self.groupBox_2)
 
@@ -1921,6 +1939,9 @@ class Ui_MainWindow(object):
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Minutes", None))
         self.checkBox.setText(QCoreApplication.translate("MainWindow", u"Send to numbers that are not saved in phone book", None))
         self.repeat_sending.setText(QCoreApplication.translate("MainWindow", u"Repeat sending every 24 hours", None))
+        self.groupBox_5.setTitle(QCoreApplication.translate("MainWindow", u"Browser", None))
+        self.chrome_rb.setText(QCoreApplication.translate("MainWindow", u"Google Chrome", None))
+        self.firefox_rb.setText(QCoreApplication.translate("MainWindow", u"Firefox", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Send Attachments", None))
         self.attachments_le.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Images, videos, documents", None))
         self.attachments_btn.setText(QCoreApplication.translate("MainWindow", u"...", None))

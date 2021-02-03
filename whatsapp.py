@@ -13,29 +13,31 @@ import shutil
 import platform
 from datetime import datetime
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 from multiprocessing import Queue
 
 
 if platform.system() == "Darwin":
     browserData = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data/WhatsappLogin"
+    browserData_firefox = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data/WhatsappLoginFirefox"
     chromedriver = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data/chromedriver"
     data_folder = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data"
 else:
     browserData = "Data/WhatsappLogin"
+    browserData_firefox = "Data/WhatsappLoginFirefox"
     chromedriver = "Data/chromedriver"
     data_folder = "Data"
 
 
 class WhatsApp:
     browserAuthDirectory = browserData  # browser data location
+    firefoxProfilePath = browserData_firefox  # browser data location
     # _chromedriverPath = chromedriver  # chromedriver.exe location
     _dataFolder = data_folder
     # delaying in seconds
     # this is the range of seconds that will be delayed between messages
     _minSeconds = 5
     _maxSeconds = 30
-    _chrome_options = Options()
-    _chrome_options.add_argument(r'--user-data-dir=' + browserAuthDirectory)
     _handle = None
     _window = None
     _search_bar = '//*[@id="side"]/div[1]/div/label/div/div[2]'
@@ -87,14 +89,19 @@ class WhatsApp:
     def logout_btn(self):
         shutil.rmtree(self.browserAuthDirectory)
 
-    def open(self):
+    def open(self, browser):
         """
         :return: the window object
         """
-        args = ["hide_console", ]
         if self._handle is None:
-            self._window = webdriver.Chrome(ChromeDriverManager().install(),
-                                            options=self._chrome_options, service_args=args)
+            if browser == "chrome":
+                chrome_options = Options()
+                chrome_options.add_argument(r'--user-data-dir=' + self.browserAuthDirectory)
+                args = ["hide_console", ]
+                self._window = webdriver.Chrome(ChromeDriverManager().install(),
+                                                options=chrome_options, service_args=args)
+            else:
+                self._window = webdriver.Firefox(executable_path=GeckoDriverManager().install())
 
             self._window.get("https://web.whatsapp.com/")
             self._handle = self._window.current_window_handle
@@ -117,7 +124,7 @@ class WhatsApp:
         :return: False - if number not found on phone book
         """
         search_bar = self._window.find_element_by_xpath(self._search_bar)
-        try:    # fixing a bug -- back button xpath changed
+        try:  # fixing a bug -- back button xpath changed
             self._window.find_element_by_xpath(self.backBlue_btn).click()
         except NoSuchElementException:
             self._window.find_element_by_xpath(self.backBlue_btn2).click()
@@ -139,7 +146,6 @@ class WhatsApp:
         if search_bar.text != "":
             return False
         # ----------------------------------------------------------------
-
 
         # contact_xpath = '//*[@id="pane-side"]//div[2]/div[1]/div[1]/span'  # this xpath chooses only the contact chat; not groups or messages
         # try:
@@ -188,7 +194,6 @@ class WhatsApp:
         actions.perform()
         sleep(1)
 
-
     def sending_image(self, paths):
         multiple_paths = paths[0]
         if len(paths) > 1:
@@ -204,7 +209,8 @@ class WhatsApp:
             return False
         # waits for the image button to appear then send the path
         try:
-            WebDriverWait(self._window, 10).until(ec.presence_of_element_located((By.CSS_SELECTOR, self._imageinput))).send_keys(multiple_paths)
+            WebDriverWait(self._window, 10).until(
+                ec.presence_of_element_located((By.CSS_SELECTOR, self._imageinput))).send_keys(multiple_paths)
         except TimeoutException:
             print("image input button didn't appear")
             return False
@@ -214,16 +220,17 @@ class WhatsApp:
 
         sleep(random.randint(2, 3))
         try:
-            try:    # fixing a bug - xpath changed
-                WebDriverWait(self._window, 10).until(ec.presence_of_element_located((By.XPATH, self._sendimagebtn2))).click()
+            try:  # fixing a bug - xpath changed
+                WebDriverWait(self._window, 10).until(
+                    ec.presence_of_element_located((By.XPATH, self._sendimagebtn2))).click()
             except TimeoutException:
-                WebDriverWait(self._window, 10).until(ec.presence_of_element_located((By.XPATH, self._sendimagebtn))).click()
+                WebDriverWait(self._window, 10).until(
+                    ec.presence_of_element_located((By.XPATH, self._sendimagebtn))).click()
         except TimeoutException:
             print("send btn didn't appear")
             print("choosed image maybe not supported")
             return False
         sleep(random.randint(3, 6))
-
 
     def sending_image_with_caption(self, paths, message):
         multiple_paths = paths[0]
@@ -240,7 +247,8 @@ class WhatsApp:
             return False
         # waits for the image button to appear then send the path
         try:
-            WebDriverWait(self._window, 10).until(ec.presence_of_element_located((By.CSS_SELECTOR, self._imageinput))).send_keys(multiple_paths)
+            WebDriverWait(self._window, 10).until(
+                ec.presence_of_element_located((By.CSS_SELECTOR, self._imageinput))).send_keys(multiple_paths)
         except TimeoutException:
             print("image input button didn't appear")
             return False
@@ -250,12 +258,14 @@ class WhatsApp:
 
         sleep(random.randint(2, 3))
         try:
-            try:    # fixing a bug - xpath changed
-                sendBtn = WebDriverWait(self._window, 10).until(ec.presence_of_element_located((By.XPATH, self._sendimagebtn2)))
+            try:  # fixing a bug - xpath changed
+                sendBtn = WebDriverWait(self._window, 10).until(
+                    ec.presence_of_element_located((By.XPATH, self._sendimagebtn2)))
                 self._sending_sameFormat_captionInput(message)
                 sendBtn.click()
             except TimeoutException:
-                sendBtn = WebDriverWait(self._window, 10).until(ec.presence_of_element_located((By.XPATH, self._sendimagebtn)))
+                sendBtn = WebDriverWait(self._window, 10).until(
+                    ec.presence_of_element_located((By.XPATH, self._sendimagebtn)))
                 self._sending_sameFormat_captionInput(message)
                 sendBtn.click()
         except TimeoutException:
@@ -304,7 +314,6 @@ class WhatsApp:
             print("sending btn didn't appear in sending contact card")
             self._window.find_element_by_xpath(self._xBtn).click()
             return False
-
 
     def unsaved_number_search(self, number):
         """
@@ -402,7 +411,8 @@ class WhatsApp:
             return None
         now = datetime.now()
         time = datetime(year=now.year, month=now.month, day=now.day, hour=time.hour, minute=time.minute)
-        start_time = datetime(year=now.year, month=now.month, day=now.day, hour=start_time.hour, minute=start_time.minute)
+        start_time = datetime(year=now.year, month=now.month, day=now.day, hour=start_time.hour,
+                              minute=start_time.minute)
         if now < time:
             return True
         else:
