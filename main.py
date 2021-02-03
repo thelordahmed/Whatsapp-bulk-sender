@@ -245,7 +245,10 @@ class Main:
 
         # handling browser error
         try:
-            self.wa.open()
+            if self.view.chrome_rb.isChecked():
+                self.wa.open("chrome")
+            else:
+                self.wa.open("firefox")
         except Exception as e:
             print(e)
             self.view.state = "error"
@@ -416,7 +419,6 @@ class Main:
 
 
 if __name__ == '__main__':
-
     app = QtWidgets.QApplication()
     main = Main()
     app.exec_()

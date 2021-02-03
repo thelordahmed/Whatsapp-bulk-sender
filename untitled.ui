@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>776</width>
-    <height>999</height>
+    <height>1020</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -1819,6 +1819,32 @@ background:transparent;
                     </widget>
                    </item>
                   </layout>
+                 </item>
+                 <item>
+                  <widget class="QGroupBox" name="groupBox_5">
+                   <property name="title">
+                    <string>Browser (*must be installed on system)</string>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_14">
+                    <item>
+                     <widget class="QRadioButton" name="chrome_rb">
+                      <property name="text">
+                       <string>Google Chrome</string>
+                      </property>
+                      <property name="checked">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QRadioButton" name="firefox_rb">
+                      <property name="text">
+                       <string>Firefox</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
                  </item>
                 </layout>
                </widget>
