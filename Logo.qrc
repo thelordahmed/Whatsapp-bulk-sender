@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="Logo">
+    <file>../FYY-Scraper/Data/logo cover.png</file>
+    <file>../FYY-Scraper/Data/logo.png</file>
+  </qresource>
+</RCC>

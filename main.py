@@ -2,6 +2,7 @@ import csv
 import os
 import platform
 import random
+import shutil
 import subprocess
 from time import sleep
 from model import Model
@@ -259,6 +260,15 @@ class Main:
             else:
                 self.view.statusbar.showMessage(
                     "There's something wrong with Chrome browser .. please try updating google chrome")
+            return False
+        # PASSING THE WINDOW OBJECT TO VIEW TO CLOSE CHROME DIRVER WINDOW ON CLOSE EVENT
+        self.view.whatsapp_window_obj = self.wa.get_window_object()
+        # # SAVING PRFILE DIR IN FIREFOX
+        # if not self.view.chrome_rb.isChecked():
+        #     currentProfilePath = self.wa._window.capabilities["moz:profile"]
+        #     profileStoragePath = os.path.join(data_folder, "firefoxProfile")
+        #     shutil.copytree(currentProfilePath, profileStoragePath,
+        #                     ignore_dangling_symlinks=True)
 
         # switching to report panel
         self.view.listWidget.setCurrentRow(1)
