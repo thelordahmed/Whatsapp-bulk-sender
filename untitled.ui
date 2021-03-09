@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>776</width>
-    <height>1020</height>
+    <height>1099</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -1839,7 +1839,7 @@ background:transparent;
                     <item>
                      <widget class="QRadioButton" name="firefox_rb">
                       <property name="text">
-                       <string>Firefox</string>
+                       <string>Firefox (Donesn't save)</string>
                       </property>
                      </widget>
                     </item>

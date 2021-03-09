@@ -63,9 +63,9 @@ class License:
                         f.write(key)
 
 
-                    # increasing online counter
-                    if res["user"] != "admin" and res["user"] != "admin_PC":
-                        requests.put(f"{self.api_url}/connected/increase")
+                    # # increasing online counter
+                    # if res["user"] != "admin" and res["user"] != "admin_PC":
+                    #     requests.put(f"{self.api_url}/connected/increase")
                     self.view.setWindowTitle(f"WhatsApp Bulk Sender {version} ---- Expire Date: {res['date']}")
                     self.show()
                     self.view.adjustSize()

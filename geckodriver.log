@@ -27,3 +27,111 @@ Exiting due to channel error.
 Exiting due to channel error.
 [GFX1-]: Receive IPC close with reason=AbnormalShutdown
 Exiting due to channel error.
+1615291420307	geckodriver	INFO	Listening on 127.0.0.1:49577
+1615291421325	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8k/jp15_fkj3750srwnkp9wgqh00000gn/T/rust_mozprofileFIvVif"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615291428399	Marionette	INFO	Listening on port 49589
+1615291428545	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+_RegisterApplication(), FAILED TO establish the default connection to the WindowServer, _CGSDefaultConnection() is NULL.
+1615291695543	geckodriver	INFO	Listening on 127.0.0.1:49714
+1615291696562	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8k/jp15_fkj3750srwnkp9wgqh00000gn/T/rust_mozprofile6R3CDs"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615291699166	Marionette	INFO	Listening on port 49725
+1615291699259	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+1615291739400	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+1615291842064	geckodriver	INFO	Listening on 127.0.0.1:49880
+1615291843081	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8k/jp15_fkj3750srwnkp9wgqh00000gn/T/rust_mozprofileHwIW4Z"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615291845589	Marionette	INFO	Listening on port 49891
+1615291845685	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1615291936792	geckodriver	INFO	Listening on 127.0.0.1:49991
+1615291937809	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8k/jp15_fkj3750srwnkp9wgqh00000gn/T/rust_mozprofile2E0KW9"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615291940299	Marionette	INFO	Listening on port 50002
+1615291940456	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+1615292082402	geckodriver	INFO	Listening on 127.0.0.1:50091
+1615292083422	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8k/jp15_fkj3750srwnkp9wgqh00000gn/T/rust_mozprofileeBcaUh"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615292085902	Marionette	INFO	Listening on port 50102
+1615292086020	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 775))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 422))
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+1615292145863	geckodriver	INFO	Listening on 127.0.0.1:50187
+1615292146878	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8k/jp15_fkj3750srwnkp9wgqh00000gn/T/rust_mozprofileffTTrE"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615292149338	Marionette	INFO	Listening on port 50198
+1615292149387	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+1615293834472	geckodriver	INFO	Listening on 127.0.0.1:50488
+1615293835492	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8k/jp15_fkj3750srwnkp9wgqh00000gn/T/rust_mozprofilemYIWY5"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615293837949	Marionette	INFO	Listening on port 50499
+1615293837979	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+_RegisterApplication(), FAILED TO establish the default connection to the WindowServer, _CGSDefaultConnection() is NULL.
+1615293862969	Marionette	INFO	Stopped listening on port 50499
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615293874891	geckodriver	INFO	Listening on 127.0.0.1:50569
+1615293875912	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/8k/jp15_fkj3750srwnkp9wgqh00000gn/T/rust_mozprofilecB6Kgh"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615293878343	Marionette	INFO	Listening on port 50580
+1615293878429	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+_RegisterApplication(), FAILED TO establish the default connection to the WindowServer, _CGSDefaultConnection() is NULL.
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+JavaScript warning: https://web.whatsapp.com/bootstrap_qr.513916447b41999e9e9b.js, line 1: unreachable code after return statement
+1615294082409	Marionette	INFO	Stopped listening on port 50580
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

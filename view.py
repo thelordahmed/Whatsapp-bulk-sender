@@ -18,6 +18,7 @@ class View(QMainWindow, design):
         self.show()
         self.api_url = api_url
         self.setWindowTitle(f"WhatsApp Bulk Sender {features_controller.version}")
+        self.whatsapp_window_obj = None
         # hidding all to validate license first
         self.main_frame.hide()
         self.buttons_frame.hide()
@@ -72,13 +73,22 @@ class View(QMainWindow, design):
     ######################################
 
     # Customizing the close event
-    def closeEvent(self, event:QCloseEvent):
-        if platform.system() == "Darwin":
-            os.system("killall chromedriver")
-            os.system("killall 'Google Chrome'")
-        else:
-            os.system("taskkill /t /F /im chromedriver.exe")
-        requests.put(f"{self.api_url}/connected/decrease")
+    def closeEvent(self, event: QCloseEvent):
+        self.whatsapp_window_obj.quit()
+        # if self.chrome_rb.isChecked():
+        #     if platform.system() == "Darwin":
+        #         os.system("killall chromedriver")
+        #         os.system("killall 'Google Chrome'")
+        #     else:
+        #         os.system("taskkill /t /F /im chromedriver.exe")
+        #     # requests.put(f"{self.api_url}/connected/decrease")
+        # else:
+        #     if platform.system() == "Darwin":
+        #         os.system('pkill -f firefox')
+        #     else:
+        #         os.system("taskkill /t /F /im firefox.exe")
+        #     # requests.put(f"{self.api_url}/connected/decrease")
+
 
     def addToTableWidget(self, data):  # slot >> trigger singal
         """

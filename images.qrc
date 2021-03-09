@@ -225,4 +225,7 @@
     <file>Data/imgs/black icons/icons8-zoom-in-500.png</file>
     <file>Data/imgs/black icons/icons8-zoom-out-500.png</file>
   </qresource>
+  <qresource prefix="spinners">
+    <file>Data/imgs/ajax-loader.gif</file>
+  </qresource>
 </RCC>

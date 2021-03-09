@@ -1,6 +1,6 @@
 import os
 from selenium import webdriver
-from selenium.webdriver import ActionChains
+from selenium.webdriver import ActionChains, FirefoxProfile
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
@@ -27,6 +27,8 @@ else:
     browserData_firefox = "Data/WhatsappLoginFirefox"
     chromedriver = "Data/chromedriver"
     data_folder = "Data"
+
+os.system(f'mkdir "{browserData_firefox}"')
 
 
 class WhatsApp:
@@ -101,6 +103,7 @@ class WhatsApp:
                 self._window = webdriver.Chrome(ChromeDriverManager().install(),
                                                 options=chrome_options, service_args=args)
             else:
+                # self._window = webdriver.Firefox(executable_path=GeckoDriverManager().install(),firefox_profile=FirefoxProfile(self.firefoxProfilePath))
                 self._window = webdriver.Firefox(executable_path=GeckoDriverManager().install())
 
             self._window.get("https://web.whatsapp.com/")
@@ -108,6 +111,8 @@ class WhatsApp:
             # waiting for the whatsapp to login
             WebDriverWait(self._window, 1000).until(ec.presence_of_element_located((
                 By.XPATH, '//*[@id="app"]/div/div/div[4]/div/div/div[2]/h1')))
+            sleep(1)
+
             return self._window
         else:
             # if browser was opened before >> switch focus to it
@@ -420,3 +425,7 @@ class WhatsApp:
             sleep_duration = now - start_time
             sleep_duration = day_seconds - sleep_duration.total_seconds()
             return sleep_duration
+
+    def get_window_object(self):
+        return self._window
+
