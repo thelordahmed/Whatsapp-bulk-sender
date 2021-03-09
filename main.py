@@ -14,6 +14,7 @@ from ast import literal_eval
 from features_controller import country_code, extra_var, copyright_link, language
 from license_validation import License
 import sys
+import traceback
 
 
 if platform.system() == "Darwin":
@@ -24,11 +25,13 @@ else:
 
 class Signals(QtCore.QObject):
     start_btn = QtCore.Signal()
+    error_message = QtCore.Signal(str, str)
 
 
 
 class Main:
     def __init__(self):
+        self.sig = Signals()
         self.api_url = "https://softwarekeys.herokuapp.com"
         self.language = language
         if platform.system() == "Darwin":
@@ -96,6 +99,7 @@ class Main:
             self.view.extra_var_btn.clicked.connect(self.view.appendToPlainTextBox_extraVar)
         self.view.logout_btn.clicked.connect(self.logout_btn_func)
         self.view.contact_groupbox.toggled.connect(lambda: self.view.contactCard_le.setStyleSheet("color:white"))
+        self.sig.error_message.connect(self.view.error_message)
         ###############################################
 
     def newSessionFunc(self):
@@ -230,12 +234,13 @@ class Main:
 
         # check if sheet path found in the interface - if False -> app will not start
         if self.view.sheet_le.text() is "":
-            #TODO - pop up error message about missing sheet
+            self.sig.error_message.emit("error", "Contacts Sheet Not Found!")
             return None
         else:
-            data_list = model2.getDataFromSheet(self.view.sheet_le.text())
-            #TODO - (unhandled error) handle wrong formating sheet errors here
-
+            try:
+                data_list = model2.getDataFromSheet(self.view.sheet_le.text())
+            except Exception as e:
+                self.sig.error_message.emit("Error", f"Sheet Formation is not correct!\nTraceback:\n{traceback.extract_tb(e.__traceback__)}")
 
         # disabling start button and activating stop button
         self.view.startbtn_process()
@@ -251,7 +256,7 @@ class Main:
             else:
                 self.wa.open("firefox")
         except Exception as e:
-            print(e)
+            self.sig.error_message.emit("Error", f"There's an Error with the browser!\nTraceback:\n{traceback.extract_tb(e.__traceback__)}")
             self.view.state = "error"
             self.view.stopbtn_process()
             if self.language == "italian":
@@ -384,6 +389,7 @@ class Main:
                 self.skipToNextNumber(name, phone, "sent", model2)
             except Exception as e:
                 self.view.state = "error"
+                self.sig.error_message.emit("Error", f"Something Wrong Happened\nTraceback:\n{traceback.extract_tb(e.__traceback__)}")
                 print(e)
                 break
 

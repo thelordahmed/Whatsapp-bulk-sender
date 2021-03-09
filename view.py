@@ -1,6 +1,3 @@
-import os
-import platform
-import requests
 from PySide2 import QtCore, QtGui
 from PySide2.QtGui import QCloseEvent, QTextOption, Qt
 from PySide2.QtWidgets import *
@@ -119,6 +116,9 @@ class View(QMainWindow, design):
             return True
         else:
             return False
+
+    def error_message(self, title, text):
+        QMessageBox.critical(self, title, text, QMessageBox.Ok)
 
     def ok_message(self, title, text):
         QMessageBox.information(self, title, text, QMessageBox.Ok)
