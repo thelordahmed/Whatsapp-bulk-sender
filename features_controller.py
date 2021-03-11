@@ -23,7 +23,7 @@ elif package == "premium":
     scheduled_sending = True
     contact_card_enabled = True
 # extras
-multi_messages_enabled = False
+multi_messages_enabled = True
 repeat_every_24h = False
 extra_var = None  # assign None to disable it. to activate it, put the column number
 

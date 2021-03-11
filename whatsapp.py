@@ -63,30 +63,8 @@ class WhatsApp:
     # phone not connected
     phone_alert = '//span[@data-icon="alert-phone"]'
     computer_alert = '//span[@data-icon="alert-computer"]'
-    backBlue_btn = '//span[@data-icon="back-blue"]/ancestor::button'
-    backBlue_btn2 = '//span[@data-icon="search"]/ancestor::button'
+    backArrow_button = '//*[@id="side"]/div[1]/div/button'
     caption_input = '//span//div[contains(@class, "selectable-text")and contains(@class, "copyable-text")]'
-
-    # # updating chromedriver automatically
-    # @staticmethod
-    # def _chromedriver_update(zip_extract_path):
-    #     print("chromedriver is outdated! .. updating...")
-    #     stable_ver = requests.get("https://chromedriver.storage.googleapis.com/LATEST_RELEASE").text
-    #     file = requests.get(f"https://chromedriver.storage.googleapis.com/{stable_ver}/chromedriver_win32.zip")
-    #     z = zipfile.ZipFile(io.BytesIO(file.content))
-    #     z.extractall(zip_extract_path)
-    #
-    # def _chromedriver_update_mac(self):
-    #     file_name = "chromedriver_macos.zip"
-    #     file_path = os.path.join(self._dataFolder, file_name)
-    #     print("chromedriver is outdated! .. updating...")
-    #     stable_ver = requests.get("https://chromedriver.storage.googleapis.com/LATEST_RELEASE").text
-    #     file = requests.get(f"https://chromedriver.storage.googleapis.com/{stable_ver}/chromedriver_mac64.zip")
-    #     with open(file_path, "wb") as f:
-    #         f.write(file.content)
-    #     os.system(f"unzip {file_path} -d {self._dataFolder}")
-    #     sleep(2)
-    #     os.system(f"rm {file_path}")
 
     def logout_btn(self):
         shutil.rmtree(self.browserAuthDirectory)
@@ -128,12 +106,10 @@ class WhatsApp:
         :param number: phone number to search in whatsapp
         :return: False - if number not found on phone book
         """
+        number = number.replace("+", "").replace(" ", "").replace("(", "").replace(")", "").replace("-", "")
         search_bar = self._window.find_element_by_xpath(self._search_bar)
-        try:  # fixing a bug -- back button xpath changed
-            self._window.find_element_by_xpath(self.backBlue_btn).click()
-        except NoSuchElementException:
-            self._window.find_element_by_xpath(self.backBlue_btn2).click()
-
+        if search_bar.text != "":
+            self._window.find_element_by_xpath(self.backArrow_button).click()
         sleep(1)
         search_bar.send_keys(number)
         # checking if results appear
@@ -144,19 +120,11 @@ class WhatsApp:
             return False
         sleep(random.randint(3, 5))
 
-        # --------------- fixing choosing wrong chat elem bug ---------------
         search_bar.send_keys(Keys.ENTER)
-
         # check if number was found or not
         if search_bar.text != "":
             return False
-        # ----------------------------------------------------------------
 
-        # contact_xpath = '//*[@id="pane-side"]//div[2]/div[1]/div[1]/span'  # this xpath chooses only the contact chat; not groups or messages
-        # try:
-        #     self._window.find_element_by_xpath(contact_xpath).click()
-        # except Exception:
-        #     return False
 
     def sending(self, message):
         """
@@ -328,6 +296,7 @@ class WhatsApp:
         :return: False - if number has no whatsapp
         """
         # added sleeps to fix a bug with get()
+        number = number.replace("+", "").replace(" ", "").replace("(", "").replace(")", "").replace("-", "")
         url = f"https://web.whatsapp.com/send?phone={number}"
         sleep(2)
         self._window.get(url)
@@ -338,22 +307,28 @@ class WhatsApp:
         except Exception:
             pass
 
-        ok_btn = '//*[@id="app"]/div/span[2]/div/span/div/div/div/div/div/div[2]/div'
         loading_div = '//*[@id="startup"]/div'
         trying_to_connect_phone = '//div[@data-animate-modal-popup="true"]/div/div[2]/hr'
+        starting_chat_loading_div = '//*[@role="status" and @viewBox and @height and @width and @class]'
+        ok_btn = '//*[@id="app"]/div/span[2]/div/span/div/div/div/div/div/div[2]/div'
         # waiting for loading div to disappear
-        # TODO - this loading may stay forever... I need to take care of this
-        WebDriverWait(self._window, 60).until(ec.invisibility_of_element_located(
+        # TODO(FUTURE) - this loading may stay forever... I need to take care of this
+        WebDriverWait(self._window, 1000).until(ec.invisibility_of_element_located(
             (By.XPATH, loading_div)))
         sleep(2)
         # if "Trying to Connect Phone" appeared => wait for it to disappear
         WebDriverWait(self._window, 3600).until(ec.invisibility_of_element_located((By.XPATH, trying_to_connect_phone)))
+        # WAIT FOR "starting chat" TO DISAPPEAR
+        WebDriverWait(self._window, 3600).until(ec.invisibility_of_element_located((By.XPATH, starting_chat_loading_div)))
+        # CHECK IF NOT FOUND OK BUTTON APPEARED
         try:
-            WebDriverWait(self._window, random.randint(5, 10)).until(ec.visibility_of_element_located(
-                (By.XPATH, ok_btn))).click()
+            WebDriverWait(self._window, random.randint(2, 3)).until(
+                ec.visibility_of_element_located((
+                    By.XPATH, ok_btn))).click()
             return False
         except TimeoutException:
             pass
+
 
     def connectionCheck(self):
         """
