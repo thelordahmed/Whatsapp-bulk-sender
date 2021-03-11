@@ -240,7 +240,8 @@ class Main:
             try:
                 data_list = model2.getDataFromSheet(self.view.sheet_le.text())
             except Exception as e:
-                self.sig.error_message.emit("Error", f"Sheet Formation is not correct!\nTraceback:\n{traceback.extract_tb(e.__traceback__)}")
+                self.sig.error_message.emit("Error", f"Sheet Formation is not correct!\nError:\n{e}\nTraceback:\n{traceback.extract_tb(e.__traceback__)}")
+                return False
 
         # disabling start button and activating stop button
         self.view.startbtn_process()
@@ -256,7 +257,7 @@ class Main:
             else:
                 self.wa.open("firefox")
         except Exception as e:
-            self.sig.error_message.emit("Error", f"There's an Error with the browser!\nTraceback:\n{traceback.extract_tb(e.__traceback__)}")
+            self.sig.error_message.emit("Error", f"There's an Error with the browser!\nError:\n{e}\nTraceback:\n{traceback.extract_tb(e.__traceback__)}")
             self.view.state = "error"
             self.view.stopbtn_process()
             if self.language == "italian":
@@ -389,7 +390,7 @@ class Main:
                 self.skipToNextNumber(name, phone, "sent", model2)
             except Exception as e:
                 self.view.state = "error"
-                self.sig.error_message.emit("Error", f"Something Wrong Happened\nTraceback:\n{traceback.extract_tb(e.__traceback__)}")
+                self.sig.error_message.emit("Error", f"Something Wrong Happened\nError:\n{e}\nTraceback:\n{traceback.extract_tb(e.__traceback__)}")
                 print(e)
                 break
 
