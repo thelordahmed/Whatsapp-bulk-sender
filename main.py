@@ -45,8 +45,12 @@ class Main:
         self.license = License(self.api_url, self.view)
         # Sending Key Request if pre-saved key found
         try:
-            with open(os.path.join(data_folder, "license_key.txt"), "r") as f:
-                key = f.read()
+            if platform.system() == "Darwin":
+                with open(os.path.join(data_folder, "license_key.txt"), "r") as f:
+                    key = f.read()
+            else:
+                with open(os.path.join(r"C:\ProgramData", "license_key.txt"), "r") as f:
+                    key = f.read()
             self.license.validate(key)
         except FileNotFoundError:
             pass

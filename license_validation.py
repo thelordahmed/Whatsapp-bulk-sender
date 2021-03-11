@@ -58,11 +58,9 @@ class License:
                     if platform.system() == "Darwin":
                         data_folder = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data"
                     else:
-                        data_folder = "Data"
+                        data_folder = r"C:\ProgramData"
                     with open(os.path.join(data_folder, "license_key.txt"), "w") as f:
                         f.write(key)
-
-
                     # # increasing online counter
                     # if res["user"] != "admin" and res["user"] != "admin_PC":
                     #     requests.put(f"{self.api_url}/connected/increase")
