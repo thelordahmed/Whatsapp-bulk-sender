@@ -5,6 +5,7 @@ import random
 import shutil
 import subprocess
 from time import sleep
+from selenium.common.exceptions import InvalidArgumentException, WebDriverException, NoSuchWindowException
 from model import Model
 from PySide2 import QtWidgets, QtCore
 from view import View
@@ -26,6 +27,7 @@ else:
 class Signals(QtCore.QObject):
     start_btn = QtCore.Signal()
     error_message = QtCore.Signal(str, str)
+    recent_extracted = QtCore.Signal(str)
 
 
 
@@ -54,7 +56,7 @@ class Main:
             self.license.validate(key)
         except FileNotFoundError:
             pass
-        self.wa = WhatsApp()
+        self.wa = WhatsApp(self.sig)
         if self.language == "italian":
             self.status = {
                 "sent": "Messaggio inviato!",
@@ -104,7 +106,63 @@ class Main:
         self.view.logout_btn.clicked.connect(self.logout_btn_func)
         self.view.contact_groupbox.toggled.connect(lambda: self.view.contactCard_le.setStyleSheet("color:white"))
         self.sig.error_message.connect(self.view.error_message)
+        self.sig.recent_extracted.connect(lambda phone: self.view.addToRecentTableWidget(("Recent Contact", phone)))
+        self.view.recent_extract_btn.clicked.connect(lambda: Thread(target=self.extract_process).start())
+        self.view.recent_clear_btn.clicked.connect(self.recent_clear)
+        self.view.recent_export_btn.clicked.connect(self.recent_export_func)
         ###############################################
+
+    # RECENT METHODS
+    def extract_process(self):
+        # START STATE
+        self.view.recent_extract_btn.setDisabled(True)
+        self.view.recent_extract_btn.setText("Extracting...")
+        self.view.start_btn.setDisabled(True)
+        # OPEN BROWSER IF NOT OPENED
+        if self.wa.window is None:
+            self.wa.open("chrome")
+        # ERROR IF THERE ARE CURRENT DATA
+        if self.view.recent_tablewidgeet.rowCount() > 0:
+            self.sig.error_message.emit("Error", "please clear the current data first")
+            # DONE STATE
+            self.view.recent_extract_btn.setEnabled(True)
+            self.view.recent_extract_btn.setText("Extract")
+            self.view.start_btn.setEnabled(True)
+            return False
+        # EXTRACTING...
+        try:
+            self.wa.extract_recent()
+        except InvalidArgumentException and NoSuchWindowException and WebDriverException:
+            self.wa.window.quit()
+            sleep(3)
+            self.wa.open("chrome")
+            self.wa.extract_recent()
+        # DONE STATE
+        self.view.recent_extract_btn.setEnabled(True)
+        self.view.recent_extract_btn.setText("Extract")
+        self.view.start_btn.setEnabled(True)
+
+    def recent_clear(self):
+        if len(self.wa.recent_contacts) == 0:
+            return False
+        if self.view.confirmMessage("Confirm clearing", "Confrim clearing the table?"):
+            self.view.recent_tablewidgeet.setRowCount(0)
+            self.wa.recent_contacts.clear()
+
+    def recent_export_func(self):
+        if len(self.wa.recent_contacts) == 0:
+            self.sig.error_message.emit("Error", "No Data to Export!")
+            return False
+        try:
+            path = self.view.saveDialog()
+            with open(path, "w", encoding = "utf-8", newline = "") as f:
+                for row in self.wa.recent_contacts:
+                    writer = csv.writer(f)
+                    writer.writerow(row)
+        except FileNotFoundError:
+            print("saving cancelled!")
+
+
 
     def newSessionFunc(self):
         if self.language == "italian":

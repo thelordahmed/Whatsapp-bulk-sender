@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import TimeoutException, InvalidArgumentException, NoSuchElementException
+from selenium.common.exceptions import TimeoutException, InvalidArgumentException, StaleElementReferenceException
 import random
 import shutil
 import platform
@@ -41,7 +41,8 @@ class WhatsApp:
     _minSeconds = 5
     _maxSeconds = 30
     _handle = None
-    _window = None
+    window = None
+    recent_contacts = []
     _search_bar = '//*[@id="side"]/div[1]/div/label/div/div[2]'
     _sbar_arrow = '//*[@id="side"]/div[1]/div/button'
     _profile_header = '//*[@id="main"]/header/div[2]/div/div/span'
@@ -66,6 +67,9 @@ class WhatsApp:
     backArrow_button = '//*[@id="side"]/div[1]/div/button'
     caption_input = '//span//div[contains(@class, "selectable-text")and contains(@class, "copyable-text")]'
 
+    def __init__(self, signals_obj):
+        self.sig = signals_obj
+
     def logout_btn(self):
         shutil.rmtree(self.browserAuthDirectory)
 
@@ -78,27 +82,27 @@ class WhatsApp:
                 chrome_options = Options()
                 chrome_options.add_argument(r'--user-data-dir=' + self.browserAuthDirectory)
                 args = ["hide_console", ]
-                self._window = webdriver.Chrome(ChromeDriverManager().install(),
-                                                options=chrome_options, service_args=args)
+                self.window = webdriver.Chrome(ChromeDriverManager().install(),
+                                               options=chrome_options, service_args=args)
             else:
                 # self._window = webdriver.Firefox(executable_path=GeckoDriverManager().install(),firefox_profile=FirefoxProfile(self.firefoxProfilePath))
-                self._window = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+                self.window = webdriver.Firefox(executable_path=GeckoDriverManager().install())
 
-            self._window.get("https://web.whatsapp.com/")
-            self._handle = self._window.current_window_handle
+            self.window.get("https://web.whatsapp.com/")
+            self._handle = self.window.current_window_handle
             # waiting for the whatsapp to login
-            WebDriverWait(self._window, 1000).until(ec.presence_of_element_located((
+            WebDriverWait(self.window, 1000).until(ec.presence_of_element_located((
                 By.XPATH, '//*[@id="app"]/div/div/div[4]/div/div/div[2]/h1')))
             sleep(1)
 
-            return self._window
+            return self.window
         else:
             # if browser was opened before >> switch focus to it
-            self._window.switch_to.window(self._handle)
-            return self._window
+            self.window.switch_to.window(self._handle)
+            return self.window
 
     def close(self):
-        self._window.quit()
+        self.window.quit()
 
     def number_search(self, number):
         """
@@ -107,14 +111,14 @@ class WhatsApp:
         :return: False - if number not found on phone book
         """
         number = number.replace("+", "").replace(" ", "").replace("(", "").replace(")", "").replace("-", "")
-        search_bar = self._window.find_element_by_xpath(self._search_bar)
+        search_bar = self.window.find_element_by_xpath(self._search_bar)
         if search_bar.text != "":
-            self._window.find_element_by_xpath(self.backArrow_button).click()
+            self.window.find_element_by_xpath(self.backArrow_button).click()
         sleep(1)
         search_bar.send_keys(number)
         # checking if results appear
         try:
-            WebDriverWait(self._window, 10).until(ec.visibility_of_element_located((
+            WebDriverWait(self.window, 10).until(ec.visibility_of_element_located((
                 By.XPATH, '//*[@id="pane-side"]/div[1]/div/div/div[1]')))
         except TimeoutException:
             return False
@@ -132,14 +136,14 @@ class WhatsApp:
         :param message: text message to be sent
         :return: None
         """
-        message_input = self._window.find_element_by_xpath(self._msg_input)
+        message_input = self.window.find_element_by_xpath(self._msg_input)
         message_input.send_keys(message)
         message_input.send_keys(Keys.ENTER)
 
     def sending_sameFormat(self, message):
         message_lines = message.split("\n")
-        message_input = self._window.find_element_by_xpath(self._msg_input)
-        actions = ActionChains(self._window)
+        message_input = self.window.find_element_by_xpath(self._msg_input)
+        actions = ActionChains(self.window)
         actions.move_to_element(message_input)
         actions.click()
         for line in message_lines:
@@ -154,8 +158,8 @@ class WhatsApp:
 
     def _sending_sameFormat_captionInput(self, message):
         message_lines = message.split("\n")
-        message_input = self._window.find_element_by_xpath(self.caption_input)
-        actions = ActionChains(self._window)
+        message_input = self.window.find_element_by_xpath(self.caption_input)
+        actions = ActionChains(self.window)
         actions.move_to_element(message_input)
         actions.click()
         for line in message_lines:
@@ -174,7 +178,7 @@ class WhatsApp:
                 multiple_paths += "\n" + path
         try:
             sleep(random.randint(1, 3))
-            self._window.find_element_by_xpath(self._attachment).click()
+            self.window.find_element_by_xpath(self._attachment).click()
             sleep(random.randint(1, 2))
         except Exception as e:
             print(e)
@@ -182,7 +186,7 @@ class WhatsApp:
             return False
         # waits for the image button to appear then send the path
         try:
-            WebDriverWait(self._window, 10).until(
+            WebDriverWait(self.window, 10).until(
                 ec.presence_of_element_located((By.CSS_SELECTOR, self._imageinput))).send_keys(multiple_paths)
         except TimeoutException:
             print("image input button didn't appear")
@@ -194,10 +198,10 @@ class WhatsApp:
         sleep(random.randint(2, 3))
         try:
             try:  # fixing a bug - xpath changed
-                WebDriverWait(self._window, 10).until(
+                WebDriverWait(self.window, 10).until(
                     ec.presence_of_element_located((By.XPATH, self._sendimagebtn2))).click()
             except TimeoutException:
-                WebDriverWait(self._window, 10).until(
+                WebDriverWait(self.window, 10).until(
                     ec.presence_of_element_located((By.XPATH, self._sendimagebtn))).click()
         except TimeoutException:
             print("send btn didn't appear")
@@ -212,7 +216,7 @@ class WhatsApp:
                 multiple_paths += "\n" + path
         try:
             sleep(random.randint(1, 3))
-            self._window.find_element_by_xpath(self._attachment).click()
+            self.window.find_element_by_xpath(self._attachment).click()
             sleep(random.randint(1, 3))
         except Exception as e:
             print(e)
@@ -220,7 +224,7 @@ class WhatsApp:
             return False
         # waits for the image button to appear then send the path
         try:
-            WebDriverWait(self._window, 10).until(
+            WebDriverWait(self.window, 10).until(
                 ec.presence_of_element_located((By.CSS_SELECTOR, self._imageinput))).send_keys(multiple_paths)
         except TimeoutException:
             print("image input button didn't appear")
@@ -232,12 +236,12 @@ class WhatsApp:
         sleep(random.randint(2, 3))
         try:
             try:  # fixing a bug - xpath changed
-                sendBtn = WebDriverWait(self._window, 10).until(
+                sendBtn = WebDriverWait(self.window, 10).until(
                     ec.presence_of_element_located((By.XPATH, self._sendimagebtn2)))
                 self._sending_sameFormat_captionInput(message)
                 sendBtn.click()
             except TimeoutException:
-                sendBtn = WebDriverWait(self._window, 10).until(
+                sendBtn = WebDriverWait(self.window, 10).until(
                     ec.presence_of_element_located((By.XPATH, self._sendimagebtn)))
                 self._sending_sameFormat_captionInput(message)
                 sendBtn.click()
@@ -250,7 +254,7 @@ class WhatsApp:
     def sending_contact(self, contact_number):
         try:
             sleep(random.randint(1, 3))
-            self._window.find_element_by_xpath(self._attachment).click()
+            self.window.find_element_by_xpath(self._attachment).click()
             sleep(random.randint(1, 3))
         except Exception as e:
             print(e)
@@ -258,7 +262,7 @@ class WhatsApp:
             return False
         # waits for the contact button to appear then click it
         try:
-            WebDriverWait(self._window, 10).until(
+            WebDriverWait(self.window, 10).until(
                 ec.presence_of_element_located((By.CSS_SELECTOR, self._attachContactBtn))).click()
         except TimeoutException:
             print("contact button didn't appear")
@@ -266,7 +270,7 @@ class WhatsApp:
         sleep(random.randint(1, 2))
         # waiting for the search bar to appear then typing the number and hitting Enter to choose it
         try:
-            searchBar_elem = WebDriverWait(self._window, 10).until(
+            searchBar_elem = WebDriverWait(self.window, 10).until(
                 ec.presence_of_element_located((By.XPATH, self._contactSearchBar)))
             searchBar_elem.send_keys(contact_number)
             sleep(5)
@@ -277,15 +281,15 @@ class WhatsApp:
         sleep(1)
         # waiting for the send btn to appear then clicking it
         try:
-            WebDriverWait(self._window, 10).until(
+            WebDriverWait(self.window, 10).until(
                 ec.presence_of_element_located((By.XPATH, self._sendBtn))).click()
             sleep(2)
             # clicking the send again for the confirmation
-            WebDriverWait(self._window, 10).until(
+            WebDriverWait(self.window, 10).until(
                 ec.presence_of_element_located((By.XPATH, self._sendBtn))).click()
         except TimeoutException:
             print("sending btn didn't appear in sending contact card")
-            self._window.find_element_by_xpath(self._xBtn).click()
+            self.window.find_element_by_xpath(self._xBtn).click()
             return False
 
     def unsaved_number_search(self, number):
@@ -299,11 +303,11 @@ class WhatsApp:
         number = number.replace("+", "").replace(" ", "").replace("(", "").replace(")", "").replace("-", "")
         url = f"https://web.whatsapp.com/send?phone={number}"
         sleep(2)
-        self._window.get(url)
+        self.window.get(url)
         sleep(2)
         # sometimes an alert pops up!
         try:
-            self._window.switch_to.alert.accept()
+            self.window.switch_to.alert.accept()
         except Exception:
             pass
 
@@ -313,16 +317,16 @@ class WhatsApp:
         ok_btn = '//*[@id="app"]/div/span[2]/div/span/div/div/div/div/div/div[2]/div'
         # waiting for loading div to disappear
         # TODO(FUTURE) - this loading may stay forever... I need to take care of this
-        WebDriverWait(self._window, 1000).until(ec.invisibility_of_element_located(
+        WebDriverWait(self.window, 1000).until(ec.invisibility_of_element_located(
             (By.XPATH, loading_div)))
         sleep(2)
         # if "Trying to Connect Phone" appeared => wait for it to disappear
-        WebDriverWait(self._window, 3600).until(ec.invisibility_of_element_located((By.XPATH, trying_to_connect_phone)))
+        WebDriverWait(self.window, 3600).until(ec.invisibility_of_element_located((By.XPATH, trying_to_connect_phone)))
         # WAIT FOR "starting chat" TO DISAPPEAR
-        WebDriverWait(self._window, 3600).until(ec.invisibility_of_element_located((By.XPATH, starting_chat_loading_div)))
+        WebDriverWait(self.window, 3600).until(ec.invisibility_of_element_located((By.XPATH, starting_chat_loading_div)))
         # CHECK IF NOT FOUND OK BUTTON APPEARED
         try:
-            WebDriverWait(self._window, random.randint(2, 3)).until(
+            WebDriverWait(self.window, random.randint(2, 3)).until(
                 ec.visibility_of_element_located((
                     By.XPATH, ok_btn))).click()
             return False
@@ -337,7 +341,7 @@ class WhatsApp:
         """
         try:
             print("checking on phone connection..")
-            self._window.find_element_by_xpath(self.phone_alert)
+            self.window.find_element_by_xpath(self.phone_alert)
             print("PHONE IS NOT CONNECTED!!")
             return False
         except Exception:
@@ -345,7 +349,7 @@ class WhatsApp:
 
         try:
             print("checking on computer connection..")
-            self._window.find_element_by_xpath(self.computer_alert)
+            self.window.find_element_by_xpath(self.computer_alert)
             print("Computer IS NOT CONNECTED!!")
             return False
         except Exception:
@@ -402,5 +406,48 @@ class WhatsApp:
             return sleep_duration
 
     def get_window_object(self):
-        return self._window
+        return self.window
 
+    def extract_recent(self) -> list:
+        """
+        this method extracts the unsaved numbers in recent chats
+        :return: list or strings
+        """
+        # SCROLLING TO TOP FIRST
+        self.window.execute_script('document.getElementById("pane-side").scrollTop = 0;')
+        # CLEARING SEARCHBAR
+        search_bar = self.window.find_element_by_xpath(self._search_bar)
+        if search_bar.text != "":
+            self.window.find_element_by_xpath(self.backArrow_button).click()
+        sleep(1)
+        number_xpath = '//div[2]/div[@role="gridcell"]//span[@class and @dir="auto" and starts-with(@title, "+")]'
+        contacts = []
+        stop_counter = 0
+        while True:
+            if stop_counter >= 3:
+                return contacts
+            elements = self.window.find_elements_by_xpath(number_xpath)
+            added_new_phone = False
+            # SCRAPING NUMBERS
+            for elem in elements:
+                try:
+                    phone = elem.get_attribute("title")
+                    if phone not in contacts:
+                        added_new_phone = True
+                        contacts.append(phone)
+                        self.sig.recent_extracted.emit(phone)
+                        self.recent_contacts.append(["Recent Contact", self.clean_number(phone)])
+                except StaleElementReferenceException:
+                    print("stale occured!!!!")
+                    self.extract_recent()
+
+            # SCROLLING
+            self.window.execute_script('document.getElementById("pane-side").scrollBy(0 , 1000);')
+            sleep(2)
+            # INCREASE COUNTER IF NO MORE NEW RESULTS SHOWN - THAT MEANS WE REACHED THE END AND NO MORE TO SCROLL
+            if added_new_phone is False:
+                stop_counter += 1
+
+    @staticmethod
+    def clean_number(phone:str) -> str:
+        return phone.replace("+", "").replace(" ", "").replace("(", "").replace(")", "").replace("-", "").replace("/","").replace("\\", "")

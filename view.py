@@ -8,13 +8,14 @@ import features_controller
 
 
 class View(QMainWindow, design):
-    def __init__(self, api_url, parent=None):
+    def __init__(self, api_url,parent=None):
         super(View, self).__init__(parent)
         self.setAttribute(QtCore.Qt.WA_DeleteOnClose)
         self.setupUi(self)
         self.show()
         self.api_url = api_url
         self.setWindowTitle(f"WhatsApp Bulk Sender {features_controller.version}")
+        self.stop_btn.setDisabled(True)
         self.whatsapp_window_obj = None
         # hidding all to validate license first
         self.main_frame.hide()
@@ -99,6 +100,19 @@ class View(QMainWindow, design):
         for index, info in enumerate(data):
             self.tableWidget.setItem(row_pos, index, QTableWidgetItem(info))
             self.tableWidget.scrollToBottom()
+
+    def addToRecentTableWidget(self, data):  # slot >> trigger singal
+        """
+        Use this method if you have TableWidget to add items in rows
+        :param data: tuple of values (1, 2, 3)
+        :return: None
+        """
+        row_pos = self.recent_tablewidgeet.rowCount()
+        self.recent_tablewidgeet.insertRow(row_pos)
+
+        for index, info in enumerate(data):
+            self.recent_tablewidgeet.setItem(row_pos, index, QTableWidgetItem(info))
+            self.recent_tablewidgeet.scrollToBottom()
 
     def confirmMessage(self, title, text, mode="question"):
         """
