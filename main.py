@@ -234,7 +234,7 @@ class Main:
             return "search is already false"
 
     def skipToNextNumber(self, name, phone, status, modelObj):
-        modelObj.addTodata((name, phone, self.status[status]))
+        # modelObj.addTodata((name, phone, self.status[status]))       # DEBUGGING TESTING
         self.view.addToTableWidget((name, phone, self.status[status]))
 
     def sending_code(self, message, attachments_paths):

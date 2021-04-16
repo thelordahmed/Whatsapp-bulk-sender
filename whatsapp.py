@@ -7,7 +7,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import TimeoutException, InvalidArgumentException, StaleElementReferenceException
+from selenium.common.exceptions import TimeoutException, InvalidArgumentException, StaleElementReferenceException, \
+    NoSuchElementException
 import random
 import shutil
 import platform
@@ -49,6 +50,7 @@ class WhatsApp:
     _group_pos = '//*[@id="app"]/div/div/div[2]/div[3]/span/div/span/div/div/div[1]/div[5]' \
                  '/div[2]/div/div/div/div/div[2]/div[1]/div/span'
     _msg_input = '//*[@id="main"]/footer/div[1]/div[2]/div/div[2]'
+    _msg_input2 = '//*[@id="main"]/footer//div[contains(@class, "copyable-text") and contains(@class, "selectable-text") and @spellcheck="true"]'
     _cancel_x = '//*[@id="side"]/div[1]/div/span/button'
     _attachment = '//span[@data-icon="clip"]/parent::div'
     # self._attachment called first then wait for self._imageinput to appear
@@ -142,7 +144,13 @@ class WhatsApp:
 
     def sending_sameFormat(self, message):
         message_lines = message.split("\n")
-        message_input = self.window.find_element_by_xpath(self._msg_input)
+        try:
+            message_input = self.window.find_element_by_xpath(self._msg_input)
+        except NoSuchElementException:
+            # SHOWING THE WHATSAPP WINDOW TO AVOID ELEMENT NOT FOUND BUG
+            self.window.switch_to.window(self.window.window_handles[0])
+            sleep(1)
+            message_input = self.window.find_element_by_xpath(self._msg_input2)
         actions = ActionChains(self.window)
         actions.move_to_element(message_input)
         actions.click()

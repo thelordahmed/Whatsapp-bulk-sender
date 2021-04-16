@@ -36,7 +36,7 @@ extra_var = None  # assign None to disable it. to activate it, put the column nu
 
 
 # SETTINGS
-version = "2.7.0"
+version = "2.7.1"
 language = "en"
 
 
