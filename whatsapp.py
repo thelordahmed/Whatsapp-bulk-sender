@@ -21,13 +21,11 @@ from multiprocessing import Queue
 if platform.system() == "Darwin":
     browserData = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data/WhatsappLogin"
     browserData_firefox = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data/WhatsappLoginFirefox"
-    chromedriver = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data/chromedriver"
     data_folder = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data"
 else:
-    browserData = "Data/WhatsappLogin"
-    browserData_firefox = "Data/WhatsappLoginFirefox"
-    chromedriver = "Data/chromedriver"
-    data_folder = "Data"
+    data_folder = os.path.join("C:\\ProgramData", "Data")
+    browserData_firefox = os.path.join(data_folder, "WhatsappLoginFirefox")
+    browserData = os.path.join(data_folder, "WhatsappLogin")
 
 os.system(f'mkdir "{browserData_firefox}"')
 
