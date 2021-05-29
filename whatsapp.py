@@ -305,6 +305,7 @@ class WhatsApp:
         :param number: whatsapp phone number
         :return: False - if number has no whatsapp
         """
+
         # added sleeps to fix a bug with get()
         number = number.replace("+", "").replace(" ", "").replace("(", "").replace(")", "").replace("-", "")
         url = f"https://web.whatsapp.com/send?phone={number}"
@@ -317,17 +318,14 @@ class WhatsApp:
         except Exception:
             pass
 
-        loading_div = '//*[@id="startup"]/div'
-        trying_to_connect_phone = '//div[@data-animate-modal-popup="true"]/div/div[2]/hr'
+        profile_side_div = '//div[@id="side"]/header'   # TO CHECK IF LOADING IS DONE OR NOT
         starting_chat_loading_div = '//*[@role="status" and @viewBox and @height and @width and @class]'
         ok_btn = '//*[@id="app"]/div/span[2]/div/span/div/div/div/div/div/div[2]/div'
-        # waiting for loading div to disappear
-        # TODO(FUTURE) - this loading may stay forever... I need to take care of this
-        WebDriverWait(self.window, 1000).until(ec.invisibility_of_element_located(
-            (By.XPATH, loading_div)))
+        # WAITING FOR LOADING TO FINISH
+        # (FUTURE FIX) - this loading may stay forever... I need to take care of this
+        WebDriverWait(self.window, 1000).until(ec.visibility_of_element_located(
+            (By.XPATH, profile_side_div)))
         sleep(2)
-        # if "Trying to Connect Phone" appeared => wait for it to disappear
-        WebDriverWait(self.window, 3600).until(ec.invisibility_of_element_located((By.XPATH, trying_to_connect_phone)))
         # WAIT FOR "starting chat" TO DISAPPEAR
         WebDriverWait(self.window, 3600).until(ec.invisibility_of_element_located((By.XPATH, starting_chat_loading_div)))
         # CHECK IF NOT FOUND OK BUTTON APPEARED

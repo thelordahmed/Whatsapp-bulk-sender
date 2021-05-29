@@ -7,8 +7,8 @@ packages = ["normal", "standard", "premium"]
 ##########################################################
 package = packages[2]   # CHOOSE WHICH PACKAGE TO COMPILE
 demo = False
-copyright_url = "https://www.fiverr.com/lordahmed"   # "https://www.fiverr.com/lordahmed"
-copyright_text = "AhmeDSaeeD | (lordahmed on Fiverr)"    #  "AhmeDSaeeD | (lordahmed on Fiverr)"
+copyright_url = "fb.com/lord.ahmed110"   # "https://www.fiverr.com/lordahmed"
+copyright_text = "AhmeD SaeeD"    #  "AhmeDSaeeD | (lordahmed on Fiverr)"
 ##########################################################
 if package == "normal":
     attachments_enabled = False
@@ -36,7 +36,7 @@ extra_var = None  # assign None to disable it. to activate it, put the column nu
 
 
 # SETTINGS
-version = "2.7.3"
+version = "2.7.4"
 language = "en"
 
 

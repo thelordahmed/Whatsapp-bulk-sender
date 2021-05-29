@@ -18,6 +18,7 @@ import sys
 import traceback
 
 
+
 if platform.system() == "Darwin":
     data_folder = f"{os.path.expanduser('~')}/Library/WhatsappSenderData/Data"
 else:
@@ -255,6 +256,7 @@ class Main:
                 self.wa.sending_image(attachments_paths)
         else:
             for i in messages:
+
                 self.wa.sending_sameFormat(i.strip())
 
     @staticmethod

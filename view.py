@@ -67,7 +67,8 @@ class View(QMainWindow, design):
         self.stop_btn.setDisabled(True)
 
     def copyrights(self):
-        open(features_controller.copyright_url)
+        if features_controller.copyright_url is not None:
+            open(features_controller.copyright_url)
     ######################################
 
     # Customizing the close event

@@ -8,6 +8,11 @@ from requests.exceptions import ConnectionError
 from getmac import get_mac_address as gma
 
 
+invalid_key_msg = "Invalid Key!"
+expired_key_msg = "Sorry, this license has expired."
+registered_key_msg = "Sorry, this key is registed to another device. \nplease contact the seller."
+
+
 class License:
     def __init__(self, api_url, view_object):
         self.api_url = api_url
@@ -39,19 +44,18 @@ class License:
                 try:
                     res = requests.put(f"{self.api_url}/key/{key}/{mac}").json()
                 except JSONDecodeError:
-                    self.view.license_status_label.setText(
-                        "Invalid key. \nplease visit link below to order a valid key\n\nhttps://www.fiverr.com/share/5ADL24 ")
+                    self.view.license_status_label.setText(invalid_key_msg)
                     self.view.license_btn.setEnabled(True)
                     return False
                 self.license_input.setText(key)
                 if res["response"] == "expired":
-                    self.view.license_status_label.setText("Sorry, this license has expired. \nplease visit link below to renew your key\n\nhttps://www.fiverr.com/share/5ADL24")
+                    self.view.license_status_label.setText(expired_key_msg)
                     self.view.license_btn.setEnabled(True)
                 elif res["response"] == "invalid":
-                    self.view.license_status_label.setText("Invalid key. \nplease visit link below to order a valid key\n\nhttps://www.fiverr.com/share/5ADL24 ")
+                    self.view.license_status_label.setText(invalid_key_msg)
                     self.view.license_btn.setEnabled(True)
                 elif res["response"] == "different device":
-                    self.view.license_status_label.setText("Sorry, this key is registed to another device. \nplease contact the seller.")
+                    self.view.license_status_label.setText(registered_key_msg)
                     self.view.license_btn.setEnabled(True)
                 elif res["response"] == "valid":
                     # saving the key if it's valid
