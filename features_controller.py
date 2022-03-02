@@ -8,7 +8,7 @@ packages = ["normal", "standard", "premium"]
 package = packages[2]   # CHOOSE WHICH PACKAGE TO COMPILE
 demo = False
 copyright_url = "fb.com/lord.ahmed110"   # "https://www.fiverr.com/lordahmed"
-copyright_text = "AhmeD SaeeD"    #  "AhmeDSaeeD | (lordahmed on Fiverr)"
+copyright_text = "AhmeD SaeeD"    #  "AhmeDSaeeD"  "Fsk dgital marketing"
 ##########################################################
 if package == "normal":
     attachments_enabled = False

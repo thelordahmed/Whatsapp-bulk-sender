@@ -91,7 +91,7 @@ class WhatsApp:
             self._handle = self.window.current_window_handle
             # waiting for the whatsapp to login
             WebDriverWait(self.window, 1000).until(ec.presence_of_element_located((
-                By.XPATH, '//*[@id="app"]/div/div/div[4]/div/div/div[2]/h1')))
+                By.XPATH, self._search_bar)))
             sleep(1)
 
             return self.window
